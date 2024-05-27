@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Bibliothèque Virtuelle 2024</title>
+    <link rel="stylesheet" href="body.css">
+</head>
+<body>
+    <h1>Ma Bibliothèque Virtuelle 2023</h1>
+    <form action="livres.php" method="post">
+    <section class="conteneur-tableau">
+        <table>
+                <tbody>
+                <tr>
+                    <td>Titre</td>
+                    <td> 
+                    	<form action="#">
+                            <input type="text" id="titre" name="titre" required>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Auteur</td>
+                    <td>
+                    	<form action="#">
+                            <input type="text" id="auteur" name="auteur" required>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Année</td>
+                    <td>
+						<form action="#">
+                            <input type="text" id="année" name="année" required>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Editeur</td>
+                    <td>
+                    	<form action="#">
+                            <input type="text" id="editeur" name="editeur" required>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Couverture</td>
+                    <td>
+                    	<form action="#">
+                            <input type="text" id="couverture" name="couverture" required>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                    	<button type="submit" name="rechercher">Rechercher</button>
+                    	<button type="submit" name="ajouter">Ajouter</button>
+                    	<button type="submit" name="supprimer">Supprimer</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</form>
+</body>
+</html>
