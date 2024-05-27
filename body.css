@@ -36,23 +36,26 @@ header img {
 
 .nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     background-color: #b0b0b0;
-    padding: 20px;
 }
 
 .nav li a {
+    display: block;
     text-decoration: none;
     color: #fff;
     padding: 10px 20px;
-    border-radius: 5px;
     font-weight: bold;
     transition: background-color 0.3s;
+    text-align: center;
+    font-size: 18px;
 }
 
 .nav > ul{
     display: flex;
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .nav a:hover {
@@ -63,8 +66,7 @@ header img {
     list-style: none;
     display: none;
     position: absolute;
-    top: 60px;
-    left: 0;
+    top: 45px;
     background: #313131;
     width: max-content;
 }
