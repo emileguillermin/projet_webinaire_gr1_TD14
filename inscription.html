@@ -45,27 +45,45 @@
                 </li>
             </ul>
         </div>
-        <div class="container mt-5">
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header text-center">
-                            <h1 class="h3 mb-3 fw-normal">Connexion</h1>
-                        </div>
-                        <div class="card-body">
-                            <form action="connexion.php" method="POST">
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">Email :</label>
-                                    <input type="email" id="email" name="email" class="form-control" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="mdp" class="form-label">Mot de Passe :</label>
-                                    <input type="password" id="mdp" name="mdp" class="form-control" required>
-                                </div>
-                                <button type="submit" class="btn btn-primary w-100">Se connecter</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <h1>Inscription</h1>
+        <table>
+            <tr>
+                <td><label for="nom">Nom :</label></td>
+                <td><input type="text" id="nom" name="nom" required></td>
+            </tr>
+            <tr>
+                <td><label for="prenom">Prenom :</label></td>
+                <td><input type="text" id="prenom" name="prenom" required></td>
+            </tr>
+            <tr>
+                <td><label for="adresseLigne1">Adresse 1 :</label></td>
+                <td><input type="text" id="adresseLigne1" name="adresseLigne1" required></td>
+            </tr>
+            <tr>
+                <td><label for="adresseLigne2">AdresseLigne2</label></td>
+                <td><input type="text" id="adresseLigne2" name="adresseLigne2" required></td>
+            </tr>
+            <tr>
+                <td><label for="Ville">Ville :</label></td>
+                <td><input type="text" id="Ville" name="Ville" required></td>
+            </tr>
+            <tr>
+                <td><label for="Code Postal">Code Postal :</label></td>
+                <td><input type="number" id="codePostal" name="codePostal" required></td>
+            </tr>
+            <tr>
+                <td><label for="pays">Pays :</label></td>
+                <td><input type="text" id="pays" name="pays" required></td>
+            </tr>
+            <tr>
+                <td><label for="telephone">Telephone</label></td>
+                <td><input type="tel" id="telephone" name="telephone" required></td>
+            </tr>
+            <tr>
+                <td><label for="carte">carteEtudiante</label></td>
+                <td><input type="text" id="carte" name="carte" required></td>
+            </tr>
+        </table>
+        <input type="submit" value="Soumettre">
+    </body>
+    </html>
