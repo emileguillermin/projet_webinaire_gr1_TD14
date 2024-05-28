@@ -3,65 +3,106 @@
 <head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ma Bibliothèque Virtuelle 2024</title>
-    <link rel="stylesheet" href="body.css">
+    <title>Sportify</title>
+    <link rel="stylesheet" href="body.css"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">  <!-- Permet d'afficher les photos horizontales-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>              <!-- Permet d'ajouter les boutons du carrousel-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>           <!-- Permet d'ajouter les différentes flèches-->  
 </head>
 <body>
-    <h1>Ma Bibliothèque Virtuelle 2023</h1>
-    <form action="livres.php" method="post">
-    <section class="conteneur-tableau">
-        <table>
-                <tbody>
-                <tr>
-                    <td>Titre</td>
-                    <td> 
-                    	<form action="#">
-                            <input type="text" id="titre" name="titre" required>
-                        </form>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Auteur</td>
-                    <td>
-                    	<form action="#">
-                            <input type="text" id="auteur" name="auteur" required>
-                        </form>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Année</td>
-                    <td>
-						<form action="#">
-                            <input type="text" id="année" name="année" required>
-                        </form>
-                    </td>
-                </tr>
-                <tr> 
-                    <td>Editeur</td>
-                    <td>
-                    	<form action="#">
-                            <input type="text" id="editeur" name="editeur" required>
-                        </form>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Couverture</td>
-                    <td>
-                    	<form action="#">
-                            <input type="text" id="couverture" name="couverture" required>
-                        </form>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                    	<button type="submit" name="rechercher">Rechercher</button>
-                    	<button type="submit" name="ajouter">Ajouter</button>
-                    	<button type="submit" name="supprimer">Supprimer</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-</form>
+    <div class="wrapper">
+        <header>
+            <h1><span>Sportify :</span> Consultation Sportive <img src="photo/logo.png" alt="Sportify Logo"></h1> 
+        </header>
+        <div class="nav">
+            <ul>
+                <li class="has-sous-nav">
+                    <a href="index.html">Accueil</a>
+                </li>
+                <li class="has-sous-nav">
+                    <a href="toutParcourir.html">Tout Parcourir</a>
+                    <ul class="sous-nav">
+                        <li><a href="activitesSportives.html">Activités sportives</a></li>
+                        <li><a href="sportsDeCompetition.html">Les Sports de compétition</a></li>
+                        <li><a href="salleDeSportOmnes.html">Salle de sport Omnes</a></li>
+                    </ul>
+                </li>
+                <li class="has-sous-nav">
+                    <a href="recherche.html">Recherche</a>
+                </li>
+                <li class="has-sous-nav">
+                    <a href="rendezVous.html">Rendez-vous</a>
+                </li>
+                <li class="has-sous-nav">
+                    <a href="votreCompte.html">Votre Compte</a>
+                    <ul class="sous-nav">
+                        <li><a href="client.html">Client</a></li>
+                        <li><a href="accesCoach.html">Coach ou personnel de sport</a></li>
+                        <li><a href="accesAdmin.html">Administrateur</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <section>
+            <p>Bienvenue chez SPORTIFY, l'une des meilleurs plateformes en ligne de salle de sport de France.
+               Il Permet de réserver une séance en ligne avec un coach spécialisé dans le domaine sportif, 
+               vous pourrez retrouver également nos meilleurs conseils nutritions et diététique pour votre remise en forme.
+            </p>
+            <div class="container">
+                <h2>Les coachs spécialistes du mois</h2>
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="photo_de_coach/coach_cardio_training.jpg" alt="Cardio" style="width: 700px; height: 600px;">
+                            <div class="carousel-caption">
+                                <h3>Cardio-Training</h3>
+                                <p>Améliorer votre coeur</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="photo_de_coach/coach_fitness.jpg" alt="fitness" style="width:700px; height: 600px;">
+                            <div class="carousel-caption">
+                                <h3>Fitness</h3>
+                                <p>Améliorer votre fitness</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="photo_de_coach/coach_musculation.jpg" alt="Muscu" style="width:700px; height: 600px;">
+                            <div class="carousel-caption">
+                                <h3>Musculation</h3>
+                                <p>Améliorer vos muscles</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Controles à gauche et à droite -->
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Précédent</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Suivant</span>
+                    </a>
+                </div>
+            </div>
+            <p>Prochain match de rugby entre Omnes Education et Visiteurs</p>
+        </section>
+        <footer>
+            <iframe width="100%" height="300%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.317662740615!2d2.328770915673154!3d48.87925167928907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66f273f4f31ad%3A0x78e9c368389ea84a!2sBlanche%2C%2075009%20Paris%2C%20France!5e0!3m2!1sen!2sfr!4v1624543145632!5m2!1sen!2sfr"></iframe>
+            <h3>Contact</h3>
+            <p><strong>Adresse :</strong> 21 rue Blanche, 75009 Paris, France</p>
+            <p><strong>Téléphone :</strong> +33 1 23 45 67 89</p>
+            <p><strong>E-mail :</strong> sportify@gmail.com</p>
+            <p><strong>Horaires :</strong></p>
+            <p><strong>Du lundi au vendredi :</strong> 7h - 23h</p>
+            <p><strong>Samedi, dimanche et jours fériés :</strong> 8h - 20h</p>
+        </footer>
+    </div>
 </body>
 </html>
