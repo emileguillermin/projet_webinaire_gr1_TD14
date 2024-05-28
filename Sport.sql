@@ -13,6 +13,7 @@ CREATE TABLE PersonnelSport(
     PRIMARY KEY (ID_personnel)
 );
 
+
 CREATE TABLE Administrateur(
     nom VARCHAR(20),
     prenom VARCHAR(20),
@@ -39,7 +40,7 @@ CREATE TABLE Client(
     PRIMARY KEY (ID_client)
 );
 
-CREATE TABLE SalleSport (
+CREATE TABLE SalleSport(
     ID_salle INT AUTO_INCREMENT,
     nom VARCHAR(50),
     adresse VARCHAR(50),
@@ -47,7 +48,7 @@ CREATE TABLE SalleSport (
     PRIMARY KEY (ID_salle)
 );
 
-CREATE TABLE Reservation (
+CREATE TABLE Reservation(
     ID_reservation INT AUTO_INCREMENT,
     ID_client INT,
     ID_personnel INT,
