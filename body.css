@@ -81,6 +81,12 @@ section{
     font-size: 1.5em;
     background-color: #ffffff;
 }
+section h3{
+    color: #313131;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+}
 
 footer {
     text-align: left;
@@ -99,6 +105,7 @@ footer {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-left: 30px;
 }
 .carousel-inner img{
     margin :auto;
