@@ -66,7 +66,7 @@ header img {
     list-style: none;
     display: none;
     position: absolute;
-    top: 46px;
+    top: 45px;
     background: #313131;
     width: max-content;
 }
@@ -96,6 +96,7 @@ footer {
     border-bottom-right-radius: 8px;
     font-weight: bold;
 }
+
 carousel{
 
     width: 200px;
