@@ -164,3 +164,47 @@ footer {
 .bouton:hover{
     background-color: #242424; 
 }
+
+
+.identifiant-container{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    background-color: #646363;
+    padding: 10px;
+    border-radius: 30px; 
+    width: 400px;
+    margin: 0 auto; 
+}
+.identifiant-box{
+    display: block;
+    align-items: center;
+    background-color: #fff; 
+    border-radius: 20px; 
+    padding: 5px 10px;
+    margin-right: 10px; 
+    flex-grow: 1;
+}
+
+.identifiant-box input{
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+    flex-grow: 1;
+    border-radius: 20px;
+
+.boutonAcces{
+    background-color: #303030; 
+    color: #fff;
+    border: none;
+    border-radius: 20px; 
+    padding: 100px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.boutonAcces:hover{
+    background-color: #242424; 
+}
