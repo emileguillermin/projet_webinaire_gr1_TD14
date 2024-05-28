@@ -45,12 +45,71 @@
             </ul>
         </div>
         <section>
-            <button type="submit" name="musculation" class="bouton">Musculation</button>
-            <button type="submit" name="fitness" class="bouton">Fitness</button>
-            <button type="submit" name="biking" class="bouton">Biking</button>
-            <button type="submit" name="cordioTraining" class="bouton">Cardio-Training</button>
-            <button type="submit" name="coursCollectifs" class="bouton">Cours Collectifs</button>
-        
+            <button type="submit" data-activity="musculation" class="bouton">Musculation</button>
+            <button type="submit" data-activity="fitness" class="bouton">Fitness</button>
+            <button type="submit" data-activity="biking" class="bouton">Biking</button>
+            <button type="submit" data-activity="cordioTraining" class="bouton">Cardio-Training</button>
+            <button type="submit" data-activity="coursCollectifs" class="bouton">Cours Collectifs</button>
+            <div id="musculation" data-activity="coach-card" style="display: none;">
+                <img src="photo_de_coach/coach_musculation.jpg" alt="Coach Image">
+                <div class="coach-info">
+                    <h2 id="coach-name">Guy DUMAIS</h2>
+                    <p id="coach-speciality">Coach, Musculation</p>
+                    <p id="coach-room">Salle: G-010</p>
+                    <p id="coach-phone">Téléphone: +33 01 23 45 67 89</p>
+                    <p id="coach-email">Email: guy.dumais@omnessports.fr</p>
+                </div>
+                <div class="btn-container">
+                    <button class="btn-rdv">Prendre un RDV</button>
+                    <button class="btn-contact">Communiquer avec le coach</button>
+                    <button class="btn-cv">Voir son CV</button>
+                </div>
+            </div>
+            <div id="fitness" class="coach-card" style="display: none;">
+                <img src="photo_de_coach/coach_fitness.jpg" alt="Coach Image">
+                <div class="coach-info">
+                    <h2 id="coach-name">Guy DUMAIS</h2>
+                    <p id="coach-speciality">Coach, fitness</p>
+                    <p id="coach-room">Salle: G-010</p>
+                    <p id="coach-phone">Téléphone: +33 01 23 45 67 89</p>
+                    <p id="coach-email">Email: guy.dumais@omnessports.fr</p>
+                </div>
+                <div class="btn-container">
+                    <button class="btn-rdv">Prendre un RDV</button>
+                    <button class="btn-contact">Communiquer avec le coach</button>
+                    <button class="btn-cv">Voir son CV</button>
+                </div>
+            </div>
+            <div id="biking" class="coach-card" style="display: none;">
+                <img src="photo_de_coach/coach_biking.jpg" alt="Coach Image">
+                <div class="coach-info">
+                    <h2 id="coach-name">Guy DUMAIS</h2>
+                    <p id="coach-speciality">Coach, biking</p>
+                    <p id="coach-room">Salle: G-010</p>
+                    <p id="coach-phone">Téléphone: +33 01 23 45 67 89</p>
+                    <p id="coach-email">Email: guy.dumais@omnessports.fr</p>
+                </div>
+                <div class="btn-container">
+                    <button class="btn-rdv">Prendre un RDV</button>
+                    <button class="btn-contact">Communiquer avec le coach</button>
+                    <button class="btn-cv">Voir son CV</button>
+                </div>
+            </div>
+            <div id="cardioTraining" class="coach-card" style="display: none;">
+                <img src="photo_de_coach/coach_cardio_training.jpg" alt="Coach Image">
+                <div class="coach-info">
+                    <h2 id="coach-name">Guy DUMAIS</h2>
+                    <p id="coach-speciality">Coach, cardio training</p>
+                    <p id="coach-room">Salle: G-010</p>
+                    <p id="coach-phone">Téléphone: +33 01 23 45 67 89</p>
+                    <p id="coach-email">Email: guy.dumais@omnessports.fr</p>
+                </div>
+                <div class="btn-container">
+                    <button class="btn-rdv">Prendre un RDV</button>
+                    <button class="btn-contact">Communiquer avec le coach</button>
+                    <button class="btn-cv">Voir son CV</button>
+                </div>
+            </div>
         </section>
         <footer>
             <iframe width="100%" height="300%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.317662740615!2d2.328770915673154!3d48.87925167928907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66f273f4f31ad%3A0x78e9c368389ea84a!2sBlanche%2C%2075009%20Paris%2C%20France!5e0!3m2!1sen!2sfr!4v1624543145632!5m2!1sen!2sfr"></iframe>
@@ -63,5 +122,32 @@
             <p><strong>Samedi, dimanche et jours fériés :</strong> 8h - 20h</p>
         </footer>
     </div>
+    <script>
+        const coaches = {
+            musculation: { name: "Guy DUMAIS", speciality: "Coach, Musculation", room: "Salle: G-010", phone: "+33 01 23 45 67 89", email: "guy.dumais@omnessports.fr", schedule: [["", "", "", "", "", "", "", "", "", "", "", "", "", ""]] },
+            fitness: { name: "Fitness Coach", speciality: "Coach, Fitness", room: "Salle: G-011", phone: "+33 01 23 45 67 90", email: "fitness.coach@omnessports.fr", schedule: [["", "", "", "", "", "", "", "", "", "", "", "", "", ""]] },
+            biking: { name: "Biking Coach", speciality: "Coach, Biking", room: "Salle: G-012", phone: "+33 01 23 45 67 91", email: "biking.coach@omnessports.fr", schedule: [["", "", "", "", "", "", "", "", "", "", "", "", "", ""]] },
+            cardioTraining: { name: "Cardio Coach", speciality: "Coach, Cardio-Training", room: "Salle: G-013", phone: "+33 01 23 45 67 92", email: "cardio.coach@omnessports.fr", schedule: [["", "", "", "", "", "", "", "", "", "", "", "", "", ""]] },
+        };
+
+        document.querySelectorAll('.bouton').forEach(button => {
+            button.addEventListener('click', function() {
+                const activity = this.getAttribute('data-activity');
+                const coachInfo = coaches[activity];
+
+                document.querySelectorAll('.coach-card').forEach(card => {
+                    card.style.display = 'none';
+                });
+
+                const coachCard = document.getElementById(activity);
+                coachCard.querySelector('#coach-name').textContent = coachInfo.name;
+                coachCard.querySelector('#coach-speciality').textContent = coachInfo.speciality;
+                coachCard.querySelector('#coach-room').textContent = coachInfo.room;
+                coachCard.querySelector('#coach-phone').textContent = coachInfo.phone;
+                coachCard.querySelector('#coach-email').textContent = coachInfo.email;
+                coachCard.style.display = 'block';
+            });
+        });
+    </script>
 </body>
 </html>
