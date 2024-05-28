@@ -57,12 +57,18 @@
                     <p id="coach-speciality">Coach, Musculation</p>
                     <p id="coach-room">Salle: G-010</p>
                     <p id="coach-phone">Téléphone: +33 06 23 45 67 11</p>
-                    <p id="coach-email">Email: guy.dumais@omnessports.fr</p>
+                    <p id="coach-email">Email: guy.dumais.musculation@omnessports.fr</p>
                 </div>
                 <div class="btn-container">
-                    <button class="bouton">Prendre un RDV</button>
-                    <button class="bouton">Communiquer avec le coach</button>
-                    <button class="bouton">Voir son CV</button>
+                    <button class="bouton" id="rdv">Prendre un RDV</button>
+                    <button class="bouton" id="communiquer" onclick="showCommunicationOptions(this)">Communiquer avec le coach</button>
+                    <button class="bouton" id="cv">Voir son CV</button>
+                    <div class="communication-options" >
+                        <button class="bouton" onclick="envoyerEmail('guy.dumais.musculation@omnessports.fr')">Email</button>
+                        <button class="bouton" onclick="envoyerSMS('+33695104073')">Texto</button>
+                        <button class="bouton">Audio</button>
+                        <button class="bouton" onclick="visioconf('https://teams.microsoft.com/l/meetup-join/19%3ameeting_NzYxZjBlMzQtZjkzMS00MzM1LTgwOGEtYzZlOTBhZmYwZjUy%40thread.v2/0?context=%7b%22Tid%22%3a%22TID%22%2c%22Oid%22%3a%22OID%22%7d')">Visio</button>
+                    </div>
                 </div>
             </div>
             <div id="fitness" class="carteCoach">
@@ -72,12 +78,18 @@
                     <p id="coach-speciality">Coach, fitness</p>
                     <p id="coach-room">Salle: G-011</p>
                     <p id="coach-phone">Téléphone: +33 06 23 45 67 22</p>
-                    <p id="coach-email">Email: guy.dumais@omnessports.fr</p>
+                    <p id="coach-email">Email: guy.dumais.fitness@omnessports.fr</p>
                 </div>
                 <div class="btn-container">
-                    <button class="bouton">Prendre un RDV</button>
-                    <button class="bouton">Communiquer avec le coach</button>
-                    <button class="bouton">Voir son CV</button>
+                    <button class="bouton" id="rdv">Prendre un RDV</button>
+                    <button class="bouton" id="communiquer" onclick="showCommunicationOptions(this)">Communiquer avec le coach</button>
+                    <button class="bouton" id="cv">Voir son CV</button>
+                    <div class="communication-options" >
+                        <button class="bouton" onclick="envoyerEmail('guy.dumais.fitness@omnessports.fr')">Email</button>
+                        <button class="bouton" onclick="envoyerSMS('+33695104073')">Texto</button>
+                        <button class="bouton">Audio</button>
+                        <button class="bouton" onclick="visioconf('https://teams.microsoft.com/l/meetup-join/19%3ameeting_NzYxZjBlMzQtZjkzMS00MzM1LTgwOGEtYzZlOTBhZmYwZjUy%40thread.v2/0?context=%7b%22Tid%22%3a%22TID%22%2c%22Oid%22%3a%22OID%22%7d')">Visio</button>
+                    </div>
                 </div>
             </div>
             <div id="biking" class="carteCoach">
@@ -87,12 +99,18 @@
                     <p id="coach-speciality">Coach, bikiing</p>
                     <p id="coach-room">Salle: G-012</p>
                     <p id="coach-phone">Téléphone: +33 06 23 45 67 33</p>
-                    <p id="coach-email">Email: guy.dumais@omnessports.fr</p>
+                    <p id="coach-email">Email: guy.dumais.biking@omnessports.fr</p>
                 </div>
                 <div class="btn-container">
-                    <button class="bouton">Prendre un RDV</button>
-                    <button class="bouton">Communiquer avec le coach</button>
-                    <button class="bouton">Voir son CV</button>
+                    <button class="bouton" id="rdv">Prendre un RDV</button>
+                    <button class="bouton" id="communiquer" onclick="showCommunicationOptions(this)">Communiquer avec le coach</button>
+                    <button class="bouton" id="cv">Voir son CV</button>
+                    <div class="communication-options" >
+                        <button class="bouton" onclick="envoyerEmail('guy.dumais.biking@omnessports.fr')">Email</button>
+                        <button class="bouton" onclick="envoyerSMS('+33695104073')">Texto</button>
+                        <button class="bouton">Audio</button>
+                        <button class="bouton" onclick="visioconf('https://teams.microsoft.com/l/meetup-join/19%3ameeting_NzYxZjBlMzQtZjkzMS00MzM1LTgwOGEtYzZlOTBhZmYwZjUy%40thread.v2/0?context=%7b%22Tid%22%3a%22TID%22%2c%22Oid%22%3a%22OID%22%7d')">Visio</button>
+                    </div>
                 </div>
             </div>
             <div id="cardioTraining" class="carteCoach">
@@ -102,12 +120,18 @@
                     <p id="coach-speciality">Coach, Cardio-Training</p>
                     <p id="coach-room">Salle: G-013</p>
                     <p id="coach-phone">Téléphone: +33 06 23 45 67 44</p>
-                    <p id="coach-email">Email: guy.dumais@omnessports.fr</p>
+                    <p id="coach-email">Email: guy.dumais.cardioTraining@omnessports.fr</p>
                 </div>
                 <div class="btn-container">
-                    <button class="bouton">Prendre un RDV</button>
-                    <button class="bouton">Communiquer avec le coach</button>
-                    <button class="bouton">Voir son CV</button>
+                    <button class="bouton" id="rdv">Prendre un RDV</button>
+                    <button class="bouton" id="communiquer" onclick="showCommunicationOptions(this)">Communiquer avec le coach</button>
+                    <button class="bouton" id="cv">Voir son CV</button>
+                    <div class="communication-options" >
+                        <button class="bouton" onclick="envoyerEmail('guy.dumais.cardioTraining@omnessports.fr')">Email</button>
+                        <button class="bouton" onclick="envoyerSMS('+33695104073')">Texto</button>
+                        <button class="bouton">Audio</button>
+                        <button class="bouton" onclick="visioconf('https://teams.microsoft.com/l/meetup-join/19%3ameeting_NzYxZjBlMzQtZjkzMS00MzM1LTgwOGEtYzZlOTBhZmYwZjUy%40thread.v2/0?context=%7b%22Tid%22%3a%22TID%22%2c%22Oid%22%3a%22OID%22%7d')">Visio</button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -127,10 +151,12 @@
         const bouton2 = document.querySelector('#bouton2');
         const bouton3 = document.querySelector('#bouton3');
         const bouton4 = document.querySelector('#bouton4');
+
         const carteCoach = document.querySelector('#musculation');
         const carteCoach2 = document.querySelector('#fitness');
         const carteCoach3 = document.querySelector('#biking');
         const carteCoach4 = document.querySelector('#cardioTraining');
+
         bouton.addEventListener('click', ()=>{
             if(carteCoach.style.display=='block'){
                 carteCoach.style.display='none';
@@ -171,6 +197,25 @@
                 carteCoach3.style.display='none';
             }
         });
+        function showCommunicationOptions(button) {
+            var optionsDiv = button.nextElementSibling.nextElementSibling;
+            if (optionsDiv.style.display == "block" ) {
+                optionsDiv.style.display = "none";
+            } else {
+                optionsDiv.style.display = "block";
+            }
+        }
+        function envoyerEmail(emailAddress) {
+            var lienMail = 'mailto:' + emailAddress;
+            window.location.href = lienMail;
+        }
+        function envoyerSMS(phoneNumber) {
+            var lienSMS = 'sms:' + phoneNumber;
+            window.location.href = lienSMS;
+        }
+        function visioconf(appelTeams){
+            window.open(appelTeams,'_bank');
+        }
     </script>
 </body>
 </html>

@@ -206,6 +206,23 @@ footer {
     width: 200px;
     height: auto;
 }
+.communication-options {
+    display: none; 
+}
+.communication-options button {
+    display: block;
+    background-color: #a7b9c0; 
+    color: #fff;
+    border: none;
+    border-radius: 20px; 
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.communication-options button:hover{
+    background-color: #7e9198;
+}
+
 
 
 .identifiant-container{
