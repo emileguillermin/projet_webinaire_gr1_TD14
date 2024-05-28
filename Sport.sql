@@ -25,7 +25,7 @@ CREATE TABLE Specialite(
     ID_Coach INT 
 );
 
-CREATE TABLE Client (
+CREATE TABLE Client(
     ID_client INT AUTO_INCREMENT,
     nom VARCHAR(50),
     prenom VARCHAR(50),
