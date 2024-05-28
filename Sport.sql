@@ -1,5 +1,4 @@
-
-CREATE TABLE PersonnelSport(
+CREATE TABLE IF NOT EXISTS PersonnelSport(
     ID_personnel INT AUTO_INCREMENT,
     nom VARCHAR(50),
     prenom VARCHAR(50),
@@ -13,20 +12,21 @@ CREATE TABLE PersonnelSport(
     PRIMARY KEY (ID_personnel)
 );
 
-
-CREATE TABLE Administrateur(
+CREATE TABLE IF NOT EXISTS Administrateur(
     nom VARCHAR(20),
     prenom VARCHAR(20),
-    email VARCHAR(100)
+    email VARCHAR(100),
+    PRIMARY KEY (email)
 );
 
-CREATE TABLE Specialite(
+CREATE TABLE IF NOT EXISTS Specialite(
     IDSpecialite INT AUTO_INCREMENT,
     nomSpecialite VARCHAR(100),
-    ID_Coach INT 
+    ID_coach INT,
+    PRIMARY KEY (IDSpecialite)
 );
 
-CREATE TABLE Client(
+CREATE TABLE IF NOT EXISTS Client (
     ID_client INT AUTO_INCREMENT,
     nom VARCHAR(50),
     prenom VARCHAR(50),
@@ -40,7 +40,7 @@ CREATE TABLE Client(
     PRIMARY KEY (ID_client)
 );
 
-CREATE TABLE SalleSport(
+CREATE TABLE IF NOT EXISTS SalleSport (
     ID_salle INT AUTO_INCREMENT,
     nom VARCHAR(50),
     adresse VARCHAR(50),
@@ -48,7 +48,7 @@ CREATE TABLE SalleSport(
     PRIMARY KEY (ID_salle)
 );
 
-CREATE TABLE Reservation(
+CREATE TABLE IF NOT EXISTS Reservation (
     ID_reservation INT AUTO_INCREMENT,
     ID_client INT,
     ID_personnel INT,
@@ -57,7 +57,7 @@ CREATE TABLE Reservation(
     PRIMARY KEY (ID_reservation)
 );
 
-CREATE TABLE Disponibilite(
+CREATE TABLE IF NOT EXISTS Disponibilite(
     jour INT,
     Heure INT
 );
