@@ -46,6 +46,7 @@
             </ul>
         </div>
         <h1>Inscription</h1>
+        <form action="inscription.php" method="POST">
         <table>
             <tr>
                 <td><label for="nom">Nom :</label></td>
@@ -56,12 +57,20 @@
                 <td><input type="text" id="prenom" name="prenom" required></td>
             </tr>
             <tr>
-                <td><label for="adresseLigne1">Adresse 1 :</label></td>
+                <td><label for="adresseLigne1">AdresseLigne1 :</label></td>
                 <td><input type="text" id="adresseLigne1" name="adresseLigne1" required></td>
             </tr>
             <tr>
-                <td><label for="adresseLigne2">AdresseLigne2</label></td>
+                <td><label for="adresseLigne2">AdresseLigne2 :</label></td>
                 <td><input type="text" id="adresseLigne2" name="adresseLigne2" required></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email :</label></td>
+                <td><input type="email" id="email" name="email" required></td>
+            </tr>
+            <tr>
+                <td><label for="mdp">Mot de Passe :</label></td>
+                <td><input type="password" id="mdp" name="mdp" required></td>
             </tr>
             <tr>
                 <td><label for="Ville">Ville :</label></td>
@@ -85,5 +94,6 @@
             </tr>
         </table>
         <input type="submit" value="Soumettre">
-    </body>
+      </form>
+-    </body>
     </html>
