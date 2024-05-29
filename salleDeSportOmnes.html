@@ -58,11 +58,21 @@
                     <div class="communication-options" >
                         <button class="bouton" >Personnels de la Salle de Sport</button>
                         <button class="bouton" >Horaires de la gym</button>
-                        <button class="bouton">Règles sur l'utilisation des machines</button>
+                        <button class="bouton" onclick ="Regles()">Règles sur l'utilisation des machines</button>
                         <button class="bouton" >Nouveaux Clients</button>
                         <button class="bouton">Alimentation et nutrition</button>
                     </div>
                 </div>
+            </div>
+            <div id="reglesSalle" class="carteCoach">
+                <h3>Règles sur l'utilisation des machines</h3>
+                <ul>
+                    <li>Règle 1 : Demander l'aide de quelqu'un si l'on sait pas utiliser une machine.</li>
+                    <li>Règle 2 : N'oubliez pas de nettoyer les machines et poids après leurs utilisations.</li>
+                    <li>Règle 3 : Faites attentions à vos articulations notamment le dos.</li>
+                    <li>Règle 4 : Ne pas abîmer le matèriel</li>
+                    <li>Règle 5 : Très important, pensez à bien vous hydrater après votre séance sportive</li>
+                </ul>
             </div>
         </section>
         <footer>
@@ -79,6 +89,8 @@
     <script>
         const bouton = document.querySelector('#service');
         const affiche = document.querySelector('.communication-options');
+        const reglesSalle = document.querySelector('#reglesSalle');
+
         bouton.addEventListener('click', ()=>{
             if(affiche.style.display=='block')
             {
@@ -89,7 +101,8 @@
                 affiche.style.display='block';
             }
         });
-        function showCommunicationOptions(button) {
+        function showCommunicationOptions(button)
+        {
             var optionsDiv = button.nextElementSibling.nextElementSibling;
             if (optionsDiv.style.display == "block" )
             {
@@ -98,6 +111,17 @@
             else
             {
                 optionsDiv.style.display = "block";
+            }
+        }
+        function Regles()
+        {
+            if (reglesSalle.style.display === 'block')
+            {
+                reglesSalle.style.display = 'none';
+            }
+            else
+            {
+                reglesSalle.style.display = 'block';
             }
         }
     </script>
