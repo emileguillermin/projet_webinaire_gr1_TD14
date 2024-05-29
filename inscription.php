@@ -1,67 +1,52 @@
 <?php
+// Start the session
+session_start();
+?>
+
+<?php
 
 $database = "sport";
 // Connexion à la base de données
 $db_handle = mysqli_connect('localhost', 'root', '');
 $db_found = mysqli_select_db($db_handle, $database);
-
-$nom=isset($_POST["nom"])? $_POST["nom"] : "";
-$prenom=isset($_POST["prenom"])? $_POST["prenom"] : "";
-$adresseLigne1=isset($_POST["adresseLigne1"])? $_POST["adresseLigne1"] : "";
-$adresseLigne2=isset($_POST["adresseLigne2"])? $_POST["adresseLigne2"] : "";
-$email=isset($_POST["email"])? $_POST["email"] : "";
-$mdp=isset($_POST["mdp"])? $_POST["mdp"] : "";
-$ville=isset($_POST["ville"])? $_POST["ville"] : "";
-$Postal=isset($_POST["Postal"])? $_POST["Postal"] : "";
-$pays=isset($_POST["pays"])? $_POST["pays"] : "";
-$carte_etudiante=isset($_POST["carte_etudiante"])? $_POST["carte_etudiante"] : "";
-$telephone=isset($_POST["telephone"])? $_POST["telephone"] : "";
-
-if (isset($_POST["Soumettre"]))
-{
-    // Vérifier si tous les champs requis sont remplis
-    if (!empty($_POST['nom']) && !empty($_POST['carte']) && !empty($_POST['telephone']) && !empty($_POST['pays']) && !empty($_POST['Postal']) && !empty($_POST['ville']) && !empty($_POST['mdp']) && !empty($_POST['prenom']) && !empty($_POST['adresseLigne1']) && !empty($_POST['adresseLigne2']) && !empty($_POST['email'])) {
-        $nom = mysqli_real_escape_string($db_handle, $_POST['nom']);
-        $carte_etudiante = mysqli_real_escape_string($db_handle, $_POST['carte_etudiante']);
-        $telephone = mysqli_real_escape_string($db_handle, $_POST['telephone']);
-        $pays = mysqli_real_escape_string($db_handle, $_POST['pays']);
-        $Postal = mysqli_real_escape_string($db_handle, $_POST['Postal']);
-        $ville = mysqli_real_escape_string($db_handle, $_POST['ville']);
-        $mdp = mysqli_real_escape_string($db_handle, $_POST['mdp']);
-        $prenom = mysqli_real_escape_string($db_handle, $_POST['prenom']);
-        $adresseLigne1 = mysqli_real_escape_string($db_handle, $_POST['adresseLigne1']);
-        $adresseLigne2 = mysqli_real_escape_string($db_handle, $_POST['adresseLigne2']);
-        $email = mysqli_real_escape_string($db_handle, $_POST['email']);
-        
-        // Vérifier si le client existe déjà
-        $check_query = "SELECT * FROM Client WHERE telephone = '$telephone'";
-        $check_result = mysqli_query($db_handle, $check_query);
-        
-        if (mysqli_num_rows($check_result) > 0)
-        {
-            echo "<h2>Ce compte existe déjà.</h2>";
-        }
-        else
-        {
-            // Insérer le client dans la base de données
-            $insert_query = "INSERT INTO Client (nom, prenom, adresseLigne1, adresseLigne2, email, ville, Postal, Pays, carte, telephone) VALUES ('$nom', '$prenom', '$adresseLigne1', '$adresseLigne2', '$email', '$ville, '$Postal', '$Pays', '$carte', '$telephone')";
-            if(mysqli_query($db_handle, $insert_query))
-            {
-                echo "<h2>Inscription faite avec succès !</h2>";
-            }
-            else
-            {
-                echo "<h2>Erreur lors de l'inscription.</h2>";
-            }
-        }
-    }
-    else
+if ($db_found){
+    if (isset($_POST["soumettre"]))
     {
-        echo "<h2>Veuillez remplir tous les champs.</h2>";
+        // Vérifier si tous les champs requis sont remplis
+        if (!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['adresseLigne1']) && !empty($_POST['adresseLigne2']) && !empty($_POST['email']) && !empty($_POST['mot_de_passe']) && !empty($_POST['ville']) && !empty($_POST['postal']) && !empty($_POST['pays']) && !empty($_POST['carte_etudiante']) && !empty($_POST['telephone'])) {
+            $nom = mysqli_real_escape_string($db_handle, $_POST['nom']);
+            $prenom = mysqli_real_escape_string($db_handle, $_POST['prenom']);
+            $adresseLigne1 = mysqli_real_escape_string($db_handle, $_POST['adresseLigne1']);
+            $adresseLigne2 = mysqli_real_escape_string($db_handle, $_POST['adresseLigne2']);
+            $email = mysqli_real_escape_string($db_handle, $_POST['email']);
+            $mot_de_passe = mysqli_real_escape_string($db_handle, $_POST['mot_de_passe']);
+            $ville = mysqli_real_escape_string($db_handle, $_POST['ville']);
+            $postal = mysqli_real_escape_string($db_handle, $_POST['postal']);
+            $pays = mysqli_real_escape_string($db_handle, $_POST['pays']);
+            $carte_etudiante = mysqli_real_escape_string($db_handle, $_POST['carte_etudiante']);
+            $telephone = mysqli_real_escape_string($db_handle, $_POST['telephone']);
+            
+            // Vérifier si le client existe déjà
+            $check_query = "SELECT * FROM client WHERE telephone = '$telephone'";
+            $check_result = mysqli_query($db_handle, $check_query);
+            
+            if (mysqli_num_rows($check_result) > 0) {
+                
+                echo "<h2>Ce compte existe déjà.</h2>";
+            } else {
+                // Insérer le client dans la base de données
+                $insert_query = "INSERT INTO client (nom, prenom, adresseLigne1, adresseLigne2, email, mot_de_passe, ville, postal, pays, carte_etudiante, telephone) VALUES ('$nom', '$prenom', '$adresseLigne1', '$adresseLigne2', '$email', '$mot_de_passe', '$ville', '$postal', '$pays', '$carte_etudiante', '$telephone')";
+                if (mysqli_query($db_handle, $insert_query)) {
+                    echo "<h2>Inscription faite avec succès !</h2>";
+                } else {
+                    echo "<h2>Erreur lors de l'inscription.</h2>";
+                }
+            }
+        } else {
+            echo "<h2>Veuillez remplir tous les champs requis.</h2>";
+        }
     }
-}
-else
-{
+}else {
     echo "Database not found.";
 }
 
