@@ -26,15 +26,17 @@ CREATE TABLE IF NOT EXISTS Specialite(
     PRIMARY KEY (IDSpecialite)
 );
 
-CREATE TABLE IF NOT EXISTS Client (
+CREATE TABLE IF NOT EXISTS client(
     ID_client INT AUTO_INCREMENT,
     nom VARCHAR(50),
     prenom VARCHAR(50),
     adresseLigne1 VARCHAR(50),
     adresseLigne2 VARCHAR(50),
     email VARCHAR(100),
-    Postal VARCHAR(5),
-    Pays VARCHAR(50),
+    mot_de_asse TEXT,
+    ville VARCHAR(50),
+    postal VARCHAR(5),
+    pays VARCHAR(50),
     carte_etudiante VARCHAR(20),
     telephone VARCHAR(20),
     PRIMARY KEY (ID_client)
