@@ -52,6 +52,9 @@ if (isset($_POST["Soumettre"]))
         echo "<h2>Veuillez remplir tous les champs.</h2>";
     }
 
+}else {
+    echo "Database not found.";
 }
 
+mysqli_close($db_handle);
 ?>
