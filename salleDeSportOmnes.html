@@ -56,11 +56,12 @@
                 <div id="affiche" class="btn-container">
                     <button class="bouton" id="service">Nos service</button>
                     <div class="communication-options" >
+                        <a href="activitesSportives.html"><button class="bouton" >Personnels de la Salle de Sport</button></a>
                         <button class="bouton" >Personnels de la Salle de Sport</button>
-                        <button class="bouton" >Horaires de la gym</button>
+                        <button class="bouton" onclick="Horaires()">Horaires de la gym</button>
                         <button class="bouton" onclick ="Regles()">Règles sur l'utilisation des machines</button>
                         <button class="bouton" >Nouveaux Clients</button>
-                        <button class="bouton">Alimentation et nutrition</button>
+                        <button class="bouton" onclick ="Alimentation()">Alimentation et nutrition</button>
                     </div>
                 </div>
             </div>
@@ -73,6 +74,21 @@
                     <li>Règle 4 : Ne pas abîmer le matèriel</li>
                     <li>Règle 5 : Très important, pensez à bien vous hydrater après votre séance sportive</li>
                 </ul>
+            </div>
+            <div id="alimentation" class="carteCoach">
+                <h3>Alimentation et Nutrition</h3>
+                <ul>
+                    <li>Au moins 5 fruits et légumes par jour.</li>
+                    <li>Des féculents à chaque repas selon l'appétit.</li>
+                    <li>3 produits laitiers (lait, yaourt, fromage) par jour.</li>
+                    <li>1 à 2 portions de viande, œufs et poissons par jour.</li>
+                    <li>Limiter les matières grasses ajoutées, le sucre et le sel.</li>
+                    <li>Eau à volonté</li>
+                </ul>
+            </div>
+            <div id="horaires" class="carteCoach">
+                <h3>Horaires</h3>
+                <p>De 7h à 23h</p>
             </div>
         </section>
         <footer>
@@ -90,6 +106,8 @@
         const bouton = document.querySelector('#service');
         const affiche = document.querySelector('.communication-options');
         const reglesSalle = document.querySelector('#reglesSalle');
+        const alimentation = document.querySelector('#alimentation');
+        const horaires = document.querySelector('#horaires');
 
         bouton.addEventListener('click', ()=>{
             if(affiche.style.display=='block')
@@ -122,6 +140,28 @@
             else
             {
                 reglesSalle.style.display = 'block';
+            }
+        }
+        function Alimentation()
+        {
+            if (alimentation.style.display === 'block')
+            {
+                alimentation.style.display = 'none';
+            }
+            else
+            {
+                alimentation.style.display = 'block';
+            }
+        }
+        function Horaires()
+        {
+            if(horaires.style.display === 'block')
+            {
+                horaires.style.display = 'none';
+            }
+            else
+            {
+                horaires.style.display = 'block';
             }
         }
     </script>
