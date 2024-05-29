@@ -206,6 +206,23 @@ footer {
     width: 200px;
     height: auto;
 }
+
+.carteCoachCompet{
+    display: none;
+    padding: 20px;
+    width: 900px;
+    align-items: center; 
+    justify-content: center;
+    background-color: #dedede;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.carteCoachCompet img{
+    width: 200px;
+    height: auto;
+}
+
 .communication-options {
     display: none; 
 }
