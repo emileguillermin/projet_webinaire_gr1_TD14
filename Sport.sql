@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS client(
     adresseLigne1 VARCHAR(50),
     adresseLigne2 VARCHAR(50),
     email VARCHAR(100),
-    mot_de_asse TEXT,
+    mot_de_passe TEXT,
     ville VARCHAR(50),
     postal VARCHAR(5),
     pays VARCHAR(50),
