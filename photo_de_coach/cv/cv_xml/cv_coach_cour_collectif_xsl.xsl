@@ -4,13 +4,7 @@
         <html>
         <head>
             <title>CV de <xsl:value-of select="cv/personalInfo/name"/></title>
-            <style>
-                body { font-family: Arial, sans-serif; }
-                .section { margin-bottom: 20px; }
-                .section h2 { background-color: #f2f2f2; padding: 10px; }
-                .job, .education, .skills { margin-left: 20px; }
-                .skills ul { list-style-type: square; }
-            </style>
+            <link rel="stylesheet" type="text/css" href="css.css"/>
         </head>
         <body>
             <h1><xsl:value-of select="cv/personalInfo/name"/></h1>
