@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="cv_coach_cour_collectif_xsl.xsl"?>
+<cv>
+    <personalInfo>
+        <name>Jane Doe</name>
+        <email>jane.doe@example.com</email>
+        <phone>123-456-7890</phone>
+    </personalInfo>
+    <summary>
+        Passionate and experienced yoga instructor specializing in Kundalini yoga with over 10 years of teaching experience.
+    </summary>
+    <experience>
+        <job>
+            <title>Senior Yoga Instructor</title>
+            <company>Yoga Bliss Studio</company>
+            <date>2015 - Present</date>
+        </job>
+        <job>
+            <title>Yoga Instructor</title>
+            <company>Wellness Center</company>
+            <date>2010 - 2015</date>
+        </job>
+    </experience>
+    <education>
+        <degree>Certified Yoga Teacher</degree>
+        <institution>Yoga Alliance</institution>
+        <year>2010</year>
+    </education>
+    <skills>
+        <skill>Kundalini Yoga</skill>
+        <skill>Hatha Yoga</skill>
+        <skill>Meditation</skill>
+        <skill>Pranayama</skill>
+    </skills>
+</cv>
