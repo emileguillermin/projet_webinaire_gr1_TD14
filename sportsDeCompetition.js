@@ -1,4 +1,4 @@
-const bouton = document.querySelector('#bouton');
+        const bouton = document.querySelector('#bouton');
         const bouton2 = document.querySelector('#bouton2');
         const bouton3 = document.querySelector('#bouton3');
         const bouton4 = document.querySelector('#bouton4');
