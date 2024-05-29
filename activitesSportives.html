@@ -21,7 +21,7 @@
                     <a href="index.html">Accueil</a>
                 </li>
                 <li class="has-sous-nav">
-                    <a href="toutParcourir.html">Tout Parcourir</a>
+                    <a href="index.html">Tout Parcourir</a>
                     <ul class="sous-nav">
                         <li><a href="activitesSportives.html">Activités sportives</a></li>
                         <li><a href="sportsDeCompetition.html">Les Sports de compétition</a></li>
@@ -35,7 +35,7 @@
                     <a href="rendezVous.html">Rendez-vous</a>
                 </li>
                 <li class="has-sous-nav">
-                    <a href="votreCompte.html">Votre Compte</a>
+                    <a href="index.html">Votre Compte</a>
                     <ul class="sous-nav">
                         <li><a href="client.html">Client</a></li>
                         <li><a href="accesCoach.html">Coach ou personnel de sport</a></li>
@@ -45,69 +45,93 @@
             </ul>
         </div>
         <section>
-            <button type="submit" data-activity="musculation" class="bouton">Musculation</button>
-            <button type="submit" data-activity="fitness" class="bouton">Fitness</button>
-            <button type="submit" data-activity="biking" class="bouton">Biking</button>
-            <button type="submit" data-activity="cordioTraining" class="bouton">Cardio-Training</button>
-            <button type="submit" data-activity="coursCollectifs" class="bouton">Cours Collectifs</button>
-            <div id="musculation" data-activity="coach-card" style="display: none;">
+            <button type="submit" class="bouton" id="bouton">Musculation</button>
+            <button type="submit" class="bouton" id="bouton2">Fitness</button>
+            <button type="submit" class="bouton" id="bouton3">Biking</button>
+            <button type="submit" class="bouton" id="bouton4">Cardio-Training</button>
+            <button type="submit" class="bouton" id="bouton5">Cours Collectifs</button>
+            <div id="musculation" class="carteCoach">
                 <img src="photo_de_coach/coach_musculation.jpg" alt="Coach Image">
                 <div class="coach-info">
                     <h2 id="coach-name">Guy DUMAIS</h2>
                     <p id="coach-speciality">Coach, Musculation</p>
                     <p id="coach-room">Salle: G-010</p>
-                    <p id="coach-phone">Téléphone: +33 01 23 45 67 89</p>
-                    <p id="coach-email">Email: guy.dumais@omnessports.fr</p>
+                    <p id="coach-phone">Téléphone: +33 06 23 45 67 11</p>
+                    <p id="coach-email">Email: guy.dumais.musculation@omnessports.fr</p>
                 </div>
                 <div class="btn-container">
-                    <button class="bouton">Prendre un RDV</button>
-                    <button class="bouton">Communiquer avec le coach</button>
-                    <button class="bouton">Voir son CV</button>
+                    <button class="bouton" id="rdv">Prendre un RDV</button>
+                    <button class="bouton" id="communiquer" onclick="showCommunicationOptions(this)">Communiquer avec le coach</button>
+                    <button class="bouton" id="cv">Voir son CV</button>
+                    <div class="communication-options" >
+                        <button class="bouton" onclick="envoyerEmail('guy.dumais.musculation@omnessports.fr')">Email</button>
+                        <button class="bouton" onclick="envoyerSMS('+33695104073')">Texto</button>
+                        <button class="bouton">Audio</button>
+                        <button class="bouton" onclick="visioconf('https://teams.microsoft.com/l/meetup-join/19%3ameeting_NzYxZjBlMzQtZjkzMS00MzM1LTgwOGEtYzZlOTBhZmYwZjUy%40thread.v2/0?context=%7b%22Tid%22%3a%22TID%22%2c%22Oid%22%3a%22OID%22%7d')">Visio</button>
+                    </div>
                 </div>
             </div>
-            <div id="fitness" class="coach-card" style="display: none;">
+            <div id="fitness" class="carteCoach">
                 <img src="photo_de_coach/coach_fitness.jpg" alt="Coach Image">
                 <div class="coach-info">
                     <h2 id="coach-name">Guy DUMAIS</h2>
                     <p id="coach-speciality">Coach, fitness</p>
-                    <p id="coach-room">Salle: G-010</p>
-                    <p id="coach-phone">Téléphone: +33 01 23 45 67 89</p>
-                    <p id="coach-email">Email: guy.dumais@omnessports.fr</p>
+                    <p id="coach-room">Salle: G-011</p>
+                    <p id="coach-phone">Téléphone: +33 06 23 45 67 22</p>
+                    <p id="coach-email">Email: guy.dumais.fitness@omnessports.fr</p>
                 </div>
                 <div class="btn-container">
-                    <button class="bouton">Prendre un RDV</button>
-                    <button class="bouton">Communiquer avec le coach</button>
-                    <button class="bouton">Voir son CV</button>
+                    <button class="bouton" id="rdv">Prendre un RDV</button>
+                    <button class="bouton" id="communiquer" onclick="showCommunicationOptions(this)">Communiquer avec le coach</button>
+                    <button class="bouton" id="cv">Voir son CV</button>
+                    <div class="communication-options" >
+                        <button class="bouton" onclick="envoyerEmail('guy.dumais.fitness@omnessports.fr')">Email</button>
+                        <button class="bouton" onclick="envoyerSMS('+33695104073')">Texto</button>
+                        <button class="bouton">Audio</button>
+                        <button class="bouton" onclick="visioconf('https://teams.microsoft.com/l/meetup-join/19%3ameeting_NzYxZjBlMzQtZjkzMS00MzM1LTgwOGEtYzZlOTBhZmYwZjUy%40thread.v2/0?context=%7b%22Tid%22%3a%22TID%22%2c%22Oid%22%3a%22OID%22%7d')">Visio</button>
+                    </div>
                 </div>
             </div>
-            <div id="biking" class="coach-card" style="display: none;">
+            <div id="biking" class="carteCoach">
                 <img src="photo_de_coach/coach_biking.jpg" alt="Coach Image">
                 <div class="coach-info">
                     <h2 id="coach-name">Guy DUMAIS</h2>
-                    <p id="coach-speciality">Coach, biking</p>
-                    <p id="coach-room">Salle: G-010</p>
-                    <p id="coach-phone">Téléphone: +33 01 23 45 67 89</p>
-                    <p id="coach-email">Email: guy.dumais@omnessports.fr</p>
+                    <p id="coach-speciality">Coach, bikiing</p>
+                    <p id="coach-room">Salle: G-012</p>
+                    <p id="coach-phone">Téléphone: +33 06 23 45 67 33</p>
+                    <p id="coach-email">Email: guy.dumais.biking@omnessports.fr</p>
                 </div>
                 <div class="btn-container">
-                    <button class="bouton">Prendre un RDV</button>
-                    <button class="bouton">Communiquer avec le coach</button>
-                    <button class="bouton">Voir son CV</button>
+                    <button class="bouton" id="rdv">Prendre un RDV</button>
+                    <button class="bouton" id="communiquer" onclick="showCommunicationOptions(this)">Communiquer avec le coach</button>
+                    <button class="bouton" id="cv">Voir son CV</button>
+                    <div class="communication-options" >
+                        <button class="bouton" onclick="envoyerEmail('guy.dumais.biking@omnessports.fr')">Email</button>
+                        <button class="bouton" onclick="envoyerSMS('+33695104073')">Texto</button>
+                        <button class="bouton">Audio</button>
+                        <button class="bouton" onclick="visioconf('https://teams.microsoft.com/l/meetup-join/19%3ameeting_NzYxZjBlMzQtZjkzMS00MzM1LTgwOGEtYzZlOTBhZmYwZjUy%40thread.v2/0?context=%7b%22Tid%22%3a%22TID%22%2c%22Oid%22%3a%22OID%22%7d')">Visio</button>
+                    </div>
                 </div>
             </div>
-            <div id="cardioTraining" class="coach-card" style="display: none;">
+            <div id="cardioTraining" class="carteCoach">
                 <img src="photo_de_coach/coach_cardio_training.jpg" alt="Coach Image">
                 <div class="coach-info">
                     <h2 id="coach-name">Guy DUMAIS</h2>
-                    <p id="coach-speciality">Coach, cardio training</p>
-                    <p id="coach-room">Salle: G-010</p>
-                    <p id="coach-phone">Téléphone: +33 01 23 45 67 89</p>
-                    <p id="coach-email">Email: guy.dumais@omnessports.fr</p>
+                    <p id="coach-speciality">Coach, Cardio-Training</p>
+                    <p id="coach-room">Salle: G-013</p>
+                    <p id="coach-phone">Téléphone: +33 06 23 45 67 44</p>
+                    <p id="coach-email">Email: guy.dumais.cardioTraining@omnessports.fr</p>
                 </div>
                 <div class="btn-container">
-                    <button class="bouton">Prendre un RDV</button>
-                    <button class="bouton">Communiquer avec le coach</button>
-                    <button class="bouton">Voir son CV</button>
+                    <button class="bouton" id="rdv">Prendre un RDV</button>
+                    <button class="bouton" id="communiquer" onclick="showCommunicationOptions(this)">Communiquer avec le coach</button>
+                    <button class="bouton" id="cv">Voir son CV</button>
+                    <div class="communication-options" >
+                        <button class="bouton" onclick="envoyerEmail('guy.dumais.cardioTraining@omnessports.fr')">Email</button>
+                        <button class="bouton" onclick="envoyerSMS('+33695104073')">Texto</button>
+                        <button class="bouton">Audio</button>
+                        <button class="bouton" onclick="visioconf('https://teams.microsoft.com/l/meetup-join/19%3ameeting_NzYxZjBlMzQtZjkzMS00MzM1LTgwOGEtYzZlOTBhZmYwZjUy%40thread.v2/0?context=%7b%22Tid%22%3a%22TID%22%2c%22Oid%22%3a%22OID%22%7d')">Visio</button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -122,32 +146,6 @@
             <p><strong>Samedi, dimanche et jours fériés :</strong> 8h - 20h</p>
         </footer>
     </div>
-    <script>
-        const coaches = {
-            musculation: { name: "Guy DUMAIS", speciality: "Coach, Musculation", room: "Salle: G-010", phone: "+33 01 23 45 67 89", email: "guy.dumais@omnessports.fr", schedule: [["", "", "", "", "", "", "", "", "", "", "", "", "", ""]] },
-            fitness: { name: "Fitness Coach", speciality: "Coach, Fitness", room: "Salle: G-011", phone: "+33 01 23 45 67 90", email: "fitness.coach@omnessports.fr", schedule: [["", "", "", "", "", "", "", "", "", "", "", "", "", ""]] },
-            biking: { name: "Biking Coach", speciality: "Coach, Biking", room: "Salle: G-012", phone: "+33 01 23 45 67 91", email: "biking.coach@omnessports.fr", schedule: [["", "", "", "", "", "", "", "", "", "", "", "", "", ""]] },
-            cardioTraining: { name: "Cardio Coach", speciality: "Coach, Cardio-Training", room: "Salle: G-013", phone: "+33 01 23 45 67 92", email: "cardio.coach@omnessports.fr", schedule: [["", "", "", "", "", "", "", "", "", "", "", "", "", ""]] },
-        };
-
-        document.querySelectorAll('.bouton').forEach(button => {
-            button.addEventListener('click', function() {
-                const activity = this.getAttribute('data-activity');
-                const coachInfo = coaches[activity];
-
-                document.querySelectorAll('.coach-card').forEach(card => {
-                    card.style.display = 'none';
-                });
-
-                const coachCard = document.getElementById(activity);
-                coachCard.querySelector('#coach-name').textContent = coachInfo.name;
-                coachCard.querySelector('#coach-speciality').textContent = coachInfo.speciality;
-                coachCard.querySelector('#coach-room').textContent = coachInfo.room;
-                coachCard.querySelector('#coach-phone').textContent = coachInfo.phone;
-                coachCard.querySelector('#coach-email').textContent = coachInfo.email;
-                coachCard.style.display = 'block';
-            });
-        });
-    </script>
+    <script src="activitesSportives.js"></script>
 </body>
 </html>
