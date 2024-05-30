@@ -14,21 +14,7 @@ $id_coach = isset($_GET['id_coach']) ? $_GET['id_coach'] : 1;  // Exemple ID coa
 $sql = "SELECT date, heure FROM Reservation WHERE id_coach = $id_coach";
 $result = $db_handle->query($sql);
 
-$rdv_pris = [];
-if ($result->num_rows>0)
-{
-    while($row = $result->fetch_assoc())
-    {
-        $rdv_pris[] = $row['date'] . ' ' . $row['heure'];
-    }
-}
-
-// Exemple de création d'un calendrier de la semaine avec des créneaux horaires
-$jours = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi'];
-$heures = ['09:00', '10:00', '11:00', '14:00', '15:00', '16:00'];
 ?>
-
-
 
 <!DOCTYPE html>
 <html> 
@@ -41,33 +27,6 @@ $heures = ['09:00', '10:00', '11:00', '14:00', '15:00', '16:00'];
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">  <!-- Permet d'afficher les photos horizontales-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>              <!-- Permet d'ajouter les boutons du carrousel-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>           <!-- Permet d'ajouter les différentes flèches-->  
-    <style>
-        .creneau-disponible { background-color: white; cursor: pointer; }
-        .creneau-indisponible { background-color: blue; color: white; }
-        .creneau { padding: 10px; border: 1px solid #ccc; text-align: center; }
-    </style>
-    <script>
-        function reserverCreneau(date, heure) {
-            if (confirm(`Voulez-vous réserver le créneau ${date} à ${heure} ?`)) {
-                fetch('reserver_rdv.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    },
-                    body: `date=${date}&heure=${heure}&id_coach=<?php echo $id_coach; ?>`
-                })
-                .then(response => response.text())
-                .then(data => {
-                    if (data === 'success') {
-                        alert('Le créneau a été réservé avec succès.');
-                        location.reload();  // Recharger la page pour mettre à jour le calendrier
-                    } else {
-                        alert('Erreur lors de la réservation du créneau.');
-                    }
-                });
-            }
-        }
-    </script>
 </head>
 <body>
     <div class="wrapper">
@@ -104,36 +63,33 @@ $heures = ['09:00', '10:00', '11:00', '14:00', '15:00', '16:00'];
             </ul>
         </div>
       <section>
-            <h2>Calendrier des créneaux disponibles</h2>
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <?php foreach ($jours as $jour) {
-                            echo "<th>$jour</th>";
-                        } ?>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    foreach ($heures as $heure)
-                    {
-                        echo "<tr><td>$heure</td>";
-                        foreach ($jours as $jour) {
-                            $date = date('Y-m-d', strtotime("next $jour"));
-                            $datetime = "$date $heure";
-                            if (in_array($datetime, $rdv_pris)) {
-                                echo "<td class='creneau creneau-indisponible'>$heure</td>";
-                            } else {
-                                echo "<td class='creneau creneau-disponible' onclick=\"reserverCreneau('$date', '$heure')\">$heure</td>";
-                            }
-                        }
-                        echo "</tr>";
-                    }
-                    ?>
-                </tbody>
-            </table>
-        </section>
+        <h1>Calendrier de Disponibilité</h1>
+            <table id="calendar">
+            <thead>
+                <tr>
+                    <th>Heure</th>
+                    <th>Lundi</th>
+                    <th>Mardi</th>
+                    <th>Mercredi</th>
+                    <th>Jeudi</th>
+                    <th>Vendredi</th>
+                </tr>
+            </thead>
+        <tbody>
+        <tr>
+            <th>10:00 - 11:00</th>
+        </tr>
+        <tr>
+            <th>11:00 - 12:00</th>
+            <td class="indisponible">Indisponible</td>
+            <td class="disponible" data-day="mardi" data-time="11:00-12:00">Disponible</td>
+            <td class="indisponible">Indisponible</td>
+            <td class="disponible" data-day="jeudi" data-time="11:00-12:00">Disponible</td>
+            <td class="indisponible">Indisponible</td>
+        </tr>
+    </tbody>
+    </table>
+    </section>
         <footer>
             <iframe width="100%" height="300%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.317662740615!2d2.328770915673154!3d48.87925167928907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66f273f4f31ad%3A0x78e9c368389ea84a!2sBlanche%2C%2075009%20Paris%2C%20France!5e0!3m2!1sen!2sfr!4v1624543145632!5m2!1sen!2sfr"></iframe>
             <h3>Contact</h3>

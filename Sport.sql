@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS PersonnelSport(
     CV TEXT,
     disponibilite TEXT,
     email VARCHAR(100),
+    mot_de_passe TEXT,
     ID_Sport INT,
     PRIMARY KEY (ID_personnel)
 );
