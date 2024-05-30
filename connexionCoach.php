@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'configConnexion.php';
+include 'configCoach.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn = get_db_connection();
 
     // Préparer et exécuter la requête SQL
-    $sql = "SELECT ID_client, nom, prenom, mot_de_passe FROM client WHERE email = ?";
+    $sql = "SELECT ID_personnel, nom, prenom, mot_de_passe FROM personnelsport WHERE email = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $email);
     $stmt->execute();
@@ -23,13 +23,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Vérifier le mot de passe en clair
         if ($mot_de_passe === $password) {
             // Démarrer la session et enregistrer les variables de session
-            $_SESSION['loggedin'] = true;
+            $_SESSION['coach_loggedin'] = true;
             $_SESSION['id'] = $id;
             $_SESSION['nom'] = $nom;
             $_SESSION['prenom'] = $prenom;
 
             // Rediriger vers la page client
-            header("Location: connexionClient.php");
+            header("Location: connexionCoach.php");
             exit();
         } else {
             $error = "Mot de passe incorrect.";
@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sportify - Connexion Client</title>
+    <title>Sportify - Connexion Coach</title>
     <link rel="stylesheet" href="body.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 </head>
@@ -75,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <a href="recherche.html">Recherche</a>
                 </li>
                 <li class="has-sous-nav">
-                    <a href="rendezvousCoach.php">Rendez-vous</a>
+                    <a href="rendezVous.html">Rendez-vous</a>
                 </li>
                 <li class="has-sous-nav">
                     <a href="index.html">Votre Compte</a>
@@ -89,18 +89,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <section>
             <?php
-            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+            if (isset($_SESSION['coach_loggedin']) && $_SESSION['coach_loggedin'] === true) {
                 echo "<h2>Bienvenue sur votre compte, " . htmlspecialchars($_SESSION['prenom']) . " !</h2>";
-                echo "<p>Vos informations de compte sont les suivantes :</p>";
+                echo "<p>Vos informations de compte coach sont les suivantes :</p>";
                 echo "<p><strong>Nom :</strong> " . htmlspecialchars($_SESSION['nom']) . "</p>";
                 echo "<p><strong>Prénom :</strong> " . htmlspecialchars($_SESSION['prenom']) . "</p>";
-                echo '<form action="deconnexionClient.php" method="post">
+                echo '<form action="deconnexionCoach.php" method="post">
                         <button type="submit" class="bouton">Déconnexion</button>
                       </form>';
             } else {
                 echo '<form action="" method="POST">
                     <div class="event">
-                        <h3>Connexion :</h3>
+                        <h3>Connexion coach:</h3>
                         <label for="email">Email:</label><br>
                         <input type="email" placeholder="Email" id="email" name="email" required autocomplete="off">
 
@@ -108,7 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <input type="password" placeholder="Mot de passe" id="mot_de_passe" name="mot_de_passe" class="tailleBoite" required autocomplete="new-password">
 
                         <button type="submit" class="bouton">Se connecter</button>
-                        <p><a href="inscription.html" style="font-size: 12px; color: black;"><u>Créer un compte</u></a></p>
+                        <p><a href="inscriptionCoach.html" style="font-size: 12px; color: black;"><u>Créer un compte</u></a></p>
                     </div>';
                 if (isset($error)) {
                     echo "<p class='error'>$error</p>";
@@ -118,7 +118,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ?>
         </section>
         <footer>
-            <iframe width="100%" height="300%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.317662740615!2d2.328770915673154!3d48.87925167928907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66f273f4f31ad%3A0x78e9c368389ea84a!2sBlanche%2C%2075009%20Paris%2C%20France!5e0!3m2!1sen!2sfr!4v1624543145632!5m2!1sen!2sfr"></iframe>
+            <iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.317662740615!2d2.328770915673154!3d48.87925167928907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66f273f4f31ad%3A0x78e9c368389ea84a!2sBlanche%2C%2075009%20Paris%2C%20France!5e0!3m2!1sen!2sfr!4v1624543145632!5m2!1sen!2sfr"></iframe>
             <h3>Contact</h3>
             <p><strong>Adresse :</strong> 21 rue Blanche, 75009 Paris, France</p>
             <p><strong>Téléphone :</strong> +33 1 23 45 67 89</p>
