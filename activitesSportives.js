@@ -10,9 +10,11 @@
     const carteCoach4 = document.querySelector('#cardioTraining');
 
     bouton.addEventListener('click', ()=>{
-        if(carteCoach.style.display=='block'){
+        if(carteCoach.style.display=='block')
+        {
             carteCoach.style.display='none';
-        }else{
+        }
+        else{
             carteCoach.style.display='block';
             carteCoach2.style.display='none';
             carteCoach3.style.display='none';

@@ -16,12 +16,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->execute();
     $stmt->store_result();
 
-    if ($stmt->num_rows > 0) {
+    if ($stmt->num_rows > 0)
+    {
         $stmt->bind_result($id, $nom, $prenom, $password);
         $stmt->fetch();
-        
         // Vérifier le mot de passe en clair
-        if ($mot_de_passe === $password) {
+        if ($mot_de_passe === $password)
+        {
             // Démarrer la session et enregistrer les variables de session
             $_SESSION['coach_loggedin'] = true;
             $_SESSION['id'] = $id;
@@ -97,7 +98,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo '<form action="deconnexionCoach.php" method="post">
                         <button type="submit" class="bouton">Déconnexion</button>
                       </form>';
-            } else {
+            }
+            else
+            {
                 echo '<form action="" method="POST">
                     <div class="event">
                         <h3>Connexion coach:</h3>
