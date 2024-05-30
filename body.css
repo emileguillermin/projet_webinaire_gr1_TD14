@@ -191,39 +191,51 @@ footer {
     background-color: #242424; 
 }
 
+/*.carteCoach{
+    display: none;
+    padding: 20px;
+    width: 900px;
+    align-items: center; 
+    justify-content: center;
+    background-color: #dedede;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}*/
+
 .carteCoach{
     display: none;
     padding: 20px;
-    width: 900px;
+    width: 450px;
     align-items: center; 
     justify-content: center;
     background-color: #dedede;
     border-radius: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 10px 45px;
+}
+
+.carteCoach h3{
+    color: #313131;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.carteCoach ul,li{
+    font-size: 15px;
+}
+
+.carteCoach p{
+    font-size: 15px;
 }
 .carteCoach img{
-    width: 200px;
-    height: auto;
-}
-.carteCoachCompet{
-    display: none;
-    padding: 20px;
-    width: 900px;
-    align-items: center; 
-    justify-content: center;
-    background-color: #dedede;
-    border-radius: 20px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.carteCoachCompet img{
     width: 200px;
     height: auto;
 }
 .communication-options {
     display: none; 
 }
+
 .communication-options button {
     display: block;
     background-color: #a7b9c0; 
@@ -234,6 +246,7 @@ footer {
     cursor: pointer;
     transition: background-color 0.3s;
 }
+
 .communication-options button:hover{
     background-color: #7e9198;
 }
@@ -248,6 +261,7 @@ footer {
     width: 400px;
     margin: 0 auto; 
 }
+
 .identifiant-box{
     display: block;
     align-items: center;
@@ -267,6 +281,7 @@ footer {
     flex-grow: 1;
     border-radius: 20px;
 }
+
 .boutonAcces{
     background-color: #303030; 
     color: #fff;
@@ -277,6 +292,19 @@ footer {
     cursor: pointer;
     transition: background-color 0.3s;
 }
+
 .boutonAcces:hover{
     background-color: #242424; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table, th, td {
+    border: 1px solid black;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
 }

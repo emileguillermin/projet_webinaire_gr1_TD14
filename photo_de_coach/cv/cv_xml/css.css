@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 20px;
+}
+
+p{
+    position: relative;
+    left : 25px;
+}
+
+.profile-photo {
+    max-width: 280px;
+    height: auto;
+    border-radius: 10%;
+    display: block;
+    margin: 10px auto;
+}
+
+.cv-container {
+    position: relative;
+    left : 25%;
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px; 
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    background-color: #f9f9f9;
+}
+
+.cv-container h2{
+    text-decoration: underline;
+}
+
+.left-column, .middle-column {
+    width: 45%;
+}
+
+.skills_hobbies_languages {
+    display: flex;
+    margin: 15px auto;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.skills, .hobbies, .languages {
+    width: 30%;
+}
+
+.skills, .hobbies, .languages {
+    background-color: #66e6e3;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #d2cfcfe8;
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.skills h2, .hobbies h2, .languages h2 {
+    color: #4d4d4d;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.skills ul, .hobbies ul, .languages ul {
+    position: relative;
+    left : 10px;
+    list-style-type: disc;
+    padding: 0;
+    
+}
+
+.skills li, .hobbies li, .languages li {
+    margin-bottom: 5px;
+}
