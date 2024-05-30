@@ -8,12 +8,10 @@ if ($db_handle->connect_error)
     die("Connection failed: " . $db_handle->connect_error);
 }
 
-// Supposons que l'ID du coach soit passé en paramètre GET
-$id_coach = isset($_GET['id_coach']) ? $_GET['id_coach'] : 1;  // Exemple ID coach par défaut
+$id_coach = 
 
 $sql = "SELECT date, heure FROM Reservation WHERE id_coach = $id_coach";
 $result = $db_handle->query($sql);
-
 ?>
 
 <!DOCTYPE html>
