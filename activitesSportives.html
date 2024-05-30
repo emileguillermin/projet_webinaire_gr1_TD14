@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sportify</title>
     <link rel="stylesheet" href="body.css"> 
+    <link rel="stylesheet" href="chat.css"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">  <!-- Permet d'afficher les photos horizontales-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>              <!-- Permet d'ajouter les boutons du carrousel-->
@@ -37,7 +38,7 @@
                 <li class="has-sous-nav">
                     <a href="index.html">Votre Compte</a>
                     <ul class="sous-nav">
-                        <li><a href="client.html">Client</a></li>
+                        <li><a href="connexionClient.php">Client</a></li>
                         <li><a href="accesCoach.html">Coach ou personnel de sport</a></li>
                         <li><a href="accesAdmin.html">Administrateur</a></li>
                     </ul>
@@ -106,7 +107,7 @@
                     <button class="bouton" id="cv">Voir son CV</button>
                     <div class="communication-options" >
                         <button class="bouton" onclick="envoyerEmail('guy.dumais.biking@omnessports.fr')">Email</button>
-                        <button class="bouton" onclick="envoyerSMS('+33695104073')">Texto</button>
+                        <button class="bouton" onclick="ouvrirchat()">Chat</button>
                         <button class="bouton">Audio</button>
                         <button class="bouton" onclick="visioconf('https://teams.microsoft.com/l/meetup-join/19%3ameeting_NzYxZjBlMzQtZjkzMS00MzM1LTgwOGEtYzZlOTBhZmYwZjUy%40thread.v2/0?context=%7b%22Tid%22%3a%22TID%22%2c%22Oid%22%3a%22OID%22%7d')">Visio</button>
                     </div>
