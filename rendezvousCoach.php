@@ -53,8 +53,8 @@ $result=$db_handle->query($sql);*/
                 <li class="has-sous-nav">
                     <a href="index.html">Votre Compte</a>
                     <ul class="sous-nav">
-                        <li><a href="client.html">Client</a></li>
-                        <li><a href="accesCoach.html">Coach ou personnel de sport</a></li>
+                        <li><a href="connexionClient.php">Client</a></li>
+                        <li><a href="connexionCoach.php">Coach ou personnel de sport</a></li>
                         <li><a href="accesAdmin.html">Administrateur</a></li>
                     </ul>
                 </li>
