@@ -14,7 +14,7 @@ $sql = "SELECT ID_reservation, ID_client, ID_coach, Specialité, nomCoach, date,
 $result = $conn->query($sql);
 ?>
 
-<!--<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -61,7 +61,7 @@ $result = $conn->query($sql);
                 </li>
             </ul>
         </div>
-        <section>-->
+        <section>
         <h1>Rendez-Vous</h1>
         <table>
             <tr>
