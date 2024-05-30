@@ -191,7 +191,8 @@ footer {
     background-color: #242424; 
 }
 
-/*.carteCoach{
+
+.carteCoach{
     display: none;
     padding: 20px;
     width: 900px;
@@ -201,41 +202,16 @@ footer {
     border-radius: 20px;
     margin-left: auto;
     margin-right: auto;
-}*/
-
-.carteCoach{
-    display: none;
-    padding: 20px;
-    width: 450px;
-    align-items: center; 
-    justify-content: center;
-    background-color: #dedede;
-    border-radius: 20px;
-    margin: 10px 45px;
-}
-
-.carteCoach h3{
-    color: #313131;
-    text-align: center;
-    font-weight: bold;
-    font-size: 25px;
-}
-
-.carteCoach ul,li{
-    font-size: 15px;
-}
-
-.carteCoach p{
-    font-size: 15px;
 }
 .carteCoach img{
     width: 200px;
     height: auto;
 }
+
+
 .communication-options {
     display: none; 
 }
-
 .communication-options button {
     display: block;
     background-color: #a7b9c0; 
@@ -246,10 +222,10 @@ footer {
     cursor: pointer;
     transition: background-color 0.3s;
 }
-
 .communication-options button:hover{
     background-color: #7e9198;
 }
+
 
 .identifiant-container{
     display: block;
