@@ -62,7 +62,7 @@ $result = $conn->query($sql);
             </ul>
         </div>
         <section>
-        <h1>Rendez-Vous</h1>
+        <h1>Mes Rendez-Vous prévus</h1>
         <table>
             <tr>
                 <th>ID_reservation</th>

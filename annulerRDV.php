@@ -18,10 +18,13 @@ if($db_found && isset($_POST["soumettre"]))
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $ID_reservation);
 
-    if ($stmt->execute()) {
-        header("Location: rendezvous.php"); // Redirect back to the appointments page
-    } else {
-        echo "Error deleting record: " . $conn->error;
+    if ($stmt->execute())
+    {
+        header("Location: rendezvous.php"); 
+    }
+    else
+    {
+        echo "Erreur annulation: " . $conn->error;
     }
 
     $stmt->close();

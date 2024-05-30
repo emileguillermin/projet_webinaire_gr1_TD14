@@ -8,10 +8,10 @@ if ($db_handle->connect_error)
     die("Connection failed: " . $db_handle->connect_error);
 }
 
-$ID_coach=$_GET['ID_coach'];
+/*$ID_coach=$_GET['ID_coach'];
 $ID_client=$_GET['ID_client'];
-$sql="SELECT date, heure FROM Reservation WHERE ID_coach = $ID_coach";
-$result=$db_handle->query($sql);
+$sql="SELECT date, heure FROM reservation WHERE ID_coach = $ID_coach";
+$result=$db_handle->query($sql);*/
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +48,7 @@ $result=$db_handle->query($sql);
                     <a href="recherche.html">Recherche</a>
                 </li>
                 <li class="has-sous-nav">
-                    <a href="rendezvousCoach.php">Rendez-vous</a>
+                    <a href="rendezvous.php">Rendez-vous</a>
                 </li>
                 <li class="has-sous-nav">
                     <a href="index.html">Votre Compte</a>
@@ -74,18 +74,13 @@ $result=$db_handle->query($sql);
                 </tr>
             </thead>
         <tbody>
-        <tr>
-            <th>10:00 - 11:00</th>
-        </tr>
-        <tr>
-            <th>11:00 - 12:00</th>
-            <td class="indisponible">Indisponible</td>
-            <td class="disponible" data-day="mardi" data-time="11:00-12:00">Disponible</td>
-            <td class="indisponible">Indisponible</td>
-            <td class="disponible" data-day="jeudi" data-time="11:00-12:00">Disponible</td>
-            <td class="indisponible">Indisponible</td>
-        </tr>
-    </tbody>
+            <tr>
+                <th>10:00 - 11:00</th>
+            </tr>
+            <tr>
+                <th>11:00 - 12:00</th>
+            </tr>
+        </tbody>
     </table>
     </section>
         <footer>
