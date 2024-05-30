@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['prenom'] = $prenom;
 
             // Rediriger vers la page client
-            header("Location: connexion.php");
+            header("Location: connexionClient.php");
             exit();
         } else {
             $error = "Mot de passe incorrect.";
@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <li class="has-sous-nav">
                     <a href="index.html">Votre Compte</a>
                     <ul class="sous-nav">
-                        <li><a href="connexion.php">Client</a></li>
+                        <li><a href="connexionClient.php">Client</a></li>
                         <li><a href="accesCoach.html">Coach ou personnel de sport</a></li>
                         <li><a href="accesAdmin.html">Administrateur</a></li>
                     </ul>
@@ -94,7 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "<p>Vos informations de compte sont les suivantes :</p>";
                 echo "<p><strong>Nom :</strong> " . htmlspecialchars($_SESSION['nom']) . "</p>";
                 echo "<p><strong>Prénom :</strong> " . htmlspecialchars($_SESSION['prenom']) . "</p>";
-                echo '<form action="deconnexion.php" method="post">
+                echo '<form action="deconnexionClient.php" method="post">
                         <button type="submit" class="bouton">Déconnexion</button>
                       </form>';
             } else {
