@@ -5,6 +5,7 @@
         <name>Jane Doe</name>
         <email>jane.doe@example.com</email>
         <phone>123-456-7890</phone>
+        <photo>coach_cour_collectif.jpg</photo> <!-- Assurez-vous que le fichier photo.jpg est dans le même répertoire -->
     </personalInfo>
     <summary>
         Passionate and experienced yoga instructor specializing in Kundalini yoga with over 10 years of teaching experience.
