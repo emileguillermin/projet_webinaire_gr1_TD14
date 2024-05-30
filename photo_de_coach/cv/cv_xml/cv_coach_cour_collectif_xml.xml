@@ -3,34 +3,50 @@
 <cv>
     <personalInfo>
         <name>Jane Doe</name>
-        <email>jane.doe@example.com</email>
-        <phone>123-456-7890</phone>
-        <photo>coach_cour_collectif.jpg</photo> <!-- Assurez-vous que le fichier photo.jpg est dans le même répertoire -->
+        <email>jane.doe@gmail.com</email>
+        <phone>+33 6 55 47 12 35</phone>
+        <photo>coach_cour_collectif.jpg</photo>
     </personalInfo>
     <summary>
-        Passionate and experienced yoga instructor specializing in Kundalini yoga with over 10 years of teaching experience.
+        Passionnée et expérimentée professeure de yoga spécialisée en Kundalini yoga avec plus de 10 ans d'expérience dans l'enseignement.
     </summary>
     <experience>
         <job>
             <title>Senior Yoga Instructor</title>
             <company>Yoga Bliss Studio</company>
-            <date>2015 - Present</date>
+            <date>2015 - Présent</date>
         </job>
         <job>
             <title>Yoga Instructor</title>
             <company>Wellness Center</company>
             <date>2010 - 2015</date>
         </job>
+        
     </experience>
     <education>
-        <degree>Certified Yoga Teacher</degree>
+        <degree>Professeure de Yoga Certifiée</degree>
+        <institution>Yoga Alliance</institution>
+        <year>2010</year>
+    </education>
+    <education>
+        <degree>Professeure de Yoga Certifiée</degree>
         <institution>Yoga Alliance</institution>
         <year>2010</year>
     </education>
     <skills>
         <skill>Kundalini Yoga</skill>
         <skill>Hatha Yoga</skill>
-        <skill>Meditation</skill>
+        <skill>Méditation</skill>
         <skill>Pranayama</skill>
     </skills>
+    <hobbies>
+        <hobby>Lecture</hobby>
+        <hobby>Voyage</hobby>
+        <hobby>Natation</hobby>
+    </hobbies>
+    <languages>
+        <language>Français (langue maternelle)</language>
+        <language>Anglais (courant)</language>
+        <language>Espagnol (intermédiaire)</language>
+    </languages>
 </cv>

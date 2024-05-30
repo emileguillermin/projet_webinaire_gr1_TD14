@@ -1,60 +1,77 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    margin: 0;
-    padding: 0;
+    background-color: #f2f2f2;
+    margin: 20px;
 }
 
-.container {
-    width: 80%;
-    margin: auto;
-    background-color: white;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.header {
-    text-align: center;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-.header h1 {
-    margin: 0;
-    color: #333;
+p{
+    position: relative;
+    left : 25px;
 }
 
 .profile-photo {
-    max-width: 150px;
+    max-width: 280px;
     height: auto;
-    border-radius: 50%;
+    border-radius: 10%;
     display: block;
     margin: 10px auto;
 }
 
-.section {
-    margin-top: 20px;
+.cv-container {
+    position: relative;
+    left : 25%;
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px; 
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    background-color: #f9f9f9;
 }
 
-.section h2 {
-    color: #555;
-    border-bottom: 2px solid #e0e0e0;
-    padding-bottom: 5px;
+.cv-container h2{
+    text-decoration: underline;
 }
 
-.job, .education {
-    margin-top: 10px;
+.left-column, .middle-column {
+    width: 45%;
 }
 
-.skills ul {
-    list-style-type: none;
+.skills_hobbies_languages {
+    display: flex;
+    margin: 15px auto;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.skills, .hobbies, .languages {
+    width: 30%;
+}
+
+.skills, .hobbies, .languages {
+    background-color: #66e6e3;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #d2cfcfe8;
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.skills h2, .hobbies h2, .languages h2 {
+    color: #4d4d4d;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.skills ul, .hobbies ul, .languages ul {
+    position: relative;
+    left : 10px;
+    list-style-type: disc;
     padding: 0;
+    
 }
 
-.skills li {
-    background-color: #e0e0e0;
-    padding: 5px;
-    margin: 5px 0;
-    border-radius: 4px;
-    display: inline-block;
+.skills li, .hobbies li, .languages li {
+    margin-bottom: 5px;
 }
