@@ -2,6 +2,7 @@
     const bouton2 = document.querySelector('#bouton2');
     const bouton3 = document.querySelector('#bouton3');
     const bouton4 = document.querySelector('#bouton4');
+    const chatBouton = document.querySelector('#chatBouton');
 
     const carteCoach = document.querySelector('#musculation');
     const carteCoach2 = document.querySelector('#fitness');
@@ -48,6 +49,9 @@
             carteCoach3.style.display='none';
         }
     });
+    function ouvrirchat() {
+        window.open('chat.php', '_blank', 'width=600,height=400');
+    }
     function showCommunicationOptions(button) {
         var optionsDiv = button.nextElementSibling.nextElementSibling;
         if (optionsDiv.style.display == "block" ) {
