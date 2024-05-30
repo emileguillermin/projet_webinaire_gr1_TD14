@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS client(
     PRIMARY KEY (ID_client)
 );
 
-CREATE TABLE IF NOT EXISTS SalleSport (
+CREATE TABLE IF NOT EXISTS SalleSport(
     ID_salle INT AUTO_INCREMENT,
     nom VARCHAR(50),
     adresse VARCHAR(50),
@@ -50,10 +50,10 @@ CREATE TABLE IF NOT EXISTS SalleSport (
     PRIMARY KEY (ID_salle)
 );
 
-CREATE TABLE IF NOT EXISTS Reservation (
+CREATE TABLE IF NOT EXISTS Reservation(
     ID_reservation INT AUTO_INCREMENT,
-    ID_client INT,
-    ID_personnel INT,
+    Specialité VARCHAR(50),
+    nomCoach INT,
     date DATE,
     heure TIME,
     PRIMARY KEY (ID_reservation)

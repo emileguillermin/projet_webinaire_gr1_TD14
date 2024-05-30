@@ -30,23 +30,33 @@ if ($db_found){
             $check_query = "SELECT * FROM client WHERE telephone = '$telephone'";
             $check_result = mysqli_query($db_handle, $check_query);
             
-            if (mysqli_num_rows($check_result) > 0) {
+            if (mysqli_num_rows($check_result) > 0)
+            {
                 
                 echo "<h2>Ce compte existe déjà.</h2>";
-            } else {
+            }
+            else
+            {
                 // Insérer le client dans la base de données
                 $insert_query = "INSERT INTO client (nom, prenom, adresseLigne1, adresseLigne2, email, mot_de_passe, ville, postal, pays, carte_etudiante, telephone) VALUES ('$nom', '$prenom', '$adresseLigne1', '$adresseLigne2', '$email', '$mot_de_passe', '$ville', '$postal', '$pays', '$carte_etudiante', '$telephone')";
-                if (mysqli_query($db_handle, $insert_query)) {
+                if (mysqli_query($db_handle, $insert_query))
+                {
                     echo "<h2>Inscription faite avec succès !</h2>";
-                } else {
+                }
+                else
+                {
                     echo "<h2>Erreur lors de l'inscription.</h2>";
                 }
             }
-        } else {
+        }
+        else
+        {
             echo "<h2>Veuillez remplir tous les champs requis.</h2>";
         }
     }
-}else {
+}
+else
+{
     echo "Database not found.";
 }
 
