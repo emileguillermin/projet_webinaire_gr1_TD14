@@ -52,6 +52,8 @@ CREATE TABLE IF NOT EXISTS SalleSport(
 
 CREATE TABLE IF NOT EXISTS Reservation(
     ID_reservation INT AUTO_INCREMENT,
+    ID_client INT,
+    ID_coach INT,
     Specialité VARCHAR(50),
     nomCoach INT,
     date DATE,

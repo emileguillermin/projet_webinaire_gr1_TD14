@@ -67,3 +67,4 @@
     function visioconf(appelTeams){
         window.open(appelTeams,'_bank');
     }
+   
