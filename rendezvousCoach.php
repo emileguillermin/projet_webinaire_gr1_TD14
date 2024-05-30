@@ -8,10 +8,10 @@ if ($db_handle->connect_error)
     die("Connection failed: " . $db_handle->connect_error);
 }
 
-$id_coach = 
-
-$sql = "SELECT date, heure FROM Reservation WHERE id_coach = $id_coach";
-$result = $db_handle->query($sql);
+$ID_coach=$_GET['ID_coach'];
+$ID_client=$_GET['ID_client'];
+$sql="SELECT date, heure FROM Reservation WHERE ID_coach = $ID_coach";
+$result=$db_handle->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -101,6 +101,5 @@ $result = $db_handle->query($sql);
     </div>
 </body>
 </html>
-<?php $db_handle->close(); ?>
-?>
+<?php $db_handle->close();
 
