@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->execute();
     $stmt->store_result();
 
-    if ($stmt->num_rows > 0)
+    if($stmt->num_rows > 0)
     {
         $stmt->bind_result($nom, $prenom, $email);
         $stmt->fetch();
