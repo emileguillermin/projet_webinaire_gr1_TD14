@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Préparer et exécuter la requête SQL
     $sql = "SELECT nom, prenom, email FROM Administrateur WHERE email = ? AND nom = ? AND prenom = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $email);
+    $stmt->bind_param("sss", $email, $nom, $prenom);
     $stmt->execute();
     $stmt->store_result();
 
