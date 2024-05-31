@@ -2,24 +2,53 @@
 <?xml-stylesheet type="text/xsl" href="cv_coach_fitness_xsl.xsl"?>
 <cv>
     <personalInfo>
-        <name>Jane Doe</name>
-        <email>jane.doe@gmail.com</email>
+        <name>Sacha Dubois</name>
+        <email>Sacha.dubois@gmail.com</email>
         <phone>+33 6 55 47 12 35</phone>
-        <photo>coach_cour_collectif.jpg</photo>
+        <photo>coach_fitness.jpg</photo>
     </personalInfo>
     <summary>
-        Passionnée et expérimentée professeure de yoga spécialisée en Kundalini yoga avec plus de 10 ans d'expérience dans l'enseignement.
+        Coach de fitness passionnée avec plus de 7 ans
+        d'expérience dans la conception et la mise en œuvre de
+        programmes de fitness personnalisés. Compétences
+        avérées en coaching individuel et collectif, en nutrition
+        sportive et en motivation, visant à aider les clients à
+        atteindre leurs objectifs de santé et de bien-être de
+        manière sécuritaire et efficace
     </summary>
     <experience>
         <job>
-            <title>Senior Yoga Instructor</title>
-            <company>Yoga Bliss Studio</company>
-            <date>2015 - Présent</date>
+            <title>Coach de Fitness</title>
+            <company>ActiveLife Studio</company>
+            <date>fevrier 2019 - Présent</date>
+            <object> 
+                Création et mise en œuvre de
+                programmes de fitness adaptés aux
+                besoins individuels des clients.
+                Animation de cours collectifs de fitness,
+                incluant le cardio, le renforcement
+                musculaire et le stretching.
+                Évaluation régulière des progrès des
+                clients et ajustement des programmes
+                en conséquence.
+            </object>
         </job>
         <job>
-            <title>Yoga Instructor</title>
-            <company>Wellness Center</company>
-            <date>2010 - 2015</date>
+            <title>Coach de Fitness</title>
+            <company>Vitality Gym</company>
+            <date>Mars 2015 - Janvier 2019</date>
+            <object>
+                Encadrement des séances de fitness
+                individuelles et en groupe pour une
+                clientèle diversifiée.
+                Conception de plans d'entraînement
+                personnalisés pour aider les clients à
+                atteindre leurs objectifs de remise en
+                forme.
+                Suivi des progrès des clients et
+                fourniture de feedbacks constructifs
+                pour améliorer les performances.
+            </object>
         </job>
         
     </experience>
