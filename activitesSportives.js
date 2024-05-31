@@ -2,17 +2,20 @@ const bouton = document.querySelector('#bouton');
 const bouton2 = document.querySelector('#bouton2');
 const bouton3 = document.querySelector('#bouton3');
 const bouton4 = document.querySelector('#bouton4');
+const bouton5 = document.querySelector('#bouton5');
 
 const cvMusculation = document.querySelector('#cvMusculation');
 const cvFitness = document.querySelector('#cvFitness');
 const cvBiking = document.querySelector('#cvBiking');
 const cvCardioTraining = document.querySelector('#cvCardioTraining');
+const cvCourCollectif = document.querySelector('#cvCourCollectif');
 
 
 const carteCoach = document.querySelector('#musculation');
 const carteCoach2 = document.querySelector('#fitness');
 const carteCoach3 = document.querySelector('#biking');
 const carteCoach4 = document.querySelector('#cardioTraining');
+const carteCoach5 = document.querySelector('#cour_collectif');
 
     bouton.addEventListener('click', ()=>{
         if(carteCoach.style.display=='block'){
@@ -22,6 +25,7 @@ const carteCoach4 = document.querySelector('#cardioTraining');
             carteCoach2.style.display='none';
             carteCoach3.style.display='none';
             carteCoach4.style.display='none';
+            carteCoach5.style.display='none';
             }
         });
     bouton2.addEventListener('click', ()=>{
@@ -32,6 +36,7 @@ const carteCoach4 = document.querySelector('#cardioTraining');
             carteCoach.style.display='none';
             carteCoach3.style.display='none';
             carteCoach4.style.display='none';
+            carteCoach5.style.display='none';
         }
     });
     bouton3.addEventListener('click', ()=>{
@@ -42,6 +47,7 @@ const carteCoach4 = document.querySelector('#cardioTraining');
             carteCoach.style.display='none';
             carteCoach2.style.display='none';
             carteCoach4.style.display='none';
+            carteCoach5.style.display='none';
         }
     });
     bouton4.addEventListener('click', ()=>{
@@ -52,6 +58,19 @@ const carteCoach4 = document.querySelector('#cardioTraining');
             carteCoach.style.display='none';
             carteCoach2.style.display='none';
             carteCoach3.style.display='none';
+            carteCoach5.style.display='none';
+        }
+    });
+
+    bouton5.addEventListener('click', ()=>{
+        if(carteCoach5.style.display=='block'){
+            carteCoach5.style.display='none';
+        }else{
+            carteCoach4.style.display='none';
+            carteCoach.style.display='none';
+            carteCoach2.style.display='none';
+            carteCoach3.style.display='none';
+            carteCoach5.style.display='block';
         }
     });
 
@@ -74,7 +93,12 @@ const carteCoach4 = document.querySelector('#cardioTraining');
         const cheminFichier4 = 'http://localhost/projet_piscine/projet_webinaire_gr1_TD14/photo_de_coach/cv/cv_xml/cv_coach_cardio_trainning_xml.xml';
         window.location.href = cheminFichier4;
     });
-    
+
+    cvCourCollectif.addEventListener('click', () => {
+        const cheminFichier5 = 'http://localhost/projet_piscine/projet_webinaire_gr1_TD14/photo_de_coach/cv/cv_xml/cv_coach_cour_collectif_xml.xml';
+        window.location.href = cheminFichier5;
+    });
+
     function ouvrirchat() {
         window.open('chat.php', '_blank', 'width=600,height=400');
     }
