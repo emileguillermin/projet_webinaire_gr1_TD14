@@ -26,6 +26,7 @@
                                 <h3><xsl:value-of select="title"/></h3>
                                 <p><xsl:value-of select="company"/></p>
                                 <p><xsl:value-of select="date"/></p>
+                                <p><xsl:value-of select="object"/></p>
                             </div>
                         </xsl:for-each>
                     </div>
