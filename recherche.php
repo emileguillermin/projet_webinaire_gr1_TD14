@@ -31,7 +31,9 @@ if ($db_found) {
                        OR adresse LIKE '%$rechercheBox%' 
                        OR telephone LIKE '%$rechercheBox%'";
         $toutesRecherchesSalle = mysqli_query($db_handle, $querySalle);
-    } else {
+    }
+    else
+    {
         echo "<h3>Veuillez entrer une recherche.</h3>";
     }
 } else {
