@@ -16,12 +16,16 @@ $result = $conn->query($sql);
 $sql = "SELECT jour, Heure FROM disponibilite";
 $result = $conn->query($sql);
 
-$dispos = [];
-if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        $dispos[$row['day']][] = $row['time'];
+$dispos=[];
+if ($result->num_rows > 0)
+{
+    while($row = $result->fetch_assoc())
+    {
+        $dispos[$row['jour']][] = $row['Heure'];
     }
-} else {
+}
+else
+{
     echo "0 results";
 }
 $conn->close();
@@ -75,32 +79,32 @@ $conn->close();
         </div>
       <section>
         <h1>Calendrier de Disponibilité</h1>
+        <button type="submit" class="bouton" id="bouton">Annuler</button>
             <table id="calendar">
 		<?php
 		    $jours = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
 		    $heures = ['07:00:00', '08:00:00', '09:00:00', '09:20:00', '09:40:00', '10:00:00', '10:20:00', '10:40:00', '11:00:00', '11:20:00','11:40:00','12:00:00', '14:00:00', '14:20:00', '14:40:00', '15:00:00', '15:20:00', '15:40:00', '16:00:00', '16:20:00', '16:40:00', '17:00:00','17:20:00','17:40:00','18:00:00','19:00:00','19:30:00','20:00:00'];
-		
+               
 		    echo '<table>';
             echo '<tr><th></th>';
             foreach ($jours as $jour)
             {
                 echo "<th>$jour</th>";
             }
-            echo '</tr>';
-            
+            echo'</tr>';
             foreach ($heures as $heure)
             {
-                echo "<tr><th>$heure</th>";
+                echo"<tr><th>$heure</th>";
                 foreach ($jours as $jour)
                 {
                     $class = 'indisponible';
                     if (isset($dispos[$jour]) && in_array($heure, $dispos[$jour]))
                     {
-                        $class = 'disponible'
+                        $class = 'disponible';
                     }
                     echo "<td class='$class'></td>";
                 }
-                echo '</tr>';
+                echo'</tr>';
             }
             echo '</table>';
             ?>
