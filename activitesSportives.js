@@ -54,6 +54,27 @@ const carteCoach4 = document.querySelector('#cardioTraining');
             carteCoach3.style.display='none';
         }
     });
+
+    cvMusculation.addEventListener('click', () => {
+        const cheminFichier = 'http://localhost/projet_piscine/projet_webinaire_gr1_TD14/photo_de_coach/cv/cv_xml/cv_coach_musculation_xml.xml';
+        window.location.href = cheminFichier;
+    });
+    
+    cvFitness.addEventListener('click', () => {
+        const cheminFichier2 = 'http://localhost/projet_piscine/projet_webinaire_gr1_TD14/photo_de_coach/cv/cv_xml/cv_coach_fitness_xml.xml';
+        window.location.href = cheminFichier2;
+    });
+    
+    cvBiking.addEventListener('click', () => {
+        const cheminFichier3 = 'http://localhost/projet_piscine/projet_webinaire_gr1_TD14/photo_de_coach/cv/cv_xml/cv_coach_biking_xml.xml';
+        window.location.href = cheminFichier3;
+    });
+    
+    cvCardioTraining.addEventListener('click', () => {
+        const cheminFichier4 = 'http://localhost/projet_piscine/projet_webinaire_gr1_TD14/photo_de_coach/cv/cv_xml/cv_coach_cardio_trainning_xml.xml';
+        window.location.href = cheminFichier4;
+    });
+    
     function ouvrirchat() {
         window.open('chat.php', '_blank', 'width=600,height=400');
     }
