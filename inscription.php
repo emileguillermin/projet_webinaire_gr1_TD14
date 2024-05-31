@@ -9,7 +9,8 @@ $database = "sport";
 // Connexion à la base de données
 $db_handle = mysqli_connect('localhost', 'root', '');
 $db_found = mysqli_select_db($db_handle, $database);
-if ($db_found){
+if ($db_found)
+{
     if (isset($_POST["soumettre"]))
     {
         // Vérifier si tous les champs requis sont remplis
@@ -46,7 +47,7 @@ if ($db_found){
                 else
                 {
                     echo "<h2>Erreur lors de l'inscription.</h2>";
-                }
+                } 
             }
         }
         else
