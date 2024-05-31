@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <ul class="sous-nav">
                         <li><a href="connexionClient.php">Client</a></li>
                         <li><a href="connexionCoach.php">Coach ou personnel de sport</a></li>
-                        <li><a href="accesAdmin.html">Administrateur</a></li>
+                        <li><a href="connexionAdmin.php">Administrateur</a></li>
                     </ul>
                 </li>
             </ul>

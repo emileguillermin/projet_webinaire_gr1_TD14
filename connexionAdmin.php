@@ -90,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <ul class="sous-nav">
                         <li><a href="connexionClient.php">Client</a></li>
                         <li><a href="connexionCoach.php">Coach ou personnel de sport</a></li>
-                        <li><a href="accesAdmin.html">Administrateur</a></li>
+                        <li><a href="connexionAdmin.php">Administrateur</a></li>
                     </ul>
                 </li>
             </ul>
@@ -111,12 +111,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo '<form action="" method="POST">
                     <div class="event">
                         <h3>Connexion admin:</h3>
-                        <label for="nom" >Nom :</label>
-                        <input type="text" placeholder="Nom" id="nom" name="nom" class="tailleBoite" required autocomplete="off">
+                        <label for="nom" >Nom :</label><br>
+                        <input type="text" placeholder="pom" id="nom" name="nom" class="tailleBoite" required autocomplete="off">
                         
-                        <label for="prenom" >prenom :</label>
-                        <input type="text" placeholder="Prenom" id="prenom" name="prenom" class="tailleBoite" required autocomplete="off">
-
+                        <label for="prenom" >Prénom :</label><br>
+                        <input type="text" placeholder="prenom" id="prenom" name="prenom" class="tailleBoite" required autocomplete="off">
+                        
                         <label for="email">Email:</label><br>
                         <input type="email" placeholder="Email" id="email" name="email" required autocomplete="off">
 
