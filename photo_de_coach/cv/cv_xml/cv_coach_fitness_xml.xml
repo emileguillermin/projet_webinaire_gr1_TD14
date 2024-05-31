@@ -53,25 +53,32 @@
         
     </experience>
     <education>
-        <degree>Professeure de Yoga Certifiée</degree>
-        <institution>Yoga Alliance</institution>
-        <year>2010</year>
+        <degree>Formation en Nutrition Sportive - École de Nutrition du Sport</degree>
+        <institution></institution>
+        <year>2018</year>
     </education>
     <education>
-        <degree>Professeure de Yoga Certifiée</degree>
-        <institution>Yoga Alliance</institution>
-        <year>2010</year>
+        <degree>Ecole Borcelle / any city</degree>
+        <institution></institution>
+        <year>2015-2016</year>
+    </education>
+    <education>
+        <degree>Certification de Coach Sportif - Fédération Française de Fitness (FFF)</degree>
+        <institution>Etat Français</institution>
+        <year>2014</year>
     </education>
     <skills>
-        <skill>Kundalini Yoga</skill>
-        <skill>Hatha Yoga</skill>
-        <skill>Méditation</skill>
-        <skill>Pranayama</skill>
+        <skill>Conception de programmes de
+fitness personnalisés</skill>
+        <skill>Coaching individuel et en groupe</skill>
+        <skill>Techniques de motivation et de
+coaching.</skill>
     </skills>
     <hobbies>
-        <hobby>Lecture</hobby>
-        <hobby>Voyage</hobby>
-        <hobby>Natation</hobby>
+        <hobby>Participation à des marathons et
+triathlons</hobby>
+        <hobby>Lecture de livres sur la santé et le
+bien-être</hobby>
     </hobbies>
     <languages>
         <language>Français (langue maternelle)</language>
