@@ -112,10 +112,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="event">
                         <h3>Connexion admin:</h3>
                         <label for="nom" >Nom :</label><br>
-                        <input type="text" placeholder="pom" id="nom" name="nom" class="tailleBoite" required autocomplete="off">
+                        <input type="text" placeholder="Nom" id="nom" name="nom" class="tailleBoite" required autocomplete="off">
                         <br>
                         <label for="prenom" >Prénom :</label><br>
-                        <input type="text" placeholder="prenom" id="prenom" name="prenom" class="tailleBoite" required autocomplete="off">
+                        <input type="text" placeholder="Prénom" id="prenom" name="prenom" class="tailleBoite" required autocomplete="off">
                         <br>
                         <label for="email">Email:</label><br>
                         <input type="email" placeholder="Email" id="email" name="email" required autocomplete="off">
