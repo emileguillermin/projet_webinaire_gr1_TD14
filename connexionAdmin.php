@@ -4,7 +4,7 @@ include 'configCoach.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nom = $_POST['nom'];
-    $prenom = $_POST['prenom']
+    $prenom = $_POST['prenom'];
     $email = $_POST['email'];
 
     // Créer une connexion à la base de données
