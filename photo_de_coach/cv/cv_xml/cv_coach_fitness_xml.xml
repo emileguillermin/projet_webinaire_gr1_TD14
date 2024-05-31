@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="cv_coach_fitness_xsl.xsl"?>
+<cv>
+    <personalInfo>
+        <name>Sacha Dubois</name>
+        <email>Sacha.dubois@gmail.com</email>
+        <phone>+33 6 55 47 12 35</phone>
+        <photo>coach_fitness.jpg</photo>
+    </personalInfo>
+    <summary>
+        Coach de fitness passionnée avec plus de 7 ans
+        d'expérience dans la conception et la mise en œuvre de
+        programmes de fitness personnalisés. Compétences
+        avérées en coaching individuel et collectif, en nutrition
+        sportive et en motivation, visant à aider les clients à
+        atteindre leurs objectifs de santé et de bien-être de
+        manière sécuritaire et efficace
+    </summary>
+    <experience>
+        <job>
+            <title>Coach de Fitness</title>
+            <company>ActiveLife Studio</company>
+            <date>fevrier 2019 - Présent</date>
+            <object> 
+                Création et mise en œuvre de
+                programmes de fitness adaptés aux
+                besoins individuels des clients.
+                Animation de cours collectifs de fitness,
+                incluant le cardio, le renforcement
+                musculaire et le stretching.
+                Évaluation régulière des progrès des
+                clients et ajustement des programmes
+                en conséquence.
+            </object>
+        </job>
+        <job>
+            <title>Coach de Fitness</title>
+            <company>Vitality Gym</company>
+            <date>Mars 2015 - Janvier 2019</date>
+            <object>
+                Encadrement des séances de fitness
+                individuelles et en groupe pour une
+                clientèle diversifiée.
+                Conception de plans d'entraînement
+                personnalisés pour aider les clients à
+                atteindre leurs objectifs de remise en
+                forme.
+                Suivi des progrès des clients et
+                fourniture de feedbacks constructifs
+                pour améliorer les performances.
+            </object>
+        </job>
+        
+    </experience>
+    <education>
+        <degree>Formation en Nutrition Sportive - École de Nutrition du Sport</degree>
+        <institution></institution>
+        <year>2018</year>
+    </education>
+    <education>
+        <degree>Ecole Borcelle / any city</degree>
+        <institution></institution>
+        <year>2015-2016</year>
+    </education>
+    <education>
+        <degree>Certification de Coach Sportif - Fédération Française de Fitness (FFF)</degree>
+        <institution>Etat Français</institution>
+        <year>2014</year>
+    </education>
+    <skills>
+        <skill>Conception de programmes de
+fitness personnalisés</skill>
+        <skill>Coaching individuel et en groupe</skill>
+        <skill>Techniques de motivation et de
+coaching.</skill>
+    </skills>
+    <hobbies>
+        <hobby>Participation à des marathons et
+triathlons</hobby>
+        <hobby>Lecture de livres sur la santé et le
+bien-être</hobby>
+    </hobbies>
+    <languages>
+        <language>Français (langue maternelle)</language>
+        <language>Anglais (courant)</language>
+        <language>Espagnol (intermédiaire)</language>
+    </languages>
+</cv>

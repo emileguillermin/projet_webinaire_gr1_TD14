@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="cv_coach_biking_xsl.xsl"?>
+<cv>
+    <personalInfo>
+        <name>Thomas Garcia</name>
+        <email>Thomas.garcia@gmail.com</email>
+        <phone>+33 7 42 36 98 57</phone>
+        <photo>coach_biking.jpg</photo>
+    </personalInfo>
+    <summary>
+        Coach de biking passionné avec
+        plus de 8 ans d'expérience,
+        spécialisé dans l'entraînement en
+        cyclisme sur route et en salle.
+        Compétences avérées en coaching
+        individuel et collectif, en nutrition
+        sportive et en optimisation de la
+        performance. Dédié à aider les
+        cyclistes de tous niveaux à
+        atteindre leurs objectifs de santé et
+        de performance
+    </summary>
+    <experience>
+        <job>
+            <title>COACH DE BIKING</title>
+            <company>Velocité Studio</company>
+            <date>05/01/2017 - PRESENT</date>
+            <object>
+                Conception et mise en œuvre de programmes de biking personnalisés
+                pour des clients de tous niveaux.
+                Animation de cours de biking en salle, incluant des séances de spinning
+                et d'entraînement par intervalles.
+                Coaching individuel pour améliorer la technique, l'endurance et la
+                puissance des cyclistes.
+                Organisation de sorties de groupe en plein air pour les amateurs de
+                cyclisme sur route.
+                Conseils en nutrition sportive pour optimiser la performance et la
+                récupération. 
+            </object>
+        </job>
+        <job>
+            <title>COACH DE CYCLISME</title>
+            <company>CyclePro club</company>
+            <date>12/03/2013 - 24/12/2016</date>
+            <object>
+                Encadrement des séances de biking pour une clientèle diversifiée,
+                allant des débutants aux cyclistes avancés.
+                Création de plans d'entraînement adaptés aux objectifs individuels des
+                clients, incluant la préparation aux compétitions.
+                Suivi des progrès des clients et ajustement des programmes en
+                conséquence.
+                Animation de stages intensifs de biking et de bootcamps cyclistes.
+            </object>
+        </job>
+    </experience>
+    <education>
+        <degree>Certification de Coach Sportif</degree>
+        <institution>Fédération Française de Cyclisme</institution>
+        <year>2015 - Présent</year>
+    </education>
+    <education>
+        <degree> Formation en Nutrition Sportive</degree>
+        <institution>Institut National du Spor</institution>
+        <year>2014</year>
+    </education>
+    <education>
+        <degree>Diplôme d'État de la Jeunesse</degree>
+        <institution>Institut National du Spor</institution>
+        <year>2012 - 2013</year>
+    </education>
+    <skills>
+        <skill>Programme personnalisés</skill>
+        <skill>Coach individuel et en groupe.</skill>
+        <skill>Conseil en nutrition</skill>
+        <skill>Premier secours</skill>
+        <skill>Expertise en technique de cyclisme et optimisation des performance</skill>
+    </skills>
+    <hobbies>
+        <hobby>Compétition de cyclismee</hobby>
+        <hobby>Randonnées cyclistes</hobby>
+        <hobby>Literrature</hobby>
+    </hobbies>
+    <languages>
+        <language>Français (langue maternelle)</language>
+        <language>Anglais (courant)</language>
+        <language>Espagnol (intermédiaire)</language>
+    </languages>
+</cv>

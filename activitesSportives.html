@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html> 
+<html lang="fr"> 
 <head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -63,7 +63,7 @@
                 <div class="btn-container">
                     <button class="bouton" id="rdv">Prendre un RDV</button>
                     <button class="bouton" id="communiquer" onclick="showCommunicationOptions(this)">Communiquer avec le coach</button>
-                    <button class="bouton" id="cv">Voir son CV</button>
+                    <button class="bouton" id="cvMusculation">Voir son CV</button>
                     <div class="communication-options" >
                         <button class="bouton" onclick="envoyerEmail('guy.dumais.musculation@omnessports.fr')">Email</button>
                         <button class="bouton" onclick="envoyerSMS('+33695104073')">Texto</button>
@@ -84,9 +84,9 @@
                 <div class="btn-container"> 
                     <button class="bouton" id="rdv">Prendre un RDV</button>
                     <button class="bouton" id="communiquer" onclick="showCommunicationOptions(this)">Communiquer avec le coach</button>
-                    <button class="bouton" id="cv">Voir son CV</button>
+                    <button class="bouton" id="cvFitness">Voir son CV</button>
                     <div class="communication-options">
-                        <button class="bouton" onclick="envoyerEmail('guy.dumais.fitness@omnessports.fr')">Email</button>
+                        <button class="bouton" onclick="envoyerEmail('sacha.dubois.fitness@omnessports.fr')">Email</button>
                         <button class="bouton" onclick="envoyerSMS('+33695104073')">Texto</button>
                         <button class="bouton">Audio</button>
                         <button class="bouton" onclick="visioconf('https://teams.microsoft.com/l/meetup-join/19%3ameeting_NzYxZjBlMzQtZjkzMS00MzM1LTgwOGEtYzZlOTBhZmYwZjUy%40thread.v2/0?context=%7b%22Tid%22%3a%22TID%22%2c%22Oid%22%3a%22OID%22%7d')">Visio</button>
@@ -105,9 +105,9 @@
                 <div class="btn-container">
                     <button class="bouton" id="rdv">Prendre un RDV</button>
                     <button class="bouton" id="communiquer" onclick="showCommunicationOptions(this)">Communiquer avec le coach</button>
-                    <button class="bouton" id="cv">Voir son CV</button>
+                    <button class="bouton" id="cvBiking">Voir son CV</button>
                     <div class="communication-options" >
-                        <button class="bouton" onclick="envoyerEmail('guy.dumais.biking@omnessports.fr')">Email</button>
+                        <button class="bouton" onclick="envoyerEmail('Thomas.Garcia.biking@omnessports.fr')">Email</button>
                         <button class="bouton" onclick="ouvrirchat()">Chat</button>
                         <button class="bouton">Audio</button>
                         <button class="bouton" onclick="visioconf('https://teams.microsoft.com/l/meetup-join/19%3ameeting_NzYxZjBlMzQtZjkzMS00MzM1LTgwOGEtYzZlOTBhZmYwZjUy%40thread.v2/0?context=%7b%22Tid%22%3a%22TID%22%2c%22Oid%22%3a%22OID%22%7d')">Visio</button>
@@ -126,9 +126,30 @@
                 <div class="btn-container">
                     <button class="bouton" id="rdv">Prendre un RDV</button>
                     <button class="bouton" id="communiquer" onclick="showCommunicationOptions(this)">Communiquer avec le coach</button>
-                    <button class="bouton" id="cv">Voir son CV</button>
+                    <button class="bouton" id="cvCardioTraining">Voir son CV</button>
                     <div class="communication-options" >
-                        <button class="bouton" onclick="envoyerEmail('guy.dumais.cardioTraining@omnessports.fr')">Email</button>
+                        <button class="bouton" onclick="envoyerEmail('Nicolas.Corsi.cardioTraining@omnessports.fr')">Email</button>
+                        <button class="bouton" onclick="envoyerSMS('+33695104073')">Texto</button>
+                        <button class="bouton">Audio</button>
+                        <button class="bouton" onclick="visioconf('https://teams.microsoft.com/l/meetup-join/19%3ameeting_NzYxZjBlMzQtZjkzMS00MzM1LTgwOGEtYzZlOTBhZmYwZjUy%40thread.v2/0?context=%7b%22Tid%22%3a%22TID%22%2c%22Oid%22%3a%22OID%22%7d')">Visio</button>
+                    </div>
+                </div>
+            </div>
+            <div id="cour_collectif" class="carteCoach">
+                <img src="photo_de_coach/coach_cour_collectif.jpg" alt="Coach Image">
+                <div class="coach-info">
+                    <h2 id="coach-name">Jane Doe</h2>
+                    <p id="coach-speciality">Coach, Cour Collectifs</p>
+                    <p id="coach-room">Salle: G-014</p>
+                    <p id="coach-phone">Téléphone: +33 06 55 47 12 35</p>
+                    <p id="coach-email">Email: jane.doe.courcollectif@omnessports.fr</p>
+                </div>
+                <div class="btn-container">
+                    <button class="bouton" id="rdv">Prendre un RDV</button>
+                    <button class="bouton" id="communiquer" onclick="showCommunicationOptions(this)">Communiquer avec le coach</button>
+                    <button class="bouton" id="cvCourCollectif">Voir son CV</button>
+                    <div class="communication-options" >
+                        <button class="bouton" onclick="envoyerEmail('Jane.doe.courcollectif@omnessports.fr')">Email</button>
                         <button class="bouton" onclick="envoyerSMS('+33695104073')">Texto</button>
                         <button class="bouton">Audio</button>
                         <button class="bouton" onclick="visioconf('https://teams.microsoft.com/l/meetup-join/19%3ameeting_NzYxZjBlMzQtZjkzMS00MzM1LTgwOGEtYzZlOTBhZmYwZjUy%40thread.v2/0?context=%7b%22Tid%22%3a%22TID%22%2c%22Oid%22%3a%22OID%22%7d')">Visio</button>

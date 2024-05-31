@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="cv_coach_cardio_trainning_xsl.xsl"?>
+<cv>
+    <personalInfo>
+        <name>NICOLAS CORSI</name>
+        <email>nicolas.corsi@gmail.com</email>
+        <phone>+33 6 55 47 89 32</phone>
+        <photo>coach_cardio_training.jpg</photo>
+    </personalInfo>
+    <summary>
+        Coach de cardio training passionné avec plus de 6 ans d'expérience, ayant surmonté des défis personnels majeurs. Après avoir perdu ses jambes dans un accident, a repris la course avec des prothèses de haute technologie. Spécialiste en motivation, endurance et résilience, déterminé à aider les autres à atteindre leurs objectifs de fitness et de santé.
+    </summary>
+    <experience>
+        <job>
+            <title>Coach de Cardio Training</title>
+            <company>Endurance Plus</company>
+            <date>Avril 2018 – Présentt</date>
+            <object>
+                Conception et mise en œuvre de programmes de cardio training personnalisés pour des clients de tous niveaux.
+                Animation de séances de coaching individuel et de groupe, incluant des cours de HIIT, de course et de vélo d'intérieur.
+                Motivation des clients en partageant des techniques et des stratégies de résilience personnelle.
+                Évaluation régulière des progrès des clients et ajustement des programmes pour maximiser les résultats.
+                Organisation d'événements et de défis sportifs pour encourager une participation active et régulière.
+            </object>
+        </job>
+        <job>
+            <title>Coach de Fitness Adapté</title>
+            <company>Dynamik Sport</company>
+            <date>Janvier 2016 – Mars 2018</date>
+            <object>
+                Encadrement de séances de fitness adaptées pour des personnes en situation de handicap.
+                Développement de programmes d'entraînement sur mesure en fonction des capacités individuelles.
+                Promotion de l'inclusion et de la diversité dans le sport et le fitness.
+                Participation à des campagnes de sensibilisation sur les bénéfices de l'activité physique pour tous.
+            </object>
+        </job>  
+    </experience>
+    <education>
+        <degree>Certification de Coach Sportif</degree>
+        <institution>Fédération Française de Fitness (FFF)</institution>
+        <year>2018</year>
+    </education>
+    <education>
+        <degree>Diplôme d'État de la Jeunesse</degree>
+        <institution>Éducation Populaire et du Sport (DEJEPS) Mention Activités de la Forme</institution>
+        <year>2016 – 2017</year>
+    </education>
+    <education>
+        <degree>Formation en Cardio Training et Réhabilitation</degree>
+        <institution>Institut National du Sport</institution>
+        <year>2015</year>
+    </education>
+    <skills>
+        <skill>Conception de programmes de cardio training personnalisés</skill>
+        <skill>Coaching individuel et en groupe</skill>
+        <skill>Expertise en réhabilitation sportive et fitness adapté</skill>
+        <skill>Techniques de motivation et de résilience</skill>
+        <skill>Gestion et maintenance des équipements sportifs</skill>
+        <skill>Premiers secours (Certificat de compétences en matière de premiers secours)</skill>
+    </skills>
+    <hobbies>
+        <hobby>Participation à des marathons et courses avec prothèses</hobby>
+        <hobby>Conférences et témoignages sur la résilience et le dépassement de soi</hobby>
+        <hobby>Animation de blogs et réseaux sociaux sur le fitness et la motivation</hobby>
+        <hobby>Lecture de littérature sur la psychologie du sport et la performance humaine</hobby>
+    </hobbies>
+    <languages>
+        <language>Français (langue maternelle)</language>
+        <language>Anglais (courant)</language>
+        <language>Espagnol (intermédiaire)</language>
+    </languages>
+</cv>

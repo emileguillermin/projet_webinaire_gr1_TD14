@@ -15,11 +15,13 @@
             <title>Senior Yoga Instructor</title>
             <company>Yoga Bliss Studio</company>
             <date>2015 - Présent</date>
+            <object></object>
         </job>
         <job>
             <title>Yoga Instructor</title>
             <company>Wellness Center</company>
             <date>2010 - 2015</date>
+            <object></object>
         </job>
         
     </experience>
