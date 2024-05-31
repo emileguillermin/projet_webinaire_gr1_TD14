@@ -54,15 +54,15 @@ $result = $conn->query($sql);
                 <li class="has-sous-nav">
                     <a href="index.html">Votre Compte</a>
                     <ul class="sous-nav">
-                        <li><a href="client.html">Client</a></li>
-                        <li><a href="accesCoach.html">Coach ou personnel de sport</a></li>
+                        <li><a href="connexionClient.php">Client</a></li>
+                        <li><a href="connexionCoach.php">Coach ou personnel de sport</a></li>
                         <li><a href="accesAdmin.html">Administrateur</a></li>
                     </ul>
                 </li>
             </ul>
         </div>
         <section>
-        <h1>Rendez-Vous</h1>
+        <h1>Mes Rendez-Vous prévus</h1>
         <table>
             <tr>
                 <th>ID_reservation</th>
@@ -74,11 +74,11 @@ $result = $conn->query($sql);
                 <th>TIME</th>
             </tr>
             <?php
-            if ($result->num_rows>0)
+            if($result->num_rows>0)
             {
                 while($row = $result->fetch_assoc())
                 {
-                    echo "<tr>
+                    echo"<tr>
                             <td>" . htmlspecialchars($row["ID_reservation"]). "</td>
                             <td>" . htmlspecialchars($row["ID_client"]). "</td>
                             <td>" . htmlspecialchars($row["ID_coach"]). "</td>
@@ -86,6 +86,11 @@ $result = $conn->query($sql);
                             <td>" . htmlspecialchars($row["nomCoach"]). "</td>
                             <td>" . htmlspecialchars($row["date"]). "</td>
                             <td>" . htmlspecialchars($row["heure"]). "</td>
+                            <td><form method='post' action='annulerRDV.php' onsubmit=\"return confirm('Êtes-vous sûr de vouloir annuler cette réservation ?');\">
+                                <input type='hidden' name='ID_reservation' value='" . htmlspecialchars($row["ID_reservation"]) . "'>
+                                <button type="submit" class="bouton">Annuler</button>
+                                <input type='submit' name='soumettre' value='Annuler' class='btn btn-danger'>
+                            </form></td>
                         </tr>";
                 }
             }
@@ -96,7 +101,7 @@ $result = $conn->query($sql);
             $conn->close();
             ?>
         </table>
-        <!--</section>
+        </section>
         <footer>
             <iframe width="100%" height="300%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.317662740615!2d2.328770915673154!3d48.87925167928907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66f273f4f31ad%3A0x78e9c368389ea84a!2sBlanche%2C%2075009%20Paris%2C%20France!5e0!3m2!1sen!2sfr!4v1624543145632!5m2!1sen!2sfr"></iframe>
             <h3>Contact</h3>
@@ -106,7 +111,7 @@ $result = $conn->query($sql);
             <p><strong>Horaires :</strong></p>
             <p><strong>Du lundi au vendredi :</strong> 7h - 23h</p>
             <p><strong>Samedi, dimanche et jours fériés :</strong> 8h - 20h</p>
-        </footer>-->
-    <!--</div>-->
+        </footer>
+      </div>
  </body>
 </html>

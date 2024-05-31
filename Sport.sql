@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS PersonnelSport(
     disponibilite TEXT,
     email VARCHAR(100),
     mot_de_passe TEXT,
-    ID_Sport INT,
+    telephone VARCHAR(20),
     PRIMARY KEY (ID_personnel)
 );
 
