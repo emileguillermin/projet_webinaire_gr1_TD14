@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS PersonnelSport(
     ID_personnel INT AUTO_INCREMENT,
     nom VARCHAR(50),
     prenom VARCHAR(50),
-    photo VARCHAR(255),
+    photo TEXT,
     specialite VARCHAR(100),
     CV TEXT,
     disponibilite TEXT,
