@@ -297,8 +297,8 @@ th, td {
     text-align: left;
     border: 1px solid black;
 }
-.indsponible{
-    background-color: blue;
+.indisponible{
+    background-color: #4C4CFF;
 }
 .disponible{
     background-color: white;
