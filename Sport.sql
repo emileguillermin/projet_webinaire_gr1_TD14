@@ -73,7 +73,6 @@ CREATE TABLE IF NOT EXISTS PersonnelSport(
     prenom VARCHAR(50),
     photo VARCHAR(255),
     specialite VARCHAR(100),
-    video VARCHAR(255),
     CV TEXT,
     disponibilite TEXT,
     email VARCHAR(100),
@@ -124,18 +123,22 @@ CREATE TABLE IF NOT EXISTS SalleSport(
 CREATE TABLE IF NOT EXISTS Reservation(
     ID_reservation INT AUTO_INCREMENT,
     ID_client INT,
-    ID_coach INT,
-    Specialité VARCHAR(50),
-    nomCoach INT,
+    ID_personnel INT,
     date DATE,
     heure TIME,
     PRIMARY KEY (ID_reservation),
     FOREIGN KEY (ID_client) REFERENCES client(ID_client),
-    FOREIGN KEY (ID_coach) REFERENCES PersonnelSport(ID_personnel)
+    FOREIGN KEY (ID_personnel) REFERENCES PersonnelSport(ID_personnel)
 );
 
 CREATE TABLE IF NOT EXISTS Disponibilite(
+    ID_disponibilite INT AUTO_INCREMENT,
+    ID_personnel INT,
     jour VARCHAR(20),
-    Heure TIME
+    Heure_debut TIME,
+    Heure_fin TIME,
+    Statue VARCHAR(20),
+    PRIMARY KEY(ID_disponibilite),
+    FOREIGN KEY (ID_personnel) REFERENCES PersonnelSport(ID_personnel)
 );
 
