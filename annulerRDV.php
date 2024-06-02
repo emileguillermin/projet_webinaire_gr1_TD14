@@ -5,29 +5,20 @@ $username = "root";
 $password = "";
 $conn = new mysqli($servername, $username, $password, $database);
 
-if ($conn->connect_error) {
+$ID_client=isset($_POST["ID_client"]) ? $_POST["ID_client"] : "";
+$ID_personnel=isset($_POST["ID_personnel"]) ? $_POST["ID_personnel"] : "";
+
+if ($conn->connect_error)
+{
     die("Connection failed: " . $conn->connect_error);
 }
 
 $db_found = $conn->select_db($database);
 
-if($db_found && isset($_POST["soumettre"]))
+if(isset($_POST["Annuler"]))
 {
-    $ID_reservation = $_POST['ID_reservation'];
-    $sql = "DELETE FROM Reservation WHERE ID_reservation = $ID_reservation'";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $ID_reservation);
-
-    if ($stmt->execute())
-    {
-        header("Location: rendezvous.php"); 
-    }
-    else
-    {
-        echo "Erreur annulation: " . $conn->error;
-    }
-
-    $stmt->close();
+    $sql="DELETE FROM reservation WHERE ID_personnel='$ID_personnel';
+    $resultat = mysqli_query($db_handle, $sql1);
 }
 
 $conn->close();

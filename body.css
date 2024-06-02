@@ -178,7 +178,7 @@ footer {
 
 .bouton{
     background-color: #373737; 
-    color: #fff;
+    color: #fff ;
     border: none;
     border-radius: 20px; 
     padding: 10px 20px;
@@ -208,36 +208,22 @@ footer {
 .carteCoach{
     display: none;
     padding: 20px;
-    width: 450px;
+    width: 900px;
     align-items: center; 
     justify-content: center;
     background-color: #dedede;
     border-radius: 20px;
-    margin: 10px 45px;
-}
-
-.carteCoach h3{
-    color: #313131;
-    text-align: center;
-    font-weight: bold;
-    font-size: 25px;
-}
-
-.carteCoach ul,li{
-    font-size: 15px;
-}
-
-.carteCoach p{
-    font-size: 15px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .carteCoach img{
     width: 200px;
     height: auto;
 }
+
 .communication-options {
     display: none; 
 }
-
 .communication-options button {
     display: block;
     background-color: #a7b9c0; 
@@ -261,7 +247,7 @@ footer {
     padding: 10px;
     border-radius: 30px; 
     width: 400px;
-    margin: 0 auto; 
+    margin: 10px; 
 }
 
 .identifiant-box{
@@ -298,6 +284,10 @@ footer {
 .boutonAcces:hover{
     background-color: #242424; 
 }
+.masquer{
+    -webkit-text-security: disc;
+}
+
 
 table {
     width: 100%;
@@ -311,8 +301,8 @@ th, td {
     text-align: left;
     border: 1px solid black;
 }
-.indsponible{
-    background-color: blue;
+.indisponible{
+    background-color: #4C4CFF;
 }
 .disponible{
     background-color: white;

@@ -1,10 +1,27 @@
+<?php
+session_start();
+include "db.php";
+
+if (isset($_SESSION['coach_loggedin']) && $_SESSION['coach_loggedin'] === true) {
+    $coach_id = $_SESSION['coach_id'];
+
+    $q = "SELECT c.conversation_id, cl.nom, cl.prenom FROM Conversations c
+          JOIN client cl ON c.ID_client = cl.ID_client
+          WHERE c.ID_coach = ?";
+    $stmt = $db->prepare($q);
+    $stmt->bind_param("i", $coach_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+}
+?>
 <!DOCTYPE html>
-<html lang="fr"> 
-<head> 
+<html lang="fr">
+<head>
     <meta charset="UTF-8">
-    <title>Sportify - Recherche</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sportify - Mes Conversations</title>
     <link rel="stylesheet" href="body.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 </head>
 <body>
     <div class="wrapper">
@@ -29,7 +46,7 @@
                     <a href="recherche.html">Recherche</a>
                 </li>
                 <li class="has-sous-nav">
-                    <a href="rendezVous.html">Rendez-vous</a>
+                    <a href="rendezvousCoach.php">Rendez-vous</a>
                 </li>
                 <li class="has-sous-nav">
                     <a href="index.html">Votre Compte</a>
@@ -42,14 +59,17 @@
             </ul>
         </div>
         <section>
-            <form action="recherche.php" method="GET">
-                <div class="recherche-container">
-                    <div class="recherche-box">
-                        <span class="formeRecherche">&#128269;</span> 
-                        <input type="text" id="rechercheBox" name="rechercheBox" placeholder="Nom ou Spécialité ou Etablissement" />
-                    </div>
-                    <button type="submit" id="rechercher" name="rechercher" class="btn btn-primary boutonRecherche">Rechercher</button>
-                </div>
+            
+            <?php
+            echo "<h3>Mes Conversations:</h3>";
+            while ($row = $result->fetch_assoc()) {
+                echo '<p><a href="chat_coach.php?conversation_id=' . $row['conversation_id'] . '">Conversation avec ' . htmlspecialchars($row['nom'] . ' ' . $row['prenom']) . '</a></p>';
+            }
+
+            $stmt->close();
+            ?>
+            <form action="deconnexionCoach.php" method="post">
+                <button type="submit" class="bouton">Déconnexion</button>
             </form>
         </section>
         <footer>
@@ -65,3 +85,7 @@
     </div>
 </body>
 </html>
+<?php
+$stmt->close();
+$db->close();
+?>

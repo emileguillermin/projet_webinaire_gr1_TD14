@@ -1,46 +1,41 @@
 <?php
 session_start();
-include 'configCoach.php';
+include 'configConnexion.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nom = $_POST['nom'];
-    $prenom = $_POST['prenom'];
+
     $email = $_POST['email'];
+    $mot_de_passe = $_POST['mot_de_passe'];
 
     // Créer une connexion à la base de données
     $conn = get_db_connection();
 
     // Préparer et exécuter la requête SQL
-    $sql = "SELECT nom, prenom, email FROM Administrateur WHERE email = ? AND nom = ? AND prenom = ?";
+    $sql = "SELECT ID_admin, nom, prenom, mot_de_passe FROM administrateur WHERE email = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sss", $email, $nom, $prenom);
+    $stmt->bind_param("s", $email);
     $stmt->execute();
     $stmt->store_result();
 
     if($stmt->num_rows > 0)
     {
-        $stmt->bind_result($nom, $prenom, $email);
+        $stmt->bind_result($id, $nom, $prenom, $password);
         $stmt->fetch();
         // Vérifier le mot de passe en clair
-        if ($nom === $nom)
+        if ($mot_de_passe === $password)
         {
-            if ($prenom === $prenom)
-            {
-                // Démarrer la session et enregistrer les variables de session
-                $_SESSION['admin_loggedin'] = true;
-                $_SESSION['email'] = $email;
-                $_SESSION['nom'] = $nom;
-                $_SESSION['prenom'] = $prenom;
+            // Démarrer la session et enregistrer les variables de session
+            $_SESSION['admin_loggedin'] = true;
+            $_SESSION['email'] = $email;
+            $_SESSION['user_type'] = 'admin';
+            $_SESSION['nom'] = $nom;
+            $_SESSION['prenom'] = $prenom;
 
-                // Rediriger vers la page client
-                header("Location: connexionAdmin.php");
-                exit();
-            }
-            else {
-                $error = "Prenom incorrect.";
-            }
+            // Rediriger vers la page client
+            header("Location: connexionAdmin.php");
+            exit();
         } else {
-            $error = "Nom incorrect.";
+            $error = "Mot de passe incorrect.";
         }
     } else {
         $error = "Aucun compte trouvé avec cet email.";
@@ -74,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <li class="has-sous-nav">
                     <a href="index.html">Tout Parcourir</a>
                     <ul class="sous-nav">
-                        <li><a href="activitesSportives.html">Activités sportives</a></li>
+                        <li><a href="activitesSportives.php">Activités sportives</a></li>
                         <li><a href="sportsDeCompetition.html">Les Sports de compétition</a></li>
                         <li><a href="salleDeSportOmnes.html">Salle de sport Omnes</a></li>
                     </ul>
@@ -157,22 +152,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo '<form action="deconnexionAdmin.php" method="post">
                         <button type="submit" class="bouton">Déconnexion</button>
                       </form>';
+                echo '<form action="listeCoachs.php" method="get">
+                        <button type="submit" class="bouton">Voir les coachs</button>
+                      </form>';
             }
             else
             {
                 echo '<form action="" method="POST">
                     <div class="event">
-                        <h3>Connexion admin:</h3>
-                        <label for="nom" >Nom :</label><br>
-                        <input type="text" placeholder="Nom" id="nom" name="nom" class="tailleBoite" required autocomplete="off">
-                        <br>
-                        <label for="prenom" >Prénom :</label><br>
-                        <input type="text" placeholder="Prénom" id="prenom" name="prenom" class="tailleBoite" required autocomplete="off">
-                        <br>
+                        <h3>Connexion admin :</h3>
                         <label for="email">Email:</label><br>
                         <input type="email" placeholder="Email" id="email" name="email" required autocomplete="off">
 
+                        <label for="mot_de_passe" >Mot de passe :</label>
+                        <input type="password" placeholder="Mot de passe" id="mot_de_passe" name="mot_de_passe" class="tailleBoite" required autocomplete="new-password">
+
                         <button type="submit" class="bouton">Se connecter</button>
+                        <p><a href="inscriptionAdmin.html" style="font-size: 12px; color: black;"><u>Créer un compte</u></a></p>
                     </div>';
                 if (isset($error)) {
                     echo "<p class='error'>$error</p>";
