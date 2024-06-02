@@ -5,7 +5,7 @@ session_start();
 
 <?php
 $database = "sport";
-$db_handle = mysqli_connect('localhost', 'root', '140703mB!' );
+$db_handle = mysqli_connect('localhost', 'root', '' );
 $db_found = mysqli_select_db($db_handle, $database);
 
 $toutesRecherchesCoach = null;
@@ -64,7 +64,7 @@ mysqli_close($db_handle);
                 <li class="has-sous-nav">
                     <a href="index.html">Tout Parcourir</a>
                     <ul class="sous-nav">
-                        <li><a href="activitesSportives.html">Activités sportives</a></li>
+                        <li><a href="activitesSportives.php">Activités sportives</a></li>
                         <li><a href="sportsDeCompetition.html">Les Sports de compétition</a></li>
                         <li><a href="salleDeSportOmnes.html">Salle de sport Omnes</a></li>
                     </ul>
@@ -78,9 +78,9 @@ mysqli_close($db_handle);
                 <li class="has-sous-nav">
                     <a href="index.html">Votre Compte</a>
                     <ul class="sous-nav">
-                        <li><a href="connexion.php">Client</a></li>
+                        <li><a href="connexionClient.php">Client</a></li>
                         <li><a href="connexionCoach.php">Coach ou personnel de sport</a></li>
-                        <li><a href="accesAdmin.html">Administrateur</a></li>
+                        <li><a href="connexionAdmin.php">Administrateur</a></li>
                     </ul>
                 </li>
             </ul>

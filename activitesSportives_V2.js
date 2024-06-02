@@ -15,6 +15,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
             });
         });
     });
+
+    document.querySelectorAll('.bouton_2').forEach(button => {
+        button.addEventListener('click', () => {
+            const productUrl = button.getAttribute('data-cvurl');
+            window.location.href = productUrl;
+        });
+    });
 });
 
 
@@ -27,8 +34,8 @@ function envoyerEmail(email) {
     window.location.href = `mailto:${email}`;
 }
 
-function ouvrirchat() {
-    // Logique pour ouvrir le chat
+function ouvrirchat(ID_personnel) {
+    window.location.href = "chat.php?coach_id=" + ID_personnel;
 }
 
 function visioconf(videoLink) {

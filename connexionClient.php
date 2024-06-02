@@ -7,11 +7,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mot_de_passe = $_POST['mot_de_passe'];
 
     // Créer une connexion à la base de données
-    $conn = get_db_connection();
+    include 'db.php';
 
     // Préparer et exécuter la requête SQL
     $sql = "SELECT ID_client, nom, prenom, mot_de_passe FROM client WHERE email = ?";
-    $stmt = $conn->prepare($sql);
+    $stmt = $db->prepare($sql);
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $stmt->store_result();
@@ -24,7 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($mot_de_passe === $password) {
             // Démarrer la session et enregistrer les variables de session
             $_SESSION['loggedin'] = true;
-            $_SESSION['id'] = $id;
+            $_SESSION['client_id'] = $id;
+            $_SESSION['user_type'] = 'client';
             $_SESSION['nom'] = $nom;
             $_SESSION['prenom'] = $prenom;
 
@@ -39,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $stmt->close();
-    $conn->close();
+    $db->close();
 }
 ?>
 
@@ -66,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <li class="has-sous-nav">
                     <a href="index.html">Tout Parcourir</a>
                     <ul class="sous-nav">
-                        <li><a href="activitesSportives.html">Activités sportives</a></li>
+                        <li><a href="activitesSportives.php">Activités sportives</a></li>
                         <li><a href="sportsDeCompetition.html">Les Sports de compétition</a></li>
                         <li><a href="salleDeSportOmnes.html">Salle de sport Omnes</a></li>
                     </ul>
@@ -94,6 +95,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "<p>Vos informations de compte sont les suivantes :</p>";
                 echo "<p><strong>Nom :</strong> " . htmlspecialchars($_SESSION['nom']) . "</p>";
                 echo "<p><strong>Prénom :</strong> " . htmlspecialchars($_SESSION['prenom']) . "</p>";
+
+                echo '<form action="voir_messages.php" method="get">
+                        <button type="submit" class="bouton">Voir les messages</button>
+                      </form>';
                 echo '<form action="deconnexionClient.php" method="post">
                         <button type="submit" class="bouton">Déconnexion</button>
                       </form>';

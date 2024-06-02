@@ -82,6 +82,8 @@ CREATE TABLE IF NOT EXISTS PersonnelSport(
 );
 
 CREATE TABLE IF NOT EXISTS Administrateur(
+    ID_admin INT AUTO_INCREMENT,
+    mot_de_passe VARCHAR(20),
     nom VARCHAR(20),
     prenom VARCHAR(20),
     email VARCHAR(100),
@@ -141,4 +143,30 @@ CREATE TABLE IF NOT EXISTS Disponibilite(
     PRIMARY KEY(ID_disponibilite),
     FOREIGN KEY (ID_personnel) REFERENCES PersonnelSport(ID_personnel)
 );
+
+CREATE TABLE IF NOT EXISTS `chatroom` (
+  `ID_message` INT NOT NULL AUTO_INCREMENT,
+  `ID_client` INT DEFAULT NULL,
+  `ID_coach` INT DEFAULT NULL,
+  `sender_type` ENUM('client', 'coach') DEFAULT NULL,
+  `message` TEXT,
+  `timestamp` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `conversation_id` INT DEFAULT NULL,
+  PRIMARY KEY (`ID_message`),
+  KEY `ID_client` (`ID_client`),
+  KEY `ID_coach` (`ID_coach`),
+  KEY `fk_conversation_id` (`conversation_id`),
+  CONSTRAINT `fk_client_id` FOREIGN KEY (`ID_client`) REFERENCES `clients` (`ID_client`) ON DELETE CASCADE,
+  CONSTRAINT `fk_coach_id` FOREIGN KEY (`ID_coach`) REFERENCES `coach` (`ID_coach`) ON DELETE CASCADE,
+  CONSTRAINT `fk_conversation_id` FOREIGN KEY (`conversation_id`) REFERENCES `conversations` (`conversation_id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS `conversations` (
+  `conversation_id` int NOT NULL AUTO_INCREMENT,
+  `ID_client` int DEFAULT NULL,
+  `ID_coach` int DEFAULT NULL,
+  PRIMARY KEY (`conversation_id`),
+  KEY `ID_client` (`ID_client`),
+  KEY `ID_coach` (`ID_coach`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
