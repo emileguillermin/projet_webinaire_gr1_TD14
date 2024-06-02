@@ -12,6 +12,7 @@
         const carteCoach5 = document.querySelector('#Natation');
         const carteCoach6 = document.querySelector('#Plongeon');
 
+        
         bouton.addEventListener('click', ()=>{
             if(carteCoach.style.display=='block'){
                 carteCoach.style.display='none';
