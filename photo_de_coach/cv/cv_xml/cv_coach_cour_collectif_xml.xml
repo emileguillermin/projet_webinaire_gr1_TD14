@@ -5,6 +5,7 @@
         <name>Jane Doe</name>
         <email>jane.doe@gmail.com</email>
         <phone>+33 6 55 47 12 35</phone>
+        <age>45 ans</age>
         <photo>coach_cour_collectif.jpg</photo>
     </personalInfo>
     <summary>

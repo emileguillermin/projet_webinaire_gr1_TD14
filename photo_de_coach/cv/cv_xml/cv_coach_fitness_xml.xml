@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="cv_coach_fitness_xsl.xsl"?>
+<?xml-stylesheet type="text/xsl" href="cv_coach_basket_xsl.xsl"?>
 <cv>
     <personalInfo>
         <name>Sacha Dubois</name>
         <email>Sacha.dubois@gmail.com</email>
         <phone>+33 6 55 47 12 35</phone>
+        <age>35 ans</age>
         <photo>coach_fitness.jpg</photo>
     </personalInfo>
     <summary>

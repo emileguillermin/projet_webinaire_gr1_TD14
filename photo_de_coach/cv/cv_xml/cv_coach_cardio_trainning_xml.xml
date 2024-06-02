@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="cv_coach_cardio_training_xsl.xsl"?>
+<?xml-stylesheet type="text/xsl" href="cv_coach_cardio_trainning_xsl.xsl"?>
 <cv>
     <personalInfo>
         <name>NICOLAS CORSI</name>
         <email>nicolas.corsi@gmail.com</email>
         <phone>+33 6 55 47 89 32</phone>
-        <age>50 ans</age>
         <photo>coach_cardio_training.jpg</photo>
     </personalInfo>
     <summary>
