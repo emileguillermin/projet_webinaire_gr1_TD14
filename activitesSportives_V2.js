@@ -15,6 +15,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
             });
         });
     });
+
+    document.querySelectorAll('.bouton_2').forEach(button => {
+        button.addEventListener('click', () => {
+            const productUrl = button.getAttribute('data-cvurl');
+            window.location.href = productUrl;
+        });
+    });
 });
 
 

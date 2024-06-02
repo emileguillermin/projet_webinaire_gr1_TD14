@@ -102,6 +102,58 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "<p>Vos informations de compte admin sont les suivantes :</p>";
                 echo "<p><strong>Nom :</strong> " . htmlspecialchars($_SESSION['nom']) . "</p>";
                 echo "<p><strong>Prénom :</strong> " . htmlspecialchars($_SESSION['prenom']) . "</p>";
+                echo '<form action="ajoute_coach.php" method="post">
+                            <br><br>
+
+                            <label for="nom">Nom:</label>
+                            <input type="text" id="nom" name="nom" required><br><br>
+                    
+                            <label for="prenom">Prénom:</label>
+                            <input type="text" id="prenom" name="prenom" required><br><br>
+                    
+                            <label for="photo">URL de la Photo:</label>
+                            <input type="text" id="photo" name="photo" required><br><br>
+                    
+                            <label for="specialite">Spécialité:</label>
+                            <input type="text" id="specialite" name="specialite" required><br><br>
+                    
+                            <label for="video">URL de la Vidéo:</label>
+                            <input type="text" id="video" name="video" required><br><br>
+                    
+                            <label for="cv">URL du CV:</label>
+                            <input type="text" id="cv" name="cv" required><br><br>
+                    
+                            <label for="disponibilite">Disponibilité:</label>
+                            <input type="text" id="disponibilite" name="disponibilite" required><br><br>
+                    
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required><br><br>
+                    
+                            <label for="mot_de_passe">Mot de Passe:</label>
+                            <input type="password" id="mot_de_passe" name="mot_de_passe" required><br>
+                    
+                            <label for="telephone">Téléphone:</label>
+                            <input type="text" id="telephone" name="telephone" required>
+                    
+                            <button type="submit" class="bouton">Ajouter Coach</button><br><br>
+                        </form>';
+                echo '<form action="supprimer_coach.php" method="post">
+                        <label for="nom">Nom du Coach:</label>
+                        <input type="text" id="nom" name="nom" required>
+                        <button type="submit" class = "bouton">Supprimer Coach</button><br><br>
+                      </form>';
+                echo '<form action="ajouter_admin.php" method="post">
+                            <label for="nom">Nom:</label>
+                            <input type="text" id="nom" name="nom" required><br><br>
+                    
+                            <label for="prenom">Prénom:</label>
+                            <input type="text" id="prenom" name="prenom" required><br>
+                    
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                    
+                            <button type="submit" class ="bouton">Ajouter Administrateur</button>
+                      </form>';
                 echo '<form action="deconnexionAdmin.php" method="post">
                         <button type="submit" class="bouton">Déconnexion</button>
                       </form>';

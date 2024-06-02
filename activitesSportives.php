@@ -87,7 +87,7 @@ $result_coaches = $conn->query($sql_coaches);
             <?php
             // Affichage des cartes des coaches
             if ($result_coaches->num_rows > 0) {
-                while($row = $result_coaches->fetch_assoc()) {
+                while ($row = $result_coaches->fetch_assoc()) {
                     $speciality = strtolower($row['specialite']);
                     echo "<div id='$speciality' class='carteCoach' style='display:none;'>";
                     echo "<img src='".$row['photo']."' alt='Coach Image'>";
@@ -100,7 +100,7 @@ $result_coaches = $conn->query($sql_coaches);
                     echo "<div class='btn-container'>";
                     echo "<button class='bouton' id='rdv'>Prendre un RDV</button>";
                     echo "<button class='bouton' id='communiquer' onclick='showCommunicationOptions(this)'>Communiquer avec le coach</button>";
-                    echo "<button class='bouton' id='cv-$speciality'>Voir son CV</button>";
+                    echo "<button class='bouton_2' id='cv-$speciality' data-cvurl='" . $row['CV'] . "'>Voir son CV</button>";
                     echo "<div class='communication-options' style='display:none;'>";
                     echo "<button class='bouton' onclick=\"envoyerEmail('".$row['email']."')\">Email</button>";
                     echo "<button class='bouton' onclick='ouvrirchat()'>Chat</button>";
@@ -116,6 +116,7 @@ $result_coaches = $conn->query($sql_coaches);
             $conn->close();
             ?>
         </section>
+
         <footer>
             <iframe width="100%" height="300%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.317662740615!2d2.328770915673154!3d48.87925167928907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66f273f4f31ad%3A0x78e9c368389ea84a!2sBlanche%2C%2075009%20Paris%2C%20France!5e0!3m2!1sen!2sfr!4v1624543145632!5m2!1sen!2sfr"></iframe>
             <h3>Contact</h3>
