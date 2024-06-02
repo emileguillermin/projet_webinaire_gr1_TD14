@@ -69,7 +69,7 @@ $result = $stmt->get_result();
             }
             $stmt->close();
             ?>
-            <form action="deconnexion.php" method="post">
+            <form action="deconnexionClient.php" method="post">
                 <button type="submit" class="bouton">Déconnexion</button>
             </form>
         </section>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'configCoach.php';
+include 'configConnexion.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];

@@ -99,7 +99,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo '<form action="voir_messages.php" method="get">
                         <button type="submit" class="bouton">Voir les messages</button>
                       </form>';
-                echo '<form action="deconnexion.php" method="post">
+                echo '<form action="deconnexionClient.php" method="post">
                         <button type="submit" class="bouton">Déconnexion</button>
                       </form>';
             } else {

@@ -68,7 +68,7 @@ if (isset($_SESSION['coach_loggedin']) && $_SESSION['coach_loggedin'] === true) 
 
             $stmt->close();
             ?>
-            <form action="deconnexion.php" method="post">
+            <form action="deconnexionCoach.php" method="post">
                 <button type="submit" class="bouton">Déconnexion</button>
             </form>
         </section>
