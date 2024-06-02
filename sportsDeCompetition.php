@@ -14,12 +14,11 @@ if ($conn->connect_error) {
 }
 
 // Requête SQL pour récupérer les spécialités distinctes
-$sql_specialities = "SELECT DISTINCT specialite FROM PersonnelSport";
+$sql_specialities = "SELECT DISTINCT specialite FROM sportDeCompetition";
 $result_specialities = $conn->query($sql_specialities);
 
-
 // Requête SQL pour récupérer les données des coaches
-$sql_coaches = "SELECT * FROM PersonnelSport";
+$sql_coaches = "SELECT * FROM sportDeCompetition";
 $result_coaches = $conn->query($sql_coaches);
 ?>
 
@@ -91,26 +90,25 @@ $result_coaches = $conn->query($sql_coaches);
                 while ($row = $result_coaches->fetch_assoc()) {
                     $speciality = strtolower($row['specialite']);
                     echo "<div id='$speciality' class='carteCoach' style='display:none;'>";
-                    echo "<img src='".$row['photo']."' alt='Coach Image'>";
-                    echo "<div class='coach-info'>";
-                    echo "<h2 id='coach-name'>".$row['prenom']." ".$row['nom']."</h2>";
-                    echo "<p id='coach-personnel'>Coach, ".$row['ID_personnel']."</p>";
-                    echo "<p id='coach-speciality'>Coach, ".$row['specialite']."</p>";
-                    echo "<p id='coach-phone'>Téléphone: ".$row['telephone']."</p>";
-                    echo "<p id='coach-email'>Email: ".$row['email']."</p>";
-                    echo "<p id='coach-id-sport'>ID Sport : ".$row['ID_personnel']."</p>";
-                    echo "</div>";
-                    echo "<div class='btn-container'>";
-                    echo "<button class='bouton' id='rdv' onclick=\"window.location.href='rendezvousCoach.php?ID_personnel=" . $row['ID_personnel'] . "';\">Prendre un RDV</button>";
-                    echo "<button class='bouton' id='communiquer' onclick='showCommunicationOptions(this)'>Communiquer avec le coach</button>";
-                    echo "<button class='bouton_2' id='cv-$speciality' data-cvurl='" . $row['CV'] . "'>Voir son CV</button>";
-                    echo "<div class='communication-options' style='display:none;'>";
-                    echo "<button class='bouton' onclick=\"envoyerEmail('".$row['email']."')\">Email</button>";
-                    echo "<button class='bouton' onclick=\"ouvrirchat('".$row['ID_personnel']."')\">Chat</button>";
-                    echo "<button class='bouton'>Audio</button>";
-                    echo "<button class='bouton' onclick=\"visioconf('".$row['video']."')\">Visio</button>";
-                    echo "</div>";
-                    echo "</div>";
+                        echo "<img src='".$row['photo']."' alt='Coach Image'>";
+                        echo "<div class='coach-info'>";
+                        echo "<h2 id='coach-name'>".$row['prenom']." ".$row['nom']."</h2>";
+                        echo "<p id='coach-speciality'>Coach, ".$row['specialite']."</p>";
+                        echo "<p id='coach-phone'>Téléphone: ".$row['telephone']."</p>";
+                        echo "<p id='coach-email'>Email: ".$row['email']."</p>";
+                        echo "<p id='coach-id-sport'>ID Sport : ".$row['ID_sport']."</p>";
+                        echo "</div>";
+                        echo "<div class='btn-container'>";
+                            echo "<button class='bouton' id='rdv'>Prendre un RDV</button>";
+                            echo "<button class='bouton' id='communiquer' onclick='showCommunicationOptions(this)'>Communiquer avec le coach</button>";
+                            echo "<button class='bouton_2' id='cv-$speciality' data-cvurl='" . $row['CV'] . "'>Voir son CV</button>";
+                            echo "<div class='communication-options' style='display:none;'>";
+                                echo "<button class='bouton' onclick=\"envoyerEmail('".$row['email']."')\">Email</button>";
+                                echo "<button class='bouton' >Chat</button>";
+                                echo "<button class='bouton'>Audio</button>";
+                                echo "<button class='bouton' onclick=\"visioconf('https://teams.microsoft.com/l/meetup-join/19%3ameeting_NzYxZjBlMzQtZjkzMS00MzM1LTgwOGEtYzZlOTBhZmYwZjUy%40thread.v2/0?context=%7b%22Tid%22%3a%22TID%22%2c%22Oid%22%3a%22OID%22%7d')\">Visio</button>";
+                            echo "</div>";
+                        echo "</div>";
                     echo "</div>"; 
                 }
             } else {

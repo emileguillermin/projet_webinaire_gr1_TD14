@@ -170,3 +170,17 @@ CREATE TABLE IF NOT EXISTS `conversations` (
   KEY `ID_coach` (`ID_coach`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+CREATE TABLE IF NOT EXISTS SportDeCompetition(
+    ID_sport INT AUTO_INCREMENT,
+    nom VARCHAR(50),
+    prenom VARCHAR(50),
+    photo TEXT,
+    specialite VARCHAR(100),
+    CV TEXT,
+    disponibilite TEXT,
+    email VARCHAR(100),
+    mot_de_passe TEXT,
+    telephone VARCHAR(20),
+    PRIMARY KEY (ID_sport)
+);
+

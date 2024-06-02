@@ -1,5 +1,5 @@
 let msgdiv = document.getElementById("msg");
-
+//appel fonction lire
 setInterval(() => {
   fetch("chatLire.php").then(
     r => {
@@ -19,7 +19,7 @@ window.onkeydown = (e) => {
     sendMessage();
   }
 }
-
+//transmet les messages 
 function sendMessage() {
   let msg = document.getElementById('input_msg').value;
   if (msg.trim() === "") return; // Ne pas envoyer de message vide

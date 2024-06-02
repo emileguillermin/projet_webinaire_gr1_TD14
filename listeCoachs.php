@@ -12,6 +12,8 @@ $conn = get_db_connection();
 // Récupérer la liste des coachs
 $sql = "SELECT ID_personnel, nom, prenom, email FROM personnelsport";
 $result = $conn->query($sql);
+$sql2 = "SELECT ID_sport, nom, prenom, email FROM sportdecompetition";
+$result2 = $conn->query($sql2);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_coach_id'])) {
     $coach_id = $_POST['delete_coach_id'];
@@ -32,6 +34,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_coach_id'])) {
 
     // Supprimer le coach de la base de données
     $delete_coach_sql = "DELETE FROM personnelsport WHERE ID_personnel = ?";
+    $delete_coach_stmt = $conn->prepare($delete_coach_sql);
+    $delete_coach_stmt->bind_param("i", $coach_id);
+    $delete_coach_stmt->execute();
+    $delete_coach_stmt->close();
+
+    // Supprimer le coach de la base de données
+    $delete_coach_sql = "DELETE FROM sportdecompetition WHERE ID_sport = ?";
     $delete_coach_stmt = $conn->prepare($delete_coach_sql);
     $delete_coach_stmt->bind_param("i", $coach_id);
     $delete_coach_stmt->execute();
@@ -83,6 +92,24 @@ $conn->close();
                                     <td>
                                         <form method='post'>
                                             <input type='hidden' name='delete_coach_id' value='" . htmlspecialchars($row['ID_personnel']) . "'>
+                                            <button type='submit' class='btn btn-danger'>Supprimer</button>
+                                        </form>
+                                    </td>
+                                  </tr>";
+                        }
+                    } else {
+                        echo "<tr><td colspan='5'>Aucun coach trouvé</td></tr>";
+                    }
+                    if ($result2->num_rows > 0) {
+                        while($row = $result2->fetch_assoc()) {
+                            echo "<tr>
+                                    <td>" . htmlspecialchars($row['ID_sport']) . "</td>
+                                    <td>" . htmlspecialchars($row['nom']) . "</td>
+                                    <td>" . htmlspecialchars($row['prenom']) . "</td>
+                                    <td>" . htmlspecialchars($row['email']) . "</td>
+                                    <td>
+                                        <form method='post'>
+                                            <input type='hidden' name='delete_coach_id' value='" . htmlspecialchars($row['ID_sport']) . "'>
                                             <button type='submit' class='btn btn-danger'>Supprimer</button>
                                         </form>
                                     </td>

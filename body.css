@@ -187,11 +187,12 @@ footer {
     transition: background-color 0.3s;
     margin: 30px;
 }
-
-
+.bouton:hover{
+    background-color: #242424; 
+}
 .bouton_2{
     background-color: #373737; 
-    color: #fff;
+    color: #fff ; 
     border: none;
     border-radius: 20px; 
     padding: 10px 20px;
@@ -199,10 +200,6 @@ footer {
     cursor: pointer;
     transition: background-color 0.3s;
     margin: 30px;
-}
-
-.bouton:hover{
-    background-color: #242424; 
 }
 
 .carteCoach{
@@ -220,7 +217,6 @@ footer {
     width: 200px;
     height: auto;
 }
-
 .carteCoachCompet{
     display: none;
     padding: 20px;

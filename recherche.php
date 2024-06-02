@@ -9,6 +9,7 @@ $db_handle = mysqli_connect('localhost', 'root', '' );
 $db_found = mysqli_select_db($db_handle, $database);
 
 $toutesRecherchesCoach = null;
+$toutesRecherchesCoachCompet = null;
 $toutesRecherchesSalle = null;
 
 if ($db_found) {
@@ -24,6 +25,16 @@ if ($db_found) {
                        OR email LIKE '%$rechercheBox%' 
                        OR telephone LIKE '%$rechercheBox%'";
         $toutesRecherchesCoach = mysqli_query($db_handle, $queryCoach);
+
+        // Recherche sql coachscompet
+        $queryCoach2 = "SELECT ID_sport, nom, prenom, photo, specialite, email, telephone FROM sportdecompetition 
+                       WHERE nom LIKE '%$rechercheBox%' 
+                       OR photo LIKE '%$rechercheBox%'
+                       OR prenom LIKE '%$rechercheBox%' 
+                       OR specialite LIKE '%$rechercheBox%' 
+                       OR email LIKE '%$rechercheBox%' 
+                       OR telephone LIKE '%$rechercheBox%'";
+        $toutesRecherchesCoachCompet = mysqli_query($db_handle, $queryCoach2);
 
         // Recherche sql salles de sport
         $querySalle = "SELECT ID_salle AS ID_personnel, nom, adresse AS prenom, telephone FROM SalleSport 
@@ -65,7 +76,7 @@ mysqli_close($db_handle);
                     <a href="index.html">Tout Parcourir</a>
                     <ul class="sous-nav">
                         <li><a href="activitesSportives.php">Activités sportives</a></li>
-                        <li><a href="sportsDeCompetition.html">Les Sports de compétition</a></li>
+                        <li><a href="sportsDeCompetition.php">Les Sports de compétition</a></li>
                         <li><a href="salleDeSportOmnes.html">Salle de sport Omnes</a></li>
                     </ul>
                 </li>
@@ -73,7 +84,7 @@ mysqli_close($db_handle);
                     <a href="recherche.html">Recherche</a>
                 </li>
                 <li class="has-sous-nav">
-                    <a href="rendezVous.html">Rendez-vous</a>
+                    <a href="AfficheRDV.php">Rendez-vous</a>
                 </li>
                 <li class="has-sous-nav">
                     <a href="index.html">Votre Compte</a>
@@ -97,7 +108,7 @@ mysqli_close($db_handle);
             </form>
             <br>
             <?php
-            if (isset($toutesRecherchesCoach) || isset($toutesRecherchesSalle)) {
+            if (isset($toutesRecherchesCoachCompet) || isset($toutesRecherchesCoach) || isset($toutesRecherchesSalle)) {
                 if ($toutesRecherchesCoach && mysqli_num_rows($toutesRecherchesCoach) > 0) {
                     echo "<h3>Résultats de la recherche (Coach) :</h3>";
                     echo "<table class='table table-bordered'>";
@@ -106,7 +117,7 @@ mysqli_close($db_handle);
                     while ($row = mysqli_fetch_assoc($toutesRecherchesCoach)) {
                         echo "<tr>";
                         echo "<td>" . htmlspecialchars($row['ID_personnel']) . "</td>";
-                        echo "<td>" . htmlspecialchars($row['photo']) . "</td>";
+                        echo "<td><img src='" . htmlspecialchars($row['photo']) . "' alt='Photo' style='width: 100px; height: auto;' /></td>";
                         echo "<td>" . htmlspecialchars($row['nom']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['prenom']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['specialite']) . "</td>";
@@ -120,13 +131,34 @@ mysqli_close($db_handle);
                     echo "<p>Aucun coach trouvé pour '" . htmlspecialchars($rechercheBox) . "'</p>";
                 }
 
+                if ($toutesRecherchesCoachCompet && mysqli_num_rows($toutesRecherchesCoachCompet) > 0) {
+                    echo "<h3>Résultats de la recherche (Coach) :</h3>";
+                    echo "<table class='table table-bordered'>";
+                    echo "<thead><tr><th>ID</th><th>Photo</th><th>Nom</th><th>Prénom</th><th>Spécialité</th><th>Email</th><th>Téléphone</th></tr></thead>";
+                    echo "<tbody>";
+                    while ($row = mysqli_fetch_assoc($toutesRecherchesCoachCompet)) {
+                        echo "<tr>";
+                        echo "<td>" . htmlspecialchars($row['ID_sport']) . "</td>";
+                        echo "<td><img src='" . htmlspecialchars($row['photo']) . "' alt='Photo' style='width: 100px; height: auto;' /></td>";
+                        echo "<td>" . htmlspecialchars($row['nom']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['prenom']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['specialite']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['email']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['telephone']) . "</td>";
+                        echo "</tr>";
+                    }
+                    echo "</tbody>";
+                    echo "</table>";
+                } else {
+                    echo "<p>Aucun coach compet trouvé pour '" . htmlspecialchars($rechercheBox) . "'</p>";
+                }
+
                 if ($toutesRecherchesSalle && mysqli_num_rows($toutesRecherchesSalle) > 0) {
                     echo "<h3>Résultats de la recherche (Salle de sport) :</h3>";
                     echo "<table class='table table-bordered'>";
                     echo "<thead><tr><th>ID</th><th>Nom</th><th>Adresse</th><th>Téléphone</th></tr></thead>";
                     echo "<tbody>";
-                    while ($row = mysqli_fetch_assoc($toutesRecherchesSalle))
-                    {
+                    while ($row = mysqli_fetch_assoc($toutesRecherchesSalle)) {
                         echo "<tr>";
                         echo "<td>" . htmlspecialchars($row['ID_personnel']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['nom']) . "</td>";
