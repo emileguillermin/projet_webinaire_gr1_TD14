@@ -1,24 +1,30 @@
 <?php
+
 $database = "sport";
 $servername = "localhost";
 $username = "root";
 $password = "";
 $conn = new mysqli($servername, $username, $password, $database);
 
-$ID_client=isset($_POST["ID_client"]) ? $_POST["ID_client"] : "";
-$ID_personnel=isset($_POST["ID_personnel"]) ? $_POST["ID_personnel"] : "";
-
-if ($conn->connect_error)
-{
-    die("Connection failed: " . $conn->connect_error);
+if ($conn->connect_error) {
+    die("Connection échouée: " . $conn->connect_error);
 }
 
-$db_found = $conn->select_db($database);
-
-if(isset($_POST["Annuler"]))
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['annuler']))
 {
-    $sql="DELETE FROM reservation WHERE ID_personnel='$ID_personnel';
-    $resultat = mysqli_query($db_handle, $sql1);
+    $ID_reservation= $_POST['reservation_id'];
+
+    // Supprimer la réservation
+    $sql = "DELETE FROM Reservation WHERE ID_reservation = $ID_reservation";
+    $sql2 = "UPDATE Disponibilite d JOIN Reservation r ON d.Jour = r.jour AND d.Heure_Debut = r.heure SET d.Statut = 'Disponible' WHERE r.reservation_id = $ID_reservation";
+    $conn->query($sql2);
+    if($conn->query($sql))
+    {
+        echo '<h2>Réservation faite avec succès<h2>';
+    }
+    // Rediriger vers la page principale après l'annulation
+    header("Location: afficheRDV.php");
+    exit();
 }
 
 $conn->close();

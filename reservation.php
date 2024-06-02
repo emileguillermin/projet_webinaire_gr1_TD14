@@ -1,17 +1,18 @@
 <?php
+
+session_start();
+
 $database = "sport";
 $servername = "localhost";
 $username = "root";
 $password = "";
 $conn = new mysqli($servername, $username, $password, $database);
 
-if ($_SERVER['REQUEST_METHOD'] == 'GET')
-{
-    $day = $_GET['day'];
-    $time = $_GET['time'];
-    $ID_personnel = $_GET['ID_personnel'];
-    $ID_client = $_GET['ID_client'];
-}
+$ID_client = $_SESSION['client_id'];
+$ID_personnel = isset($_GET['ID_personnel']) ? $_GET['ID_personnel'] : 1;
+$day = $_GET['day'];
+$time = $_GET['time'];
+
 ?>
 <!DOCTYPE html>
 <html> 

@@ -98,6 +98,11 @@ $resultatReservation = $conn->query($sql2);
                                 <td>" . htmlspecialchars($row_res["Jour"]) . "</td>
                                 <td>" . htmlspecialchars($row_res["heure"]) . "</td>
                                 <td>
+                                <form method='POST' action='annulerRDV.php'>
+                                    <input type='hidden' name='reservation_id' value='" . htmlspecialchars($row_res["ID_reservation"]) . "'>
+                                    <button type='submit' name='annuler' class='btn btn-danger'>Annuler</button>
+                                </form>
+                            </td>
                             </td>
                           </tr>";    
                 }
