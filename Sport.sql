@@ -126,7 +126,7 @@ CREATE TABLE IF NOT EXISTS Reservation(
     ID_reservation INT AUTO_INCREMENT,
     ID_client INT,
     ID_personnel INT,
-    date DATE,
+    jour VARCHAR(20),
     heure TIME,
     PRIMARY KEY (ID_reservation),
     FOREIGN KEY (ID_client) REFERENCES client(ID_client),
@@ -139,7 +139,7 @@ CREATE TABLE IF NOT EXISTS Disponibilite(
     jour VARCHAR(20),
     Heure_debut TIME,
     Heure_fin TIME,
-    Statue VARCHAR(20),
+    Statut VARCHAR(20),
     PRIMARY KEY(ID_disponibilite),
     FOREIGN KEY (ID_personnel) REFERENCES PersonnelSport(ID_personnel)
 );
