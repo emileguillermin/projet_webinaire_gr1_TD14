@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
-
 function showCommunicationOptions(button) {
     var optionsDiv = button.nextElementSibling.nextElementSibling;
         if (optionsDiv.style.display == "block" ) {
