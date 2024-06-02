@@ -90,27 +90,6 @@ $result_coaches = $conn->query($sql_coaches);
                 while ($row = $result_coaches->fetch_assoc()) {
                     $speciality = strtolower($row['specialite']);
                     echo "<div id='$speciality' class='carteCoach' style='display:none;'>";
-<<<<<<< HEAD
-                    echo "<img src='".$row['photo']."' alt='Coach Image'>";
-                    echo "<div class='coach-info'>";
-                    echo "<h2 id='coach-name'>".$row['prenom']." ".$row['nom']."</h2>";
-                    echo "<p id='coach-speciality'>Coach, ".$row['specialite']."</p>";
-                    echo "<p id='coach-phone'>Téléphone: ".$row['telephone']."</p>";
-                    echo "<p id='coach-email'>Email: ".$row['email']."</p>";
-                    echo "</div>";
-                    echo "<div class='btn-container'>";
-                    echo "<button class='bouton' id='rdv'>Prendre un RDV</button>";
-                    echo "<button class='bouton' id='communiquer' onclick='showCommunicationOptions(this)'>Communiquer avec le coach</button>";
-                    echo "<button class='bouton_2' id='cv-$speciality' data-cvurl='" . $row['CV'] . "'>Voir son CV</button>";
-                    echo "<div class='communication-options' style='display:none;'>";
-                    echo "<button class='bouton' onclick=\"envoyerEmail('".$row['email']."')\">Email</button>";
-                    echo "<button class='bouton' onclick='ouvrirchat()'>Chat</button>";
-                    echo "<button class='bouton'>Audio</button>";
-                    echo "<button class='bouton' onclick=\"visioconf('".$row['video']."')\">Visio</button>";
-                    echo "</div>";
-                    echo "</div>";
-                    echo "</div>";
-=======
                         echo "<img src='".$row['photo']."' alt='Coach Image'>";
                         echo "<div class='coach-info'>";
                         echo "<h2 id='coach-name'>".$row['prenom']." ".$row['nom']."</h2>";
@@ -130,7 +109,6 @@ $result_coaches = $conn->query($sql_coaches);
                             echo "</div>";
                         echo "</div>";
                     echo "</div>"; 
->>>>>>> 5c4487d7669545222542bd7a1f181836161f67a4
                 }
             } else {
                 echo "Aucun coach trouvé.";
