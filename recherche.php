@@ -125,7 +125,8 @@ mysqli_close($db_handle);
                     echo "<table class='table table-bordered'>";
                     echo "<thead><tr><th>ID</th><th>Nom</th><th>Adresse</th><th>Téléphone</th></tr></thead>";
                     echo "<tbody>";
-                    while ($row = mysqli_fetch_assoc($toutesRecherchesSalle)) {
+                    while ($row = mysqli_fetch_assoc($toutesRecherchesSalle))
+                    {
                         echo "<tr>";
                         echo "<td>" . htmlspecialchars($row['ID_personnel']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['nom']) . "</td>";

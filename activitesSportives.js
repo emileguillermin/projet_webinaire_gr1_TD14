@@ -110,7 +110,7 @@ const carteCoach5 = document.querySelector('#cour_collectif');
             optionsDiv.style.display = "block";
         }
     }
-    function envoyerEmail(emailAddress) {
+    function envoyerEmail(emailAddress){
         var lienMail = 'mailto:' + emailAddress;
         window.location.href = lienMail;
     }
