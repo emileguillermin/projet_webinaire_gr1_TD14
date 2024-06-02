@@ -24,10 +24,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
-
 function showCommunicationOptions(button) {
-    const options = button.nextElementSibling;
-    options.style.display = options.style.display === 'block' ? 'none' : 'block';
+    var optionsDiv = button.nextElementSibling.nextElementSibling;
+        if (optionsDiv.style.display == "block" ) {
+            optionsDiv.style.display = "none";
+        } else {
+            optionsDiv.style.display = "block";
+        }
 }
 
 function envoyerEmail(email) {
