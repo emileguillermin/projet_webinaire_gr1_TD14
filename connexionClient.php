@@ -2,7 +2,8 @@
 session_start();
 include 'configConnexion.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST")
+{
     $email = $_POST['email'];
     $mot_de_passe = $_POST['mot_de_passe'];
 

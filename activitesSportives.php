@@ -17,6 +17,7 @@ if ($conn->connect_error) {
 $sql_specialities = "SELECT DISTINCT specialite FROM PersonnelSport";
 $result_specialities = $conn->query($sql_specialities);
 
+
 // Requête SQL pour récupérer les données des coaches
 $sql_coaches = "SELECT * FROM PersonnelSport";
 $result_coaches = $conn->query($sql_coaches);
@@ -86,33 +87,31 @@ $result_coaches = $conn->query($sql_coaches);
         <section>
             <?php
             // Affichage des cartes des coaches
-            if ($result_coaches->num_rows > 0)
-            {
-                while ($row = $result_coaches->fetch_assoc())
-                {
+            if ($result_coaches->num_rows > 0) {
+                while ($row = $result_coaches->fetch_assoc()) {
                     $speciality = strtolower($row['specialite']);
-                    // Chemin de l'image par défaut pour l'exemple
-                    $photo = "photo_de_coach/coach_musculation.jpg"; 
                     echo "<div id='$speciality' class='carteCoach' style='display:none;'>";
                     echo "<img src='".$row['photo']."' alt='Coach Image'>";
                     echo "<div class='coach-info'>";
                     echo "<h2 id='coach-name'>".$row['prenom']." ".$row['nom']."</h2>";
+                    echo "<p id='coach-personnel'>Coach, ".$row['ID_personnel']."</p>";
                     echo "<p id='coach-speciality'>Coach, ".$row['specialite']."</p>";
                     echo "<p id='coach-phone'>Téléphone: ".$row['telephone']."</p>";
                     echo "<p id='coach-email'>Email: ".$row['email']."</p>";
+                    echo "<p id='coach-id-sport'>ID Sport : ".$row['ID_personnel']."</p>";
                     echo "</div>";
                     echo "<div class='btn-container'>";
-                    echo "<button class='bouton' id='rdv' onclick=\"window.location.href='rendezvousCoach.php';\">Prendre un RDV</button>";
+                    echo "<button class='bouton' id='rdv' onclick=\"window.location.href='rendezvousCoach.php?ID_personnel=" . $row['ID_personnel'] . "';\">Prendre un RDV</button>";
                     echo "<button class='bouton' id='communiquer' onclick='showCommunicationOptions(this)'>Communiquer avec le coach</button>";
                     echo "<button class='bouton_2' id='cv-$speciality' data-cvurl='" . $row['CV'] . "'>Voir son CV</button>";
                     echo "<div class='communication-options' style='display:none;'>";
                     echo "<button class='bouton' onclick=\"envoyerEmail('".$row['email']."')\">Email</button>";
-                    echo "<button class='bouton' onclick='ouvrirchat()'>Chat</button>";
+                    echo "<button class='bouton' onclick=\"ouvrirchat('".$row['ID_personnel']."')\">Chat</button>";
                     echo "<button class='bouton'>Audio</button>";
                     echo "<button class='bouton' onclick=\"visioconf('".$row['video']."')\">Visio</button>";
                     echo "</div>";
                     echo "</div>";
-                    echo "</div>";
+                    echo "</div>"; 
                 }
             } else {
                 echo "Aucun coach trouvé.";
