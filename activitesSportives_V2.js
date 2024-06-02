@@ -27,8 +27,8 @@ function envoyerEmail(email) {
     window.location.href = `mailto:${email}`;
 }
 
-function ouvrirchat() {
-    // Logique pour ouvrir le chat
+function ouvrirchat(ID_coach) {
+    window.location.href = "chat.php?coach_id=" + ID_coach;
 }
 
 function visioconf(videoLink) {

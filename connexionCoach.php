@@ -25,7 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         {
             // Démarrer la session et enregistrer les variables de session
             $_SESSION['coach_loggedin'] = true;
-            $_SESSION['id'] = $id;
+            $_SESSION['coach_id'] = $id;
+            $_SESSION['user_type'] = 'coach';
             $_SESSION['nom'] = $nom;
             $_SESSION['prenom'] = $prenom;
 
@@ -67,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <li class="has-sous-nav">
                     <a href="index.html">Tout Parcourir</a>
                     <ul class="sous-nav">
-                        <li><a href="activitesSportives.html">Activités sportives</a></li>
+                        <li><a href="activitesSportives.php">Activités sportives</a></li>
                         <li><a href="sportsDeCompetition.html">Les Sports de compétition</a></li>
                         <li><a href="salleDeSportOmnes.html">Salle de sport Omnes</a></li>
                     </ul>
@@ -95,6 +96,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "<p>Vos informations de compte coach sont les suivantes :</p>";
                 echo "<p><strong>Nom :</strong> " . htmlspecialchars($_SESSION['nom']) . "</p>";
                 echo "<p><strong>Prénom :</strong> " . htmlspecialchars($_SESSION['prenom']) . "</p>";
+                echo '<form action="voir_messages_coach.php" method="get">
+                        <button type="submit" class="bouton">Voir les messages</button>
+                      </form>';
                 echo '<form action="deconnexionCoach.php" method="post">
                         <button type="submit" class="bouton">Déconnexion</button>
                       </form>';
