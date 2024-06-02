@@ -1,13 +1,12 @@
 <?php
-session_start();
+session_start(); 
 
-if(!isset($_SESSION['loggedin']) || $_SESSION['user_type'] !== 'client')
+if (!isset($_SESSION['loggedin']) || $_SESSION['user_type'] !== 'client')
 {
-    header("Location: connexionClient.php");
+    header("Location: connexionClient.php"); // Redirige vers la page de connexion
     exit();
 }
 
-$ID_client=$_SESSION['ID_client'];
 $database = "sport";
 $servername = "localhost";
 $username = "root";
@@ -55,8 +54,7 @@ if ($result->num_rows > 0)
         $endTime = strtotime($row["Heure_fin"]);
         $day = $row["jour"];
         $status = $row["Statut"];
-        while ($startTime < $endTime)
-        {
+        while ($startTime < $endTime) {
             $slot = date('H:i', $startTime);
             if (in_array($day, $daysOfWeek) && in_array($slot, $timeSlots))
             {
@@ -90,7 +88,7 @@ if ($result->num_rows > 0)
                 <li class="has-sous-nav">
                     <a href="index.html">Tout Parcourir</a>
                     <ul class="sous-nav">
-                        <li><a href="activitesSportives.html">Activités sportives</a></li>
+                        <li><a href="activitesSportives.php">Activités sportives</a></li>
                         <li><a href="sportsDeCompetition.html">Les Sports de compétition</a></li>
                         <li><a href="salleDeSportOmnes.html">Salle de sport Omnes</a></li>
                     </ul>
@@ -123,7 +121,7 @@ if ($result->num_rows > 0)
                         <?php
                         $status = $dispo[$day][$slot];
                         $class = $status === "Disponible" ? "Disponible" : "indisponible";
-                        $link = $status === "Disponible" ? "<a href='reservation.php?day=$day&time=$slot & ID_personnel=1 & ID_client=$ID_client' class='$class'>$status</a>" : $status;
+                        $link = $status === "Disponible" ? "<a href='reservation.php?day=$day&time=$slot&ID_personnel=1&ID_client=1' class='$class'>$status</a>" : $status;
                         ?>
                         <td class="<?php echo $class; ?>"><?php echo $link; ?></td>
                     <?php endforeach; ?>
@@ -132,7 +130,7 @@ if ($result->num_rows > 0)
             </table>
         </section>
         <footer>
-            <iframe width="100%" height="300px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?..."></iframe>
+            <iframe width="100%" height="300%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.317662740615!2d2.328770915673154!3d48.87925167928907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66f273f4f31ad%3A0x78e9c368389ea84a!2sBlanche%2C%2075009%20Paris%2C%20France!5e0!3m2!1sen!2sfr!4v1624543145632!5m2!1sen!2sfr"></iframe>
             <h3>Contact</h3>
             <p><strong>Adresse :</strong> 21 rue Blanche, 75009 Paris, France</p>
             <p><strong>Téléphone :</strong> +33 1 23 45 67 89</p>
@@ -144,5 +142,3 @@ if ($result->num_rows > 0)
     </div>
 </body>
 </html>
-
-<?php $conn->close(); ?>
