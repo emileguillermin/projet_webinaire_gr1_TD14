@@ -136,7 +136,7 @@ CREATE TABLE IF NOT EXISTS Reservation(
 CREATE TABLE IF NOT EXISTS Disponibilite(
     ID_disponibilite INT AUTO_INCREMENT,
     ID_personnel INT,
-    jour VARCHAR(20),
+    Jour VARCHAR(20),
     Heure_debut TIME,
     Heure_fin TIME,
     Statut VARCHAR(20),
