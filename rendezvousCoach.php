@@ -1,9 +1,9 @@
 <?php
-session_start(); 
+session_start();
 
 if (!isset($_SESSION['loggedin']) || $_SESSION['user_type'] !== 'client')
 {
-    header("Location: connexionClient.php"); // Redirige vers la page de connexion
+    header("Location: connexionClient.php");
     exit();
 }
 
@@ -15,20 +15,22 @@ $conn = new mysqli($servername, $username, $password, $database);
 
 if ($conn->connect_error)
 {
-    die("Connection failed: " . $conn->connect_error);
+	die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT jour, Heure_debut, Heure_fin, Statut FROM Disponibilite WHERE ID_personnel='1'";
+$ID_personnel=$_GET['ID_personnel'];
+
+$sql = "SELECT jour, Heure_debut, Heure_fin, Statut FROM Disponibilite WHERE ID_personnel='$ID_personnel'";
 $result = $conn->query($sql);
 
 function generateTimeSlots($start, $end, $interval)
 {
-    $startTime = strtotime($start);
+	$startTime = strtotime($start);
     $endTime = strtotime($end);
     $timeSlots = [];
     while ($startTime <= $endTime)
     {
-        $timeSlots[] = date('H:i', $startTime);
+		$timeSlots[] = date('H:i', $startTime);
         $startTime = strtotime("+$interval minutes", $startTime);
     }
     return $timeSlots;
@@ -40,7 +42,7 @@ $dispo = [];
 
 foreach ($daysOfWeek as $day)
 {
-    foreach ($timeSlots as $slot)
+	foreach ($timeSlots as $slot)
     {
         $dispo[$day][$slot] = 'Indisponible';
     }
@@ -48,17 +50,17 @@ foreach ($daysOfWeek as $day)
 
 if ($result->num_rows > 0)
 {
-    while ($row = $result->fetch_assoc())
+	while ($row = $result->fetch_assoc())
     {
         $startTime = strtotime($row["Heure_debut"]);
         $endTime = strtotime($row["Heure_fin"]);
         $day = $row["jour"];
         $status = $row["Statut"];
         while ($startTime < $endTime) {
-            $slot = date('H:i', $startTime);
+			$slot = date('H:i', $startTime);
             if (in_array($day, $daysOfWeek) && in_array($slot, $timeSlots))
             {
-                $dispo[$day][$slot] = $status;
+				$dispo[$day][$slot] = $status;
             }
             $startTime = strtotime("+20 minutes", $startTime);
         }
@@ -93,8 +95,8 @@ if ($result->num_rows > 0)
                         <li><a href="salleDeSportOmnes.html">Salle de sport Omnes</a></li>
                     </ul>
                 </li>
-                <li class="has-sous-nav"><a href="recherche.html">Recherche</a></li>
-                <li class="has-sous-nav"><a href="rendezvous.php">Rendez-vous</a></li>
+                <li class="has-sous-nav"><a href="recherche.php">Recherche</a></li>
+                <li class="has-sous-nav"><a href="AfficheRDV.php">Rendez-vous</a></li>
                 <li class="has-sous-nav">
                     <a href="index.html">Votre Compte</a>
                     <ul class="sous-nav">
@@ -106,7 +108,6 @@ if ($result->num_rows > 0)
             </ul>
         </div>
         <section>
-            <h1>Calendrier de Guy Dumais</h1>
             <table>
                 <tr>
                     <th>Heure</th>
@@ -121,7 +122,7 @@ if ($result->num_rows > 0)
                         <?php
                         $status = $dispo[$day][$slot];
                         $class = $status === "Disponible" ? "Disponible" : "indisponible";
-                        $link = $status === "Disponible" ? "<a href='reservation.php?day=$day&time=$slot&ID_personnel=1&ID_client=1' class='$class'>$status</a>" : $status;
+                        $link = $status === "Disponible" ? "<a href='reservation.php?day={$day}&time={$slot}&ID_personnel={$ID_personnel}&ID_client={$_SESSION['client_id']}' class='{$class}'>{$status}</a>" : $status;
                         ?>
                         <td class="<?php echo $class; ?>"><?php echo $link; ?></td>
                     <?php endforeach; ?>
