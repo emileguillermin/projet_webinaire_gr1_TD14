@@ -57,13 +57,13 @@ $resultatReservation = $conn->query($sql2);
             <li class="has-sous-nav"><a href="index.html">Accueil</a></li>
             <li class="has-sous-nav"><a href="index.html">Tout Parcourir</a>
                 <ul class="sous-nav">
-                    <li><a href="activitesSportives.html">Activités sportives</a></li>
-                    <li><a href="sportsDeCompetition.html">Les Sports de compétition</a></li>
+                    <li><a href="activitesSportives.php">Activités sportives</a></li>
+                    <li><a href="sportsDeCompetition.php">Les Sports de compétition</a></li>
                     <li><a href="salleDeSportOmnes.html">Salle de sport Omnes</a></li>
                 </ul>
             </li>
             <li class="has-sous-nav"><a href="recherche.html">Recherche</a></li>
-            <li class="has-sous-nav"><a href="rendezvous.php">Rendez-vous</a></li>
+            <li class="has-sous-nav"><a href="AfficheRDV.php">Rendez-vous</a></li>
             <li class="has-sous-nav"><a href="index.html">Votre Compte</a>
                 <ul class="sous-nav">
                     <li><a href="connexionClient.php">Client</a></li>

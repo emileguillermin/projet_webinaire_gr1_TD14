@@ -1,3 +1,4 @@
+<!--permet la recherche de chose dans la bdd -->
 <!DOCTYPE html>
 <html lang="fr"> 
 <head> 
@@ -21,7 +22,7 @@
                     <a href="index.html">Tout Parcourir</a>
                     <ul class="sous-nav">
                         <li><a href="activitesSportives.php">Activités sportives</a></li>
-                        <li><a href="sportsDeCompetition.html">Les Sports de compétition</a></li>
+                        <li><a href="sportsDeCompetition.php">Les Sports de compétition</a></li>
                         <li><a href="salleDeSportOmnes.html">Salle de sport Omnes</a></li>
                     </ul>
                 </li>
@@ -29,7 +30,7 @@
                     <a href="recherche.html">Recherche</a>
                 </li>
                 <li class="has-sous-nav">
-                    <a href="rendezVous.html">Rendez-vous</a>
+                    <a href="AfficheRDV.php">Rendez-vous</a>
                 </li>
                 <li class="has-sous-nav">
                     <a href="index.html">Votre Compte</a>
@@ -43,6 +44,7 @@
         </div>
         <section>
             <form action="recherche.php" method="GET">
+                <!--prend les caracteres mis par l'utilisateur pour trouver dans la bdd grace à recherche.php -->
                 <div class="recherche-container">
                     <div class="recherche-box">
                         <span class="formeRecherche">&#128269;</span> 

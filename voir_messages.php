@@ -3,7 +3,7 @@ session_start();
 include "db.php";
 
 if (!isset($_SESSION['loggedin']) || $_SESSION['user_type'] !== 'client') {
-    header("Location: connexion.php");
+    header("Location: connexionClient.php");
     exit();
 }
 
@@ -41,7 +41,7 @@ $result = $stmt->get_result();
                     <a href="index.html">Tout Parcourir</a>
                     <ul class="sous-nav">
                         <li><a href="activitesSportives.php">Activités sportives</a></li>
-                        <li><a href="sportsDeCompetition.html">Les Sports de compétition</a></li>
+                        <li><a href="sportsDeCompetition.php">Les Sports de compétition</a></li>
                         <li><a href="salleDeSportOmnes.html">Salle de sport Omnes</a></li>
                     </ul>
                 </li>
@@ -49,7 +49,7 @@ $result = $stmt->get_result();
                     <a href="recherche.html">Recherche</a>
                 </li>
                 <li class="has-sous-nav">
-                    <a href="rendezvousCoach.php">Rendez-vous</a>
+                    <a href="AfficheRDV.php">Rendez-vous</a>
                 </li>
                 <li class="has-sous-nav">
                     <a href="index.html">Votre Compte</a>

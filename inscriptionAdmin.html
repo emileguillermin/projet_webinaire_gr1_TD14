@@ -1,3 +1,4 @@
+<!-- inscription d'un admin--> 
 <!DOCTYPE html>
 <html lang="fr"> 
 <head> 
@@ -24,7 +25,7 @@
                     <a href="index.html">Tout Parcourir</a>
                     <ul class="sous-nav">
                         <li><a href="activitesSportives.php">Activités sportives</a></li>
-                        <li><a href="sportsDeCompetition.html">Les Sports de compétition</a></li>
+                        <li><a href="sportsDeCompetition.php">Les Sports de compétition</a></li>
                         <li><a href="salleDeSportOmnes.html">Salle de sport Omnes</a></li>
                     </ul>
                 </li>
@@ -32,7 +33,7 @@
                     <a href="recherche.html">Recherche</a>
                 </li>
                 <li class="has-sous-nav">
-                    <a href="rendezVous.html">Rendez-vous</a>
+                    <a href="AfficheRDV.php">Rendez-vous</a>
                 </li>
                 <li class="has-sous-nav">
                     <a href="index.html">Votre Compte</a>
@@ -46,6 +47,7 @@
         </div>
         <h1>Inscription</h1>
         <form action="inscriptionAdmin.php" method="POST">
+        <!-- relie les informations saisies a inscriptionAdmin.php afin de l'ajouter a la bdd-->
         <table>
             <tr>
                 <td><label for="nom">Nom :</label></td>

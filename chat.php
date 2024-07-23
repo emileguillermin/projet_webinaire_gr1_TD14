@@ -1,9 +1,9 @@
-<?php
+<?php //Fonction principal de client qui permet le commencement des chats
 session_start();
 include "db.php";
 
 if (!isset($_SESSION['loggedin']) || $_SESSION['user_type'] !== 'client') {
-    header("Location: connexion.php");
+    header("Location: connexionClient.php");
     exit();
 }
 

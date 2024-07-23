@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const msgdiv = document.getElementById("msg");
   const inputMsg = document.getElementById("input_msg");
-
+//envoie de message (appel de la fonction qui poste/publie les messages)
   function update() {
     const msg = inputMsg.value;
     inputMsg.value = "";
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     );
   }
-
+//chargement des messages (appel de la fonction qui lie les messages)
   function loadMessages() {
     fetch(`chatLire.php`).then(
       r => r.text()

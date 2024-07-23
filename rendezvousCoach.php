@@ -15,7 +15,7 @@ $conn = new mysqli($servername, $username, $password, $database);
 
 if ($conn->connect_error)
 {
-	die("Connection failed: " . $conn->connect_error);
+    die("Connection failed: " . $conn->connect_error);
 }
 
 $ID_personnel=$_GET['ID_personnel'];
@@ -25,12 +25,12 @@ $result = $conn->query($sql);
 
 function generateTimeSlots($start, $end, $interval)
 {
-	$startTime = strtotime($start);
+    $startTime = strtotime($start);
     $endTime = strtotime($end);
     $timeSlots = [];
     while ($startTime <= $endTime)
     {
-		$timeSlots[] = date('H:i', $startTime);
+        $timeSlots[] = date('H:i', $startTime);
         $startTime = strtotime("+$interval minutes", $startTime);
     }
     return $timeSlots;
@@ -42,7 +42,7 @@ $dispo = [];
 
 foreach ($daysOfWeek as $day)
 {
-	foreach ($timeSlots as $slot)
+    foreach ($timeSlots as $slot)
     {
         $dispo[$day][$slot] = 'Indisponible';
     }
@@ -50,17 +50,17 @@ foreach ($daysOfWeek as $day)
 
 if ($result->num_rows > 0)
 {
-	while ($row = $result->fetch_assoc())
+    while ($row = $result->fetch_assoc())
     {
         $startTime = strtotime($row["Heure_debut"]);
         $endTime = strtotime($row["Heure_fin"]);
         $day = $row["jour"];
         $status = $row["Statut"];
         while ($startTime < $endTime) {
-			$slot = date('H:i', $startTime);
+            $slot = date('H:i', $startTime);
             if (in_array($day, $daysOfWeek) && in_array($slot, $timeSlots))
             {
-				$dispo[$day][$slot] = $status;
+                $dispo[$day][$slot] = $status;
             }
             $startTime = strtotime("+20 minutes", $startTime);
         }
@@ -91,7 +91,7 @@ if ($result->num_rows > 0)
                     <a href="index.html">Tout Parcourir</a>
                     <ul class="sous-nav">
                         <li><a href="activitesSportives.php">Activités sportives</a></li>
-                        <li><a href="sportsDeCompetition.html">Les Sports de compétition</a></li>
+                        <li><a href="sportsDeCompetition.php">Les Sports de compétition</a></li>
                         <li><a href="salleDeSportOmnes.html">Salle de sport Omnes</a></li>
                     </ul>
                 </li>

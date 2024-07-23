@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="body.css"> 
     <link rel="stylesheet" href="chat.css"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">  <!-- Permet d'afficher les photos horizontales-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>              <!-- Permet d'ajouter les boutons du carrousel-->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>           <!-- Permet d'ajouter les différentes flèches-->  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>             
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -24,8 +24,8 @@
                 <li class="has-sous-nav">
                     <a href="index.html">Tout Parcourir</a>
                     <ul class="sous-nav">
-                        <li><a href="activitesSportives.html">Activités sportives</a></li>
-                        <li><a href="sportsDeCompetition.html">Les Sports de compétition</a></li>
+                        <li><a href="activitesSportives.php">Activités sportives</a></li>
+                        <li><a href="sportsDeCompetition.php">Les Sports de compétition</a></li>
                         <li><a href="salleDeSportOmnes.html">Salle de sport Omnes</a></li>
                     </ul>
                 </li>
@@ -33,7 +33,7 @@
                     <a href="recherche.html">Recherche</a>
                 </li>
                 <li class="has-sous-nav">
-                    <a href="rendezvousCoach.php">Rendez-vous</a>
+                    <a href="AfficheRDV.php">Rendez-vous</a>
                 </li>
                 <li class="has-sous-nav">
                     <a href="index.html">Votre Compte</a>
@@ -61,7 +61,7 @@
                     <p id="coach-email">Email: guy.dumais.musculation@omnessports.fr</p>
                 </div>
                 <div class="btn-container">
-                    <button class="bouton" id="rdv" onclick="window.location.href='rendezvousCoach.php';">Prendre un RDV</button>
+                    <button class="bouton" id="rdv">Prendre un RDV</button>
                     <button class="bouton" id="communiquer" onclick="showCommunicationOptions(this)">Communiquer avec le coach</button>
                     <button class="bouton" id="cvMusculation">Voir son CV</button>
                     <div class="communication-options" >
@@ -82,7 +82,7 @@
                     <p id="coach-email">Email: sacha.dubois.fitness@omnessports.fr</p>
                 </div>
                 <div class="btn-container"> 
-                    <button class="bouton" id="rdv" onclick="window.location.href='rendezvousCoach.php';">Prendre un RDV</button>
+                    <button class="bouton" id="rdv">Prendre un RDV</button>
                     <button class="bouton" id="communiquer" onclick="showCommunicationOptions(this)">Communiquer avec le coach</button>
                     <button class="bouton" id="cvFitness">Voir son CV</button>
                     <div class="communication-options">

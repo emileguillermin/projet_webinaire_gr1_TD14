@@ -40,7 +40,7 @@ if ($db_found)
             {
                 // Insérer le client dans la base de données
                 $insert_query = "INSERT INTO client (nom, prenom, adresseLigne1, adresseLigne2, email, mot_de_passe, ville, postal, pays, carte_etudiante, telephone) VALUES ('$nom', '$prenom', '$adresseLigne1', '$adresseLigne2', '$email', '$mot_de_passe', '$ville', '$postal', '$pays', '$carte_etudiante', '$telephone')";
-                if(mysqli_query($db_handle, $insert_query))
+                if (mysqli_query($db_handle, $insert_query))
                 {
                     echo "<h2>Inscription faite avec succès !</h2>";
                 }

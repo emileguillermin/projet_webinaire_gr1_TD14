@@ -1,12 +1,12 @@
 <?php
 session_start();
 include "db.php";
-
+//verification de la connexion
 if (!isset($_SESSION['loggedin']) && !isset($_SESSION['coach_loggedin'])) {
     echo "<h3>Veuillez vous connecter pour voir les messages</h3>";
     exit();
 }
-
+//récupère l'identifiant de la conversation à partir de la session
 $conversation_id = $_SESSION['conversation_id'];
 
 $q = "SELECT * FROM chatroom WHERE conversation_id = ? ORDER BY timestamp ASC";
@@ -14,7 +14,7 @@ $stmt = $db->prepare($q);
 $stmt->bind_param("i", $conversation_id);
 $stmt->execute();
 $result = $stmt->get_result();
-
+//verifie si les messges sont trouvés
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $class = ($row["sender_type"] == $_SESSION['user_type']) ? 'sender' : 'receiver';

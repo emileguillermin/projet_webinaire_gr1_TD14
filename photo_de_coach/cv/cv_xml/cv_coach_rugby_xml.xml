@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="cv_coach_basket_xsl.xsl"?>
+<?xml-stylesheet type="text/xsl" href="cv_coach_rugby_xsl.xsl"?>
 <cv>
     <personalInfo>
-        <name>Guy Dumais</name>
-        <email>guy.dumais.musculation@omnessports.fr</email>
-        <phone>+33 6 23 45 67 11</phone>
-        <age>29 ans</age>
-        <photo>coach_musculation.jpg</photo>
+        <name>Fabien Galthié</name>
+        <email>fabien.galthié.rugby@omnessports.fr</email>
+        <phone>+33 06 23 45 70 49</phone>
+        <age>54 ans</age>
+        <photo>coach_rugby.jpg</photo>
     </personalInfo>
     <summary>
-        Coach de musculation Passionnée et certifié avec plus de 5 ans d'expérience dans la conception et la mise en oeuvre de programme d'entraînenment personnalisé.
+        Coach de rugby Passionnée et certifié avec plus de 5 ans d'expérience dans la conception et la mise en oeuvre de programme d'entraînenment personnalisé.
         Compétence avérées en motivation, éduction physique et nutrition, visant à aider les clients à atteindre leurs objectif de fitness de manière sécuritaire et efficace.
     </summary>
     <experience>
         <job>
-            <title>Coach de Musculation</title>
-            <company>FitLife Gym</company>
+            <title>Coach de rugby</title>
+            <company>rugby Gym</company>
             <date>janvier 2020 - Présent</date>
             <object>
                 Développement et mise en œuvre de programmes de
@@ -28,8 +28,8 @@
             </object>
         </job>
         <job>
-            <title>Assistant Coach </title>
-            <company>PowerHouse Fitness Center</company>
+            <title>Rugby Coach</title>
+            <company>rugbyCenter</company>
             <date>Mai 2017 – Décembre 2019</date>
             <object>
                 Assistance dans la création de programmes d'entraînement et supervision
@@ -55,12 +55,12 @@
     <skills>
         <skill>Conception de programmes de musculation personnalisés</skill>
         <skill>Coaching individuel et en groupe</skill>
-        <skill>Connaissances approfondies en nutrition sportive</skill>
+        <skill>Connaissances du rugby</skill>
         <skill>Techniques de motivation et de coaching</skill>
     </skills>
     <hobbies>
         <hobby>Lecture d'article de sport</hobby>
-        <hobby>Pratique du sport</hobby>
+        <hobby>Pratique du rugby</hobby>
         <hobby>Régime protéiné</hobby>
         <hobby>Le beau temps</hobby>
         <hobby>Faire mes lacets</hobby>

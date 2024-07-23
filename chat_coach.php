@@ -1,4 +1,5 @@
-<?php
+<?php //Fonction principale de coach qui permet le commencement des chats
+//fonctionnement sur le meme principe que chat.php mais est adaptée au coach
 session_start();
 include "db.php";
 

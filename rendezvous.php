@@ -10,7 +10,7 @@ if ($conn->connect_error)
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT ID_reservation, ID_client, ID_coach, Specialité, nomCoach, date, heure FROM Reservation";
+$sql = "SELECT ID_reservation, ID_client, ID_personnel, jour, heure FROM Reservation";
 $result = $conn->query($sql);
 ?>
 
@@ -40,8 +40,8 @@ $result = $conn->query($sql);
                 <li class="has-sous-nav">
                     <a href="index.html">Tout Parcourir</a>
                     <ul class="sous-nav">
-                        <li><a href="activitesSportives.html">Activités sportives</a></li>
-                        <li><a href="sportsDeCompetition.html">Les Sports de compétition</a></li>
+                        <li><a href="activitesSportives.php">Activités sportives</a></li>
+                        <li><a href="sportsDeCompetition.php">Les Sports de compétition</a></li>
                         <li><a href="salleDeSportOmnes.html">Salle de sport Omnes</a></li>
                     </ul>
                 </li>
@@ -49,14 +49,14 @@ $result = $conn->query($sql);
                     <a href="recherche.html">Recherche</a>
                 </li>
                 <li class="has-sous-nav">
-                    <a href="rendezvous.php">Rendez-vous</a>
+                    <a href="AfficheRDV.php">Rendez-vous</a>
                 </li>
                 <li class="has-sous-nav">
                     <a href="index.html">Votre Compte</a>
                     <ul class="sous-nav">
                         <li><a href="connexionClient.php">Client</a></li>
                         <li><a href="connexionCoach.php">Coach ou personnel de sport</a></li>
-                        <li><a href="accesAdmin.html">Administrateur</a></li>
+                        <li><a href="connexionAdmin.php">Administrateur</a></li>
                     </ul>
                 </li>
             </ul>
@@ -67,11 +67,9 @@ $result = $conn->query($sql);
             <tr>
                 <th>ID_reservation</th>
                 <th>ID_client</th>
-                <th>ID_coach</th>
-                <th>Specialité</th>
-                <th>Nom du Coach</th>
-                <th>DATE</th>
-                <th>TIME</th>
+                <th>ID_personnel</th>
+                <th>jour</th>
+                <th>heure</th>
             </tr>
             <?php
             if($result->num_rows>0)
@@ -81,16 +79,9 @@ $result = $conn->query($sql);
                     echo"<tr>
                             <td>" . htmlspecialchars($row["ID_reservation"]). "</td>
                             <td>" . htmlspecialchars($row["ID_client"]). "</td>
-                            <td>" . htmlspecialchars($row["ID_coach"]). "</td>
-                            <td>" . htmlspecialchars($row["Specialité"]). "</td>
-                            <td>" . htmlspecialchars($row["nomCoach"]). "</td>
-                            <td>" . htmlspecialchars($row["date"]). "</td>
+                            <td>" . htmlspecialchars($row["ID_personnel"]). "</td>
+                            <td>" . htmlspecialchars($row["jour"]). "</td>
                             <td>" . htmlspecialchars($row["heure"]). "</td>
-                            <td><form method='post' action='annulerRDV.php' onsubmit=\"return confirm('Êtes-vous sûr de vouloir annuler cette réservation ?');\">
-                                <input type='hidden' name='ID_reservation' value='" . htmlspecialchars($row["ID_reservation"]) . "'>
-                                <button type="submit" class="bouton">Annuler</button>
-                                <input type='submit' name='soumettre' value='Annuler' class='btn btn-danger'>
-                            </form></td>
                         </tr>";
                 }
             }

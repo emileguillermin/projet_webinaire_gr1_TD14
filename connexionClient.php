@@ -1,9 +1,9 @@
 <?php
+//commencer une session
 session_start();
 include 'configConnexion.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST")
-{
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $mot_de_passe = $_POST['mot_de_passe'];
 
@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                     <a href="index.html">Tout Parcourir</a>
                     <ul class="sous-nav">
                         <li><a href="activitesSportives.php">Activités sportives</a></li>
-                        <li><a href="sportsDeCompetition.html">Les Sports de compétition</a></li>
+                        <li><a href="sportsDeCompetition.php">Les Sports de compétition</a></li>
                         <li><a href="salleDeSportOmnes.html">Salle de sport Omnes</a></li>
                     </ul>
                 </li>
@@ -91,19 +91,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         </div>
         <section>
             <?php
+            //test si le client existe, s'il existe on lui affiche ses données
             if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
                 echo "<h2>Bienvenue sur votre compte, " . htmlspecialchars($_SESSION['prenom']) . " !</h2>";
                 echo "<p>Vos informations de compte sont les suivantes :</p>";
                 echo "<p><strong>Nom :</strong> " . htmlspecialchars($_SESSION['nom']) . "</p>";
                 echo "<p><strong>Prénom :</strong> " . htmlspecialchars($_SESSION['prenom']) . "</p>";
-
+                //peut voir ses messages 
                 echo '<form action="voir_messages.php" method="get">
                         <button type="submit" class="bouton">Voir les messages</button>
                       </form>';
+                //peut se deconnecter
                 echo '<form action="deconnexionClient.php" method="post">
                         <button type="submit" class="bouton">Déconnexion</button>
                       </form>';
-            } else {
+            } else {//sinon retour a la connexion
                 echo '<form action="" method="POST">
                     <div class="event">
                         <h3>Connexion :</h3>

@@ -1,4 +1,5 @@
 <?php
+//demarer un session
 session_start();
 include 'configConnexion.php';
 
@@ -70,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <a href="index.html">Tout Parcourir</a>
                     <ul class="sous-nav">
                         <li><a href="activitesSportives.php">Activités sportives</a></li>
-                        <li><a href="sportsDeCompetition.html">Les Sports de compétition</a></li>
+                        <li><a href="sportsDeCompetition.php">Les Sports de compétition</a></li>
                         <li><a href="salleDeSportOmnes.html">Salle de sport Omnes</a></li>
                     </ul>
                 </li>
@@ -92,71 +93,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <section>
             <?php
+            //verifier si l'administrateur existe dans la bdd, si oui on lui affiche ses données
             if (isset($_SESSION['admin_loggedin']) && $_SESSION['admin_loggedin'] === true) {
                 echo "<h2>Bienvenue sur votre compte admin, " . htmlspecialchars($_SESSION['prenom']) . " !</h2>";
                 echo "<p>Vos informations de compte admin sont les suivantes :</p>";
                 echo "<p><strong>Nom :</strong> " . htmlspecialchars($_SESSION['nom']) . "</p>";
                 echo "<p><strong>Prénom :</strong> " . htmlspecialchars($_SESSION['prenom']) . "</p>";
-                echo '<form action="ajoute_coach.php" method="post">
-                            <br><br>
-
-                            <label for="nom">Nom:</label>
-                            <input type="text" id="nom" name="nom" required><br><br>
-                    
-                            <label for="prenom">Prénom:</label>
-                            <input type="text" id="prenom" name="prenom" required><br><br>
-                    
-                            <label for="photo">URL de la Photo:</label>
-                            <input type="text" id="photo" name="photo" required><br><br>
-                    
-                            <label for="specialite">Spécialité:</label>
-                            <input type="text" id="specialite" name="specialite" required><br><br>
-                    
-                            <label for="video">URL de la Vidéo:</label>
-                            <input type="text" id="video" name="video" required><br><br>
-                    
-                            <label for="cv">URL du CV:</label>
-                            <input type="text" id="cv" name="cv" required><br><br>
-                    
-                            <label for="disponibilite">Disponibilité:</label>
-                            <input type="text" id="disponibilite" name="disponibilite" required><br><br>
-                    
-                            <label for="email">Email:</label>
-                            <input type="email" id="email" name="email" required><br><br>
-                    
-                            <label for="mot_de_passe">Mot de Passe:</label>
-                            <input type="password" id="mot_de_passe" name="mot_de_passe" required><br>
-                    
-                            <label for="telephone">Téléphone:</label>
-                            <input type="text" id="telephone" name="telephone" required>
-                    
-                            <button type="submit" class="bouton">Ajouter Coach</button><br><br>
-                        </form>';
-                echo '<form action="supprimer_coach.php" method="post">
-                        <label for="nom">Nom du Coach:</label>
-                        <input type="text" id="nom" name="nom" required>
-                        <button type="submit" class = "bouton">Supprimer Coach</button><br><br>
-                      </form>';
-                echo '<form action="ajouter_admin.php" method="post">
-                            <label for="nom">Nom:</label>
-                            <input type="text" id="nom" name="nom" required><br><br>
-                    
-                            <label for="prenom">Prénom:</label>
-                            <input type="text" id="prenom" name="prenom" required><br>
-                    
-                            <label for="email">Email:</label>
-                            <input type="email" id="email" name="email" required>
-                    
-                            <button type="submit" class ="bouton">Ajouter Administrateur</button>
-                      </form>';
+                //possibilité de se deconnecter 
                 echo '<form action="deconnexionAdmin.php" method="post">
                         <button type="submit" class="bouton">Déconnexion</button>
                       </form>';
+                //possibilité de voir les coach inscrit puis de les supprimer ou pas grace à listeCoachs.php
                 echo '<form action="listeCoachs.php" method="get">
                         <button type="submit" class="bouton">Voir les coachs</button>
                       </form>';
+                //possibilités de créer un compte coach
+                echo '<form action="inscriptionCoach.html" method="get">
+                        <button type="submit" class="bouton">Créer un compte coach</button>
+                      </form>';
             }
-            else
+            else//si pas trouvé, on le redirige sur la connexion
             {
                 echo '<form action="" method="POST">
                     <div class="event">

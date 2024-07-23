@@ -12,6 +12,7 @@
                     <h1><xsl:value-of select="cv/personalInfo/name"/></h1>
                     <p>Email: <xsl:value-of select="cv/personalInfo/email"/></p>
                     <p>Téléphone: <xsl:value-of select="cv/personalInfo/phone"/></p>
+                    <p>Age: <xsl:value-of select="cv/personalInfo/age"/></p>
                     <img class="profile-photo" src="{cv/personalInfo/photo}" alt="Photo du CV"/>
                     <div class="section">
                         <h2>Résumé</h2>
